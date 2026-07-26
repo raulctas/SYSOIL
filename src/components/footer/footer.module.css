@@ -1,0 +1,107 @@
+.footer {
+  background: var(--color-navy);
+  color: rgba(255, 255, 255, 0.78);
+  padding-block: var(--space-8) var(--space-5);
+  margin-top: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: var(--space-7);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand {
+  max-width: 320px;
+}
+
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.wordmarkName {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: var(--color-green-light);
+}
+
+.wordmarkSuffix {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 6px;
+}
+
+/* Líneas que flanquean "GROUP", como en el logo. */
+.wordmarkSuffix::before,
+.wordmarkSuffix::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.7;
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.colTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.link {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.78);
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--color-gold);
+}
+
+.contactLine {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-5);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}

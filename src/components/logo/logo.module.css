@@ -1,0 +1,14 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.image {
+  height: 66px;
+  width: auto;
+  display: block;
+}
+
+.large .image {
+  height: 96px;
+}
