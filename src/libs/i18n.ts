@@ -7,12 +7,22 @@ import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from 'src/constants/languages';
 
 /**
  * Inicializa i18next. Los textos se cargan en runtime desde
- * `/locales/{{lng}}/translation.json` (http-backend). Por ahora solo existe `es`,
- * pero añadir un idioma es tan simple como crear su fichero de traducción y
+ * `/locales/{{lng}}/translation.json` (http-backend). Hay un fichero por idioma
+ * (es, en); añadir uno nuevo es tan simple como crear su fichero de traducción y
  * registrarlo en `SUPPORTED_LANGUAGES`.
+ *
+ * El español es el idioma por defecto: la detección NO usa el idioma del
+ * navegador, de modo que una primera visita siempre arranca en español. Se
+ * recuerda la elección manual del usuario (localStorage) y se permite forzar el
+ * idioma por querystring (?lng=en).
  */
-export const i18nextInit = () =>
-  i18n
+export const i18nextInit = () => {
+  // Mantiene el atributo <html lang> sincronizado con el idioma activo.
+  i18n.on('languageChanged', (language) => {
+    document.documentElement.lang = language;
+  });
+
+  return i18n
     .use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)
@@ -22,7 +32,13 @@ export const i18nextInit = () =>
       supportedLngs: SUPPORTED_LANGUAGES.map((language) => language.code),
       ns: ['translation'],
       defaultNS: 'translation',
+      detection: {
+        order: ['querystring', 'localStorage'],
+        lookupQuerystring: 'lng',
+        caches: ['localStorage'],
+      },
       interpolation: {
         escapeValue: false,
       },
     });
+};
