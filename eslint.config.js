@@ -30,7 +30,7 @@ export default tseslint.config(
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       'react/prop-types': 'off',
-      // Fuerza componentes como arrow functions (convención Wio.Front).
+      // Fuerza componentes como arrow functions.
       'react/function-component-definition': [
         'error',
         { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },

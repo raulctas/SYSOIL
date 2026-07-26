@@ -11,9 +11,8 @@ integral de hidrocarburos y productos energéticos.
 - **CSS Modules** + design tokens (`src/styles/design-tokens.css`)
 - Fuentes self-hosted vía `@fontsource` (Rem + Inter)
 
-Convenciones alineadas con el proyecto `Wio.Front`: ficheros/carpetas en `kebab-case`,
-una carpeta por componente con barrel `index.ts`, componentes como arrow functions,
-Prettier + ESLint (flat config).
+Convenciones del proyecto: ficheros/carpetas en `kebab-case`, una carpeta por componente
+con barrel `index.ts`, componentes como arrow functions, Prettier + ESLint (flat config).
 
 ## Requisitos
 
