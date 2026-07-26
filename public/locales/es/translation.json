@@ -1,0 +1,358 @@
+{
+  "common": {
+    "companyName": "PARRI GROUP MANEGEMENT S.L",
+    "companyShort": "PARRI GROUP",
+    "homeLink": "Ir al inicio",
+    "languageSelector": "Seleccionar idioma",
+    "readMore": "Saber más",
+    "backToList": "Volver a Productos y Servicios",
+    "getInTouch": "Hablemos"
+  },
+  "nav": {
+    "main": "Navegación principal",
+    "home": "Inicio",
+    "aboutUs": "Quiénes somos",
+    "productsServices": "Productos y Servicios",
+    "team": "Equipo",
+    "contact": "Contactar",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Trading y gestión energética integral",
+      "title": "Conectamos la energía con los mercados globales",
+      "subtitle": "Especialistas en la comercialización mayorista y la gestión estratégica de hidrocarburos y productos energéticos, con una ejecución precisa y una gestión de riesgos responsable.",
+      "ctaPrimary": "Contactar",
+      "ctaSecondary": "Ver productos y servicios"
+    },
+    "mission": {
+      "eyebrow": "Nuestra misión",
+      "title": "Soluciones de intercambio y comercialización de alta eficiencia",
+      "text": "Optimizamos la cadena de suministro energético global mediante la comercialización eficiente y responsable de hidrocarburos y derivados. Conectamos mercados globales con tecnología avanzada y análisis profundo, garantizando el flujo ininterrumpido de energía hacia sectores clave y maximizando el valor para nuestros clientes y socios.",
+      "cta": "Conócenos"
+    },
+    "values": {
+      "eyebrow": "Lo que nos define",
+      "title": "Valores que guían cada decisión",
+      "subtitle": "Los pilares que orientan operaciones de alto impacto bajo presión."
+    },
+    "growth": {
+      "eyebrow": "Motores de crecimiento 2022–2025",
+      "title": "Una trayectoria ascendente y sostenible",
+      "text": "La transición de una empresa de trading pura a una entidad de gestión energética integral ha impulsado un crecimiento resiliente y escalable, con utilidades que crecen por encima de la facturación.",
+      "stats": {
+        "revenue": "Facturación 2025",
+        "revenueValue": "29 M€",
+        "growth": "Crecimiento del volumen de negocio",
+        "growthValue": "+61 %",
+        "ebitda": "Margen EBITDA 2025",
+        "ebitdaValue": "13,1 %",
+        "years": "Ejercicios de crecimiento continuado",
+        "yearsValue": "2022–2025"
+      }
+    },
+    "featured": {
+      "eyebrow": "Nuestra oferta",
+      "title": "Productos y servicios destacados",
+      "subtitle": "Del comercio mayorista de combustibles a la intermediación estratégica internacional.",
+      "cta": "Ver todo"
+    },
+    "cta": {
+      "title": "¿Buscas optimizar tus fuentes de suministro energético?",
+      "text": "Aportamos inteligencia comercial para mitigar riesgos en entornos volátiles y garantizar las mejores condiciones de suministro.",
+      "button": "Contacta con nosotros"
+    }
+  },
+  "aboutUs": {
+    "hero": {
+      "eyebrow": "Quiénes somos",
+      "title": "Especialistas en gestión energética internacional",
+      "subtitle": "El nexo vital entre la producción y la demanda energética global."
+    },
+    "intro": {
+      "text": "En PARRI GROUP MANEGEMENT S.L somos especialistas en la gestión estratégica y comercialización de hidrocarburos y productos energéticos a nivel internacional. Con una sólida base operativa en España y una red de conexiones que abarca los principales centros de suministro global, actuamos como el nexo vital entre la producción y la demanda energética.",
+      "text2": "Nuestra experiencia se centra en la intermediación de alto nivel y el comercio mayorista de combustibles, donde la agilidad y el análisis de mercado son nuestras herramientas principales. No solo movemos recursos; aportamos inteligencia comercial para mitigar riesgos en entornos volátiles, garantizando que nuestros socios obtengan siempre las mejores condiciones de suministro."
+    },
+    "mission": {
+      "title": "Misión",
+      "text": "Proporcionar soluciones de intercambio y comercialización de alta eficiencia, conectando mercados globales mediante el uso de tecnología avanzada y análisis profundo. Nos comprometemos a maximizar el valor para nuestros clientes y socios a través de una ejecución precisa y una gestión de riesgos responsable, optimizando la cadena de suministro energético global y garantizando el flujo ininterrumpido de energía hacia sectores clave."
+    },
+    "vision": {
+      "title": "Visión",
+      "text": "Convertirnos en el referente global del sector de trading, reconocidos por nuestra integridad operativa, nuestra capacidad de innovación tecnológica y nuestro impacto positivo en la liquidez y estabilidad de los mercados en los que operamos, aportando soluciones logísticas innovadoras que generen rentabilidad para nuestros aliados y seguridad energética para los mercados finales."
+    },
+    "values": {
+      "title": "Nuestros valores",
+      "subtitle": "Los pilares que guían decisiones de alto impacto bajo presión."
+    },
+    "whyUs": {
+      "eyebrow": "¿Por qué elegirnos?",
+      "title": "Confianza respaldada por resultados",
+      "items": [
+        {
+          "title": "Experiencia técnica",
+          "text": "Un equipo experto en las complejidades logísticas y normativas del sector petrolífero."
+        },
+        {
+          "title": "Red global",
+          "text": "Alianzas estratégicas que nos permiten operar con flexibilidad en los mercados internacionales."
+        },
+        {
+          "title": "Compromiso con la excelencia",
+          "text": "Cada transacción está respaldada por una ética profesional inquebrantable y un enfoque total en los resultados de nuestros clientes."
+        }
+      ]
+    },
+    "growth": {
+      "eyebrow": "Trayectoria 2022–2025",
+      "title": "Un modelo de negocio resiliente y escalable",
+      "text": "Entre 2022 y 2025 la compañía ha experimentado una trayectoria ascendente, pasando de una facturación de 18 M€ a 29 M€. Este incremento no es fortuito, sino el resultado de una ejecución disciplinada: la consolidación como nexo entre refinerías internacionales y distribuidores finales, las alianzas en productos de alto valor (Repsol y Castrol), la optimización de la cadena logística integral y una gestión avanzada de riesgos mediante coberturas.",
+      "confidentiality": "Garantizamos absoluta confidencialidad en todas nuestras comunicaciones y procesos de Due Diligence."
+    }
+  },
+  "productsServices": {
+    "hero": {
+      "eyebrow": "Productos y Servicios",
+      "title": "Soluciones energéticas integrales",
+      "subtitle": "Desde la comercialización mayorista de hidrocarburos hasta la consultoría y la gestión de riesgos."
+    },
+    "services": {
+      "title": "Servicios",
+      "subtitle": "Acompañamos a nuestros clientes en toda la cadena de valor energética."
+    },
+    "products": {
+      "title": "Productos",
+      "subtitle": "Una amplia gama de productos energéticos con estándares internacionales de calidad."
+    }
+  },
+  "catalog": {
+    "categories": {
+      "service": "Servicio",
+      "product": "Producto"
+    },
+    "detail": {
+      "featuresTitle": "Qué incluye",
+      "ctaTitle": "¿Te interesa esta solución?",
+      "ctaText": "Cuéntanos tus necesidades y te propondremos la mejor alternativa de suministro.",
+      "ctaButton": "Solicitar información"
+    },
+    "wholesale-hydrocarbons": {
+      "title": "Comercialización mayorista de hidrocarburos",
+      "summary": "Compra y venta a gran escala de productos energéticos con estándares internacionales de calidad.",
+      "description": "Gestionamos la compra y venta a gran escala de una amplia gama de productos energéticos, asegurando el cumplimiento de los estándares internacionales de calidad y las mejores condiciones de suministro para nuestros socios.",
+      "features": [
+        "Combustibles líquidos: gasóleos, gasolinas y fuelóleos.",
+        "Gases licuados: GLP y gas natural.",
+        "Derivados industriales: lubricantes y betunes asfálticos."
+      ]
+    },
+    "fuel-additives": {
+      "title": "Aditivos para combustibles",
+      "summary": "Aditivos antifricción y mejoradores de los índices de octano y cetano.",
+      "description": "Comercializamos aditivos antifricción y aditivos para mejorar los índices de octano y cetano de los combustibles, optimizando el rendimiento y la eficiencia de los motores.",
+      "features": [
+        "Índice de octano: mide la capacidad de la gasolina para resistir la detonación prematura al comprimirse dentro del cilindro del motor.",
+        "Índice de cetano: mide la calidad de ignición y la velocidad de combustión del diésel, indicando la rapidez con la que se inflama bajo compresión."
+      ]
+    },
+    "mobile-fuel-stations": {
+      "title": "Estaciones de combustible móviles",
+      "summary": "Estaciones móviles alimentadas con energía solar y electricidad.",
+      "description": "Comercializamos estaciones de combustible móviles alimentadas con energía solar y electricidad, una solución flexible y sostenible para el suministro en cualquier ubicación.",
+      "features": [
+        "Alimentación con energía solar y eléctrica.",
+        "Movilidad y despliegue rápido allí donde se necesita el suministro."
+      ]
+    },
+    "chemicals-refrigerant-gases": {
+      "title": "Productos químicos y gases refrigerantes",
+      "summary": "Comercialización de productos químicos y las principales familias de gases refrigerantes.",
+      "description": "Comercializamos productos químicos y gases refrigerantes, cubriendo las principales familias del mercado con garantías de calidad y cumplimiento normativo.",
+      "features": [
+        "Refrigerantes naturales (ecológicos).",
+        "Hidrofluorocarbonos (HFC).",
+        "Hidroclorofluorocarbonos (HCFC)."
+      ]
+    },
+    "strategic-intermediation": {
+      "title": "Intermediación estratégica internacional",
+      "summary": "Facilitamos el acceso a mercados globales para optimizar las fuentes de suministro.",
+      "description": "Facilitamos el acceso a mercados globales para empresas que buscan optimizar sus fuentes de suministro, actuando como puente de confianza entre refinerías y distribuidores finales.",
+      "features": [
+        "Conexión entre mercados: puente entre refinerías y distribuidores finales.",
+        "Negociación de contratos: acuerdos de suministro a corto, medio y largo plazo.",
+        "Arbitraje de precios: aprovechamiento de las ineficiencias del mercado para lograr precios competitivos."
+      ]
+    },
+    "logistics-supply-chain": {
+      "title": "Logística y gestión de la cadena de suministro",
+      "summary": "Soluciones integrales para que el producto llegue de forma segura y eficiente.",
+      "description": "Ofrecemos soluciones integrales para asegurar que el producto llegue a su destino de forma segura y eficiente, reduciendo tiempos de tránsito y costes operativos.",
+      "features": [
+        "Gestión de fletamentos: coordinación de transporte marítimo y terrestre.",
+        "Almacenamiento estratégico: optimización de inventarios en puntos clave.",
+        "Trámites aduaneros: gestión de toda la documentación de importación y exportación."
+      ]
+    },
+    "consulting-risk-management": {
+      "title": "Consultoría y gestión de riesgos",
+      "summary": "Herramientas avanzadas para navegar la volatilidad del mercado energético.",
+      "description": "Ayudamos a nuestros clientes a navegar la volatilidad del mercado energético con herramientas de análisis avanzadas y estrategias de protección de márgenes.",
+      "features": [
+        "Análisis de mercado: informes periódicos sobre tendencias de precios y geopolítica energética.",
+        "Coberturas (hedging): estrategias para proteger los márgenes frente a las fluctuaciones de precios.",
+        "Cumplimiento normativo: asesoramiento sobre regulaciones internacionales y estándares medioambientales."
+      ]
+    },
+    "chemicals-gases": {
+      "title": "Productos químicos y gases",
+      "summary": "Amplio catálogo de productos químicos y gases para uso industrial.",
+      "description": "Suministramos productos químicos y gases para uso industrial, incluyendo las principales familias de gases refrigerantes del mercado.",
+      "features": [
+        "Gases refrigerantes naturales y ecológicos.",
+        "Hidrofluorocarbonos (HFC) e hidroclorofluorocarbonos (HCFC).",
+        "Productos químicos industriales."
+      ]
+    },
+    "mobile-service-stations": {
+      "title": "Estaciones de servicio de combustibles móviles",
+      "summary": "Estaciones de servicio móviles sostenibles y de despliegue rápido.",
+      "description": "Estaciones de servicio de combustibles móviles alimentadas con energía solar y electricidad, ideales para proyectos, obras y ubicaciones temporales.",
+      "features": [
+        "Alimentación solar y eléctrica.",
+        "Instalación y despliegue rápidos."
+      ]
+    },
+    "wholesale-fuels": {
+      "title": "Combustibles al por mayor",
+      "summary": "Suministro mayorista de combustibles líquidos y gases licuados.",
+      "description": "Comercializamos combustibles al por mayor con garantía de calidad y capacidad logística internacional, asegurando un suministro continuo y competitivo.",
+      "features": [
+        "Gasóleos, gasolinas y fuelóleos.",
+        "GLP y gas natural.",
+        "Cumplimiento de estándares internacionales de calidad."
+      ]
+    },
+    "lubricants": {
+      "title": "Lubricantes Repsol y Castrol",
+      "summary": "Lubricantes premium de las marcas Repsol y Castrol.",
+      "description": "Comercializamos lubricantes premium de las marcas Repsol y Castrol, productos de alto valor que ofrecen un rendimiento superior y márgenes atractivos.",
+      "features": [
+        "Gama premium de las marcas Repsol y Castrol.",
+        "Productos de alto valor para automoción e industria."
+      ]
+    },
+    "antifriction-additives": {
+      "title": "Aditivos antifricción y para combustibles",
+      "summary": "Aditivos que mejoran el rendimiento y la eficiencia de los combustibles.",
+      "description": "Aditivos antifricción y aditivos para mejorar los índices de octano y cetano, diseñados para optimizar el rendimiento y la eficiencia de los motores.",
+      "features": [
+        "Aditivos antifricción para reducir el desgaste.",
+        "Mejoradores de los índices de octano y cetano."
+      ]
+    }
+  },
+  "team": {
+    "hero": {
+      "eyebrow": "Equipo",
+      "title": "Las personas detrás de PARRI GROUP",
+      "subtitle": "Un equipo experto en las complejidades logísticas, comerciales y normativas del sector energético."
+    },
+    "photoPending": "Foto próximamente",
+    "roles": {
+      "ceo": "Director General",
+      "operationsDirector": "Director de Operaciones",
+      "tradingDirector": "Director de Trading",
+      "logisticsManager": "Responsable de Logística",
+      "riskAnalyst": "Analista de Riesgos",
+      "commercialManager": "Responsable Comercial"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contactar",
+      "title": "Hablemos de tu próximo suministro",
+      "subtitle": "Cuéntanos qué necesitas y nuestro equipo te responderá lo antes posible."
+    },
+    "form": {
+      "title": "Escríbenos",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre y apellidos",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@empresa.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "Motivo de tu consulta",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos en qué podemos ayudarte",
+      "submit": "Enviar mensaje",
+      "note": "Al enviar se abrirá tu gestor de correo con el mensaje preparado.",
+      "required": "Este campo es obligatorio",
+      "invalidEmail": "Introduce un correo electrónico válido"
+    },
+    "info": {
+      "title": "Datos de contacto",
+      "addressTitle": "Dirección",
+      "emailTitle": "Correo electrónico"
+    }
+  },
+  "values": {
+    "integrity": {
+      "title": "Integridad y ética",
+      "text": "Actuar con total transparencia y honestidad en cada operación, cumpliendo rigurosamente con las normativas internacionales."
+    },
+    "analysis": {
+      "title": "Excelencia en el análisis",
+      "text": "Basar cada decisión en datos precisos y una comprensión profunda del mercado."
+    },
+    "agility": {
+      "title": "Agilidad",
+      "text": "Capacidad de respuesta rápida ante la volatilidad del entorno para aprovechar las oportunidades en tiempo real."
+    },
+    "risk": {
+      "title": "Gestión prudente del riesgo",
+      "text": "Priorizar la preservación del capital y la estabilidad a largo plazo sobre los beneficios inmediatos de alto riesgo."
+    },
+    "innovation": {
+      "title": "Innovación continua",
+      "text": "Adoptar y desarrollar las últimas herramientas tecnológicas para mantener una ventaja competitiva en los mercados digitales."
+    },
+    "reliability": {
+      "title": "Fiabilidad operativa",
+      "text": "Garantizar el cumplimiento de los contratos y los plazos de entrega bajo cualquier condición de mercado."
+    },
+    "transparency": {
+      "title": "Transparencia en la transacción",
+      "text": "Mantener canales de comunicación claros y procesos auditables que generen confianza en inversores y socios comerciales."
+    },
+    "responsibility": {
+      "title": "Responsabilidad ambiental y social",
+      "text": "Operar bajo el estricto cumplimiento de las normativas medioambientales, minimizando el impacto de la logística de transporte de combustibles."
+    },
+    "globalVision": {
+      "title": "Visión global",
+      "text": "Entender y operar en mercados complejos y diversos, aprovechando las fluctuaciones internacionales para beneficio del cliente."
+    },
+    "safety": {
+      "title": "Seguridad",
+      "text": "Priorizar los protocolos de seguridad física y técnica en el manejo de productos petrolíferos para proteger el entorno y el capital humano."
+    }
+  },
+  "footer": {
+    "tagline": "Comercialización mayorista y gestión estratégica de hidrocarburos y productos energéticos a nivel internacional.",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Trading y gestión energética integral."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "cta": "Volver al inicio"
+  },
+  "error": {
+    "title": "Algo ha ido mal",
+    "text": "Se ha producido un error inesperado. Vuelve a intentarlo o regresa al inicio.",
+    "cta": "Volver al inicio"
+  }
+}
