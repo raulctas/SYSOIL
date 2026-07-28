@@ -128,7 +128,36 @@
   },
   "castrolGallery": {
     "title": "Castrol product range",
-    "subtitle": "A selection of Castrol-branded lubricants and products that we trade."
+    "subtitle": "A selection of Castrol-branded lubricants and products that we trade.",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "castrol": {
+    "back": "Back to Repsol and Castrol lubricants",
+    "vecton-15w40": {
+      "description": "Heavy-duty diesel engine oil for trucks (15W-40) with System Pro Technology. Fights oil breakdown by controlling oxidation and deposits, and extends drain intervals."
+    },
+    "vecton-fuel-saver-5w30": {
+      "description": "Fully synthetic diesel engine oil (5W-30) for fleets and heavy-duty vehicles. Optimizes fuel economy and delivers excellent performance at low temperatures."
+    },
+    "moly-grease": {
+      "description": "Molybdenum disulfide lubricating grease that protects components under heavy loads against friction and wear."
+    },
+    "radicool-sf": {
+      "description": "Long-life coolant and antifreeze for the engine cooling system. Prevents overheating and protects against corrosion."
+    },
+    "transmax-axle-75w90": {
+      "description": "Long-life lubricant for axles and differentials (75W-90). Protects gears under heavy loads and extends transmission life."
+    },
+    "transmax-manual-fe-75w": {
+      "description": "Manual transmission fluid (75W). Keeps the gearbox lubricated and protected for smooth shifting and greater efficiency."
+    },
+    "edge-supercar-5w50": {
+      "description": "Ultra-high-performance fully synthetic engine oil (5W-50) with Fluid Titanium technology. Engineered for sports and high-power engines, delivering strength and endurance under pressure."
+    },
+    "edge-5w30-ll": {
+      "description": "Fully synthetic Long Life engine oil (5W-30) for modern, efficient engines. Maximum protection and performance thanks to Fluid Titanium technology."
+    }
   },
   "catalog": {
     "categories": {

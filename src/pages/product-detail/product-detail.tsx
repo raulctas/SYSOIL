@@ -59,16 +59,6 @@ export const ProductDetail = () => {
                 </li>
               ))}
             </ul>
-
-            {item.slug === 'lubricants' && <CastrolGallery />}
-
-            <div className={styles.cta}>
-              <h3>{t('catalog.detail.ctaTitle')}</h3>
-              <p>{t('catalog.detail.ctaText')}</p>
-              <Button to={routes.contact} variant="primary">
-                {t('catalog.detail.ctaButton')}
-              </Button>
-            </div>
           </div>
 
           <div>
@@ -82,6 +72,16 @@ export const ProductDetail = () => {
               </div>
             )}
           </div>
+        </div>
+
+        {item.slug === 'lubricants' && <CastrolGallery />}
+
+        <div className={styles.cta}>
+          <h3>{t('catalog.detail.ctaTitle')}</h3>
+          <p>{t('catalog.detail.ctaText')}</p>
+          <Button to={routes.contact} variant="primary">
+            {t('catalog.detail.ctaButton')}
+          </Button>
         </div>
       </Section>
     </>

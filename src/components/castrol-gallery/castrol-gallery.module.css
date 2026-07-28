@@ -1,21 +1,59 @@
+/* Banda separada claramente de las secciones superior e inferior. */
 .gallery {
-  margin-top: var(--space-7);
+  margin-block: var(--space-7);
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
 }
 
 .title {
   font-size: var(--text-xl);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .subtitle {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
-  margin-bottom: var(--space-5);
 }
 
-.grid {
+.controls {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-navy);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.control:hover {
+  background: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.track {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--space-4);
 }
 
@@ -28,12 +66,14 @@
   overflow: hidden;
   transition:
     transform var(--transition),
-    box-shadow var(--transition);
+    box-shadow var(--transition),
+    border-color var(--transition);
 }
 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+  border-color: transparent;
 }
 
 .media {

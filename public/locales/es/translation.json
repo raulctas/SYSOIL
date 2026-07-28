@@ -128,7 +128,36 @@
   },
   "castrolGallery": {
     "title": "Gama de productos Castrol",
-    "subtitle": "Una selección de lubricantes y productos de la marca Castrol que comercializamos."
+    "subtitle": "Una selección de lubricantes y productos de la marca Castrol que comercializamos.",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "castrol": {
+    "back": "Volver a Lubricantes Repsol y Castrol",
+    "vecton-15w40": {
+      "description": "Aceite de motor diésel para vehículos pesados y camiones (15W-40) con tecnología System Pro. Combate la degradación del aceite controlando la oxidación y los depósitos, y prolonga los intervalos de cambio."
+    },
+    "vecton-fuel-saver-5w30": {
+      "description": "Aceite de motor diésel totalmente sintético (5W-30) para flotas y vehículos pesados. Optimiza el ahorro de combustible y ofrece un excelente rendimiento a bajas temperaturas."
+    },
+    "moly-grease": {
+      "description": "Grasa lubricante con disulfuro de molibdeno que protege frente a la fricción y el desgaste los componentes sometidos a cargas elevadas."
+    },
+    "radicool-sf": {
+      "description": "Refrigerante y anticongelante de larga duración para el sistema de refrigeración del motor. Previene el sobrecalentamiento y protege frente a la corrosión."
+    },
+    "transmax-axle-75w90": {
+      "description": "Lubricante de larga duración para ejes y diferenciales (75W-90). Protege los engranajes bajo cargas elevadas y prolonga la vida útil de la transmisión."
+    },
+    "transmax-manual-fe-75w": {
+      "description": "Fluido para cajas de cambio manuales (75W). Mantiene la transmisión lubricada y protegida, favoreciendo un cambio suave y una mayor eficiencia."
+    },
+    "edge-supercar-5w50": {
+      "description": "Aceite de motor totalmente sintético (5W-50) de altísimo rendimiento con tecnología Fluid Titanium. Diseñado para motores deportivos y de alta potencia, aporta fuerza y resistencia bajo presión."
+    },
+    "edge-5w30-ll": {
+      "description": "Aceite de motor totalmente sintético (5W-30) Long Life para motores modernos y eficientes. Máxima protección y rendimiento gracias a la tecnología Fluid Titanium."
+    }
   },
   "catalog": {
     "categories": {
