@@ -21,9 +21,10 @@ export const ProductDetail = () => {
     return <NotFound />;
   }
 
-  const features = t(`catalog.${item.slug}.features`, {
-    returnObjects: true,
-  }) as string[];
+  const features =
+    item.featureCount > 0
+      ? (t(`catalog.${item.slug}.features`, { returnObjects: true }) as string[])
+      : [];
 
   return (
     <>
@@ -50,15 +51,21 @@ export const ProductDetail = () => {
               {t(`catalog.${item.slug}.description`)}
             </p>
 
-            <h3 className={styles.featuresTitle}>{t('catalog.detail.featuresTitle')}</h3>
-            <ul className={styles.features}>
-              {features.map((feature) => (
-                <li key={feature} className={styles.feature}>
-                  <Check size={20} className={styles.featureIcon} aria-hidden />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            {features.length > 0 && (
+              <>
+                <h3 className={styles.featuresTitle}>
+                  {t('catalog.detail.featuresTitle')}
+                </h3>
+                <ul className={styles.features}>
+                  {features.map((feature) => (
+                    <li key={feature} className={styles.feature}>
+                      <Check size={20} className={styles.featureIcon} aria-hidden />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
 
           <div>
@@ -74,7 +81,7 @@ export const ProductDetail = () => {
           </div>
         </div>
 
-        {item.slug === 'lubricants' && <CastrolGallery />}
+        {item.slug === 'lubricants-castrol' && <CastrolGallery />}
 
         <div className={styles.cta}>
           <h3>{t('catalog.detail.ctaTitle')}</h3>

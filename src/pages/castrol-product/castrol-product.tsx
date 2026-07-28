@@ -28,7 +28,7 @@ export const CastrolProduct = () => {
       <PageHero eyebrow={t('castrolGallery.title')} title={product.name} wide />
 
       <Section>
-        <Link to={productDetailPath('lubricants')} className={styles.breadcrumb}>
+        <Link to={productDetailPath('lubricants-castrol')} className={styles.breadcrumb}>
           <ArrowLeft size={16} aria-hidden />
           {t('castrol.back')}
         </Link>

@@ -48,10 +48,16 @@ export const CATALOG: CatalogItem[] = [
     featured: true,
   },
   {
-    slug: 'lubricants',
+    slug: 'lubricants-castrol',
     category: 'product',
     image: '/images/products/lubricants.jpg',
     featureCount: 2,
+    featured: true,
+  },
+  {
+    slug: 'lubricants-repsol',
+    category: 'product',
+    featureCount: 0,
     featured: true,
   },
   {

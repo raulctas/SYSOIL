@@ -133,7 +133,7 @@
     "next": "Next"
   },
   "castrol": {
-    "back": "Back to Repsol and Castrol lubricants",
+    "back": "Back to Castrol lubricants",
     "vecton-15w40": {
       "description": "Heavy-duty diesel engine oil for trucks (15W-40) with System Pro Technology. Fights oil breakdown by controlling oxidation and deposits, and extends drain intervals."
     },
@@ -239,14 +239,19 @@
         "Compliance with international quality standards."
       ]
     },
-    "lubricants": {
-      "title": "Repsol and Castrol lubricants",
-      "summary": "Premium lubricants from the Repsol and Castrol brands.",
-      "description": "We trade premium lubricants from the Repsol and Castrol brands, high-value products that offer superior performance and attractive margins.",
+    "lubricants-castrol": {
+      "title": "Castrol lubricants",
+      "summary": "Premium lubricants from the Castrol brand.",
+      "description": "We trade premium lubricants from the Castrol brand, high-value products that deliver superior performance for automotive and industry.",
       "features": [
-        "Premium range from the Repsol and Castrol brands.",
+        "Premium range from the Castrol brand.",
         "High-value products for automotive and industry."
       ]
+    },
+    "lubricants-repsol": {
+      "title": "Repsol lubricants",
+      "summary": "Coming soon.",
+      "description": "We're preparing this section. Our Repsol lubricants range will be available here soon."
     },
     "antifriction-additives": {
       "title": "Anti-friction and fuel additives",

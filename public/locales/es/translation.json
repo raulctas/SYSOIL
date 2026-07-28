@@ -133,7 +133,7 @@
     "next": "Siguiente"
   },
   "castrol": {
-    "back": "Volver a Lubricantes Repsol y Castrol",
+    "back": "Volver a Lubricantes Castrol",
     "vecton-15w40": {
       "description": "Aceite de motor diésel para vehículos pesados y camiones (15W-40) con tecnología System Pro. Combate la degradación del aceite controlando la oxidación y los depósitos, y prolonga los intervalos de cambio."
     },
@@ -239,14 +239,19 @@
         "Cumplimiento de estándares internacionales de calidad."
       ]
     },
-    "lubricants": {
-      "title": "Lubricantes Repsol y Castrol",
-      "summary": "Lubricantes premium de las marcas Repsol y Castrol.",
-      "description": "Comercializamos lubricantes premium de las marcas Repsol y Castrol, productos de alto valor que ofrecen un rendimiento superior y márgenes atractivos.",
+    "lubricants-castrol": {
+      "title": "Lubricantes Castrol",
+      "summary": "Lubricantes premium de la marca Castrol.",
+      "description": "Comercializamos lubricantes premium de la marca Castrol, productos de alto valor que ofrecen un rendimiento superior para automoción e industria.",
       "features": [
-        "Gama premium de las marcas Repsol y Castrol.",
+        "Gama premium de la marca Castrol.",
         "Productos de alto valor para automoción e industria."
       ]
+    },
+    "lubricants-repsol": {
+      "title": "Lubricantes Repsol",
+      "summary": "Próximamente.",
+      "description": "Estamos preparando esta sección. Muy pronto encontrarás aquí nuestra gama de lubricantes Repsol."
     },
     "antifriction-additives": {
       "title": "Aditivos antifricción y para combustibles",
