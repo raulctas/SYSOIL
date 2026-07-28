@@ -7,14 +7,14 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-7);
   padding-bottom: var(--space-6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .brand {
-  max-width: 320px;
+  max-width: 340px;
 }
 
 .wordmark {
