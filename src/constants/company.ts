@@ -1,10 +1,9 @@
 /**
  * Datos de contacto de la empresa. Valores no traducibles (dirección, correo).
- * NOTA: `email` es un placeholder — sustituir por el correo real de Parri Group.
  */
 export const COMPANY = {
   legalName: 'PARRI GROUP MANEGEMENT S.L',
-  email: 'info@parrigroup.com',
+  email: 'parri-group@parri-group.com',
   address: {
     street: 'Avda. Juan de la Cierva 10, Planta 1, Puerta 8',
     city: '46980 Paterna',
