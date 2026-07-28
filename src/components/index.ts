@@ -1,3 +1,4 @@
+export { BrandName } from './brand-name';
 export { Button } from './button';
 export { CatalogCard } from './catalog-card';
 export { Container } from './container';

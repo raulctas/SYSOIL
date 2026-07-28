@@ -29,6 +29,10 @@
   max-width: 720px;
 }
 
+.inner.wide {
+  max-width: none;
+}
+
 .eyebrow {
   display: inline-block;
   font-weight: 700;

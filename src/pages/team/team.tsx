@@ -1,5 +1,6 @@
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
+import { BrandName } from 'components/brand-name';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
 import { TEAM, TEAM_PHOTO_PLACEHOLDER } from 'data/team';
@@ -13,9 +14,12 @@ export const Team = () => {
     <>
       <PageHero
         eyebrow={t('team.hero.eyebrow')}
-        title={t('team.hero.title')}
+        title={
+          <Trans i18nKey="team.hero.title" components={{ brand: <BrandName /> }} />
+        }
         subtitle={t('team.hero.subtitle')}
         image="/images/products/chemicals-gases.jpg"
+        wide
       />
 
       <Section>
