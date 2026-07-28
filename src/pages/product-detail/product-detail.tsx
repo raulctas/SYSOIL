@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, Layers } from 'lucide-react';
 
 import { Button } from 'components/button';
+import { CastrolGallery } from 'components/castrol-gallery';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
 import { NotFound } from 'pages/not-found';
@@ -58,6 +59,8 @@ export const ProductDetail = () => {
                 </li>
               ))}
             </ul>
+
+            {item.slug === 'lubricants' && <CastrolGallery />}
 
             <div className={styles.cta}>
               <h3>{t('catalog.detail.ctaTitle')}</h3>
