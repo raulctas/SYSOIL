@@ -25,6 +25,7 @@ export const ProductsServices = () => {
       <Section
         title={t('productsServices.products.title')}
         subtitle={t('productsServices.products.subtitle')}
+        wideHeader
       >
         <div className={styles.grid}>
           {products.map((item) => (

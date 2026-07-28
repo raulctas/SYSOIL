@@ -9,9 +9,7 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'wholesale-hydrocarbons',
     category: 'service',
-    image: '/images/products/wholesale-fuels.jpg',
     featureCount: 3,
-    featured: true,
   },
   {
     slug: 'strategic-intermediation',
@@ -47,6 +45,7 @@ export const CATALOG: CatalogItem[] = [
     category: 'product',
     image: '/images/products/wholesale-fuels.jpg',
     featureCount: 3,
+    featured: true,
   },
   {
     slug: 'lubricants',
