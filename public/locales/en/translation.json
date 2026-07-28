@@ -261,12 +261,7 @@
     },
     "photoPending": "Photo coming soon",
     "roles": {
-      "ceo": "Chief Executive Officer",
-      "operationsDirector": "Operations Director",
-      "tradingDirector": "Trading Director",
-      "logisticsManager": "Logistics Manager",
-      "riskAnalyst": "Risk Analyst",
-      "commercialManager": "Commercial Manager"
+      "jointAdministrator": "Joint and Several Administrator"
     }
   },
   "contact": {

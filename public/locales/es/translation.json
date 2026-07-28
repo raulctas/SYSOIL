@@ -261,12 +261,7 @@
     },
     "photoPending": "Foto próximamente",
     "roles": {
-      "ceo": "Director General",
-      "operationsDirector": "Director de Operaciones",
-      "tradingDirector": "Director de Trading",
-      "logisticsManager": "Responsable de Logística",
-      "riskAnalyst": "Analista de Riesgos",
-      "commercialManager": "Responsable Comercial"
+      "jointAdministrator": "Administrador Solidario"
     }
   },
   "contact": {
