@@ -16,6 +16,7 @@ export const Team = () => {
         title={t('team.hero.title')}
         subtitle={t('team.hero.subtitle')}
         image="/images/products/chemicals-gases.jpg"
+        wide
       />
 
       <Section>
