@@ -7,7 +7,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr minmax(320px, 1fr);
   gap: var(--space-7);
   padding-bottom: var(--space-6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -87,6 +87,7 @@
 .contactLine {
   font-size: var(--text-sm);
   line-height: 1.7;
+  white-space: nowrap;
 }
 
 .bottom {
@@ -103,5 +104,10 @@
   .grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+
+  /* En una sola columna estrecha se permite el ajuste para no desbordar. */
+  .contactLine {
+    white-space: normal;
   }
 }
