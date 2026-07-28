@@ -14,6 +14,5 @@ export const COMPANY = {
 
 export const COMPANY_ADDRESS_LINES = [
   COMPANY.address.street,
-  `${COMPANY.address.city} (${COMPANY.address.region})`,
-  COMPANY.address.country,
+  `${COMPANY.address.city} (${COMPANY.address.region}), ${COMPANY.address.country}`,
 ];
