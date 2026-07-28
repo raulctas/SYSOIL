@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-8);
-  max-width: 720px;
+  max-width: 760px;
   margin-inline: auto;
 }
 
@@ -63,6 +63,14 @@
 .name {
   font-size: var(--text-lg);
   margin-bottom: var(--space-1);
+  white-space: nowrap;
+}
+
+/* En móvil (1 columna estrecha) se permite el ajuste para no desbordar. */
+@media (max-width: 480px) {
+  .name {
+    white-space: normal;
+  }
 }
 
 .role {
