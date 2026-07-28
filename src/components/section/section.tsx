@@ -14,6 +14,8 @@ interface Props {
   title?: string;
   subtitle?: string;
   center?: boolean;
+  /** Ensancha el encabezado (útil para subtítulos largos que deben ir en una línea). */
+  wideHeader?: boolean;
   className?: string;
 }
 
@@ -25,6 +27,7 @@ export const Section = ({
   title,
   subtitle,
   center,
+  wideHeader,
   className,
 }: Props) => {
   const hasHeader = Boolean(eyebrow || title || subtitle);
@@ -38,7 +41,11 @@ export const Section = ({
     >
       <Container>
         {hasHeader && (
-          <div className={[styles.header, center && styles.center].filter(Boolean).join(' ')}>
+          <div
+            className={[styles.header, center && styles.center, wideHeader && styles.wide]
+              .filter(Boolean)
+              .join(' ')}
+          >
             {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
             {title && <h2 className={styles.title}>{title}</h2>}
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}

@@ -147,34 +147,6 @@
         "Derivados industriales: lubricantes y betunes asfálticos."
       ]
     },
-    "fuel-additives": {
-      "title": "Aditivos para combustibles",
-      "summary": "Aditivos antifricción y mejoradores de los índices de octano y cetano.",
-      "description": "Comercializamos aditivos antifricción y aditivos para mejorar los índices de octano y cetano de los combustibles, optimizando el rendimiento y la eficiencia de los motores.",
-      "features": [
-        "Índice de octano: mide la capacidad de la gasolina para resistir la detonación prematura al comprimirse dentro del cilindro del motor.",
-        "Índice de cetano: mide la calidad de ignición y la velocidad de combustión del diésel, indicando la rapidez con la que se inflama bajo compresión."
-      ]
-    },
-    "mobile-fuel-stations": {
-      "title": "Estaciones de combustible móviles",
-      "summary": "Estaciones móviles alimentadas con energía solar y electricidad.",
-      "description": "Comercializamos estaciones de combustible móviles alimentadas con energía solar y electricidad, una solución flexible y sostenible para el suministro en cualquier ubicación.",
-      "features": [
-        "Alimentación con energía solar y eléctrica.",
-        "Movilidad y despliegue rápido allí donde se necesita el suministro."
-      ]
-    },
-    "chemicals-refrigerant-gases": {
-      "title": "Productos químicos y gases refrigerantes",
-      "summary": "Comercialización de productos químicos y las principales familias de gases refrigerantes.",
-      "description": "Comercializamos productos químicos y gases refrigerantes, cubriendo las principales familias del mercado con garantías de calidad y cumplimiento normativo.",
-      "features": [
-        "Refrigerantes naturales (ecológicos).",
-        "Hidrofluorocarbonos (HFC).",
-        "Hidroclorofluorocarbonos (HCFC)."
-      ]
-    },
     "strategic-intermediation": {
       "title": "Intermediación estratégica internacional",
       "summary": "Facilitamos el acceso a mercados globales para optimizar las fuentes de suministro.",
@@ -250,6 +222,16 @@
       "features": [
         "Aditivos antifricción para reducir el desgaste.",
         "Mejoradores de los índices de octano y cetano."
+      ]
+    },
+    "renewable-energy-projects": {
+      "title": "Proyectos de energía renovable",
+      "summary": "Desarrollo y comercialización de soluciones de energía solar y renovable.",
+      "description": "Impulsamos proyectos de energía renovable, incluyendo instalaciones solares fotovoltaicas, como parte de nuestra evolución hacia una gestión energética integral y sostenible.",
+      "features": [
+        "Instalaciones solares fotovoltaicas.",
+        "Soluciones de energía limpia y sostenible.",
+        "Apoyo en la transición hacia nuevas fuentes de energía."
       ]
     }
   },
