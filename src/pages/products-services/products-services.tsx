@@ -19,14 +19,15 @@ export const ProductsServices = () => {
         title={t('productsServices.hero.title')}
         subtitle={t('productsServices.hero.subtitle')}
         image="/images/products/mobile-fuel-stations.jpg"
+        wide
       />
 
       <Section
-        title={t('productsServices.services.title')}
-        subtitle={t('productsServices.services.subtitle')}
+        title={t('productsServices.products.title')}
+        subtitle={t('productsServices.products.subtitle')}
       >
         <div className={styles.grid}>
-          {services.map((item) => (
+          {products.map((item) => (
             <CatalogCard key={item.slug} item={item} />
           ))}
         </div>
@@ -34,11 +35,11 @@ export const ProductsServices = () => {
 
       <Section
         background="subtle"
-        title={t('productsServices.products.title')}
-        subtitle={t('productsServices.products.subtitle')}
+        title={t('productsServices.services.title')}
+        subtitle={t('productsServices.services.subtitle')}
       >
         <div className={styles.grid}>
-          {products.map((item) => (
+          {services.map((item) => (
             <CatalogCard key={item.slug} item={item} />
           ))}
         </div>

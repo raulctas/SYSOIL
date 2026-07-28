@@ -147,34 +147,6 @@
         "Industrial derivatives: lubricants and asphalt bitumen."
       ]
     },
-    "fuel-additives": {
-      "title": "Fuel additives",
-      "summary": "Anti-friction additives and octane and cetane rating enhancers.",
-      "description": "We trade anti-friction additives and additives that improve the octane and cetane ratings of fuels, optimizing engine performance and efficiency.",
-      "features": [
-        "Octane rating: measures gasoline's ability to resist premature detonation when compressed inside the engine cylinder.",
-        "Cetane rating: measures the ignition quality and combustion speed of diesel, indicating how quickly it ignites under compression."
-      ]
-    },
-    "mobile-fuel-stations": {
-      "title": "Mobile fuel stations",
-      "summary": "Mobile stations powered by solar energy and electricity.",
-      "description": "We supply mobile fuel stations powered by solar energy and electricity, a flexible and sustainable solution for supply at any location.",
-      "features": [
-        "Powered by solar and electric energy.",
-        "Mobility and rapid deployment wherever supply is needed."
-      ]
-    },
-    "chemicals-refrigerant-gases": {
-      "title": "Chemical products and refrigerant gases",
-      "summary": "Trading of chemical products and the main families of refrigerant gases.",
-      "description": "We trade chemical products and refrigerant gases, covering the main market families with quality guarantees and regulatory compliance.",
-      "features": [
-        "Natural (eco-friendly) refrigerants.",
-        "Hydrofluorocarbons (HFC).",
-        "Hydrochlorofluorocarbons (HCFC)."
-      ]
-    },
     "strategic-intermediation": {
       "title": "International strategic intermediation",
       "summary": "We facilitate access to global markets to optimize supply sources.",
@@ -250,6 +222,16 @@
       "features": [
         "Anti-friction additives to reduce wear.",
         "Octane and cetane rating enhancers."
+      ]
+    },
+    "renewable-energy-projects": {
+      "title": "Renewable energy projects",
+      "summary": "Development and trading of solar and renewable energy solutions.",
+      "description": "We drive renewable energy projects, including photovoltaic solar installations, as part of our evolution towards integrated and sustainable energy management.",
+      "features": [
+        "Photovoltaic solar installations.",
+        "Clean and sustainable energy solutions.",
+        "Support in the transition to new energy sources."
       ]
     }
   },

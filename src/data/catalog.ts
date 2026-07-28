@@ -14,25 +14,6 @@ export const CATALOG: CatalogItem[] = [
     featured: true,
   },
   {
-    slug: 'fuel-additives',
-    category: 'service',
-    image: '/images/products/fuel-additives.jpg',
-    featureCount: 2,
-  },
-  {
-    slug: 'mobile-fuel-stations',
-    category: 'service',
-    image: '/images/products/mobile-fuel-stations.jpg',
-    featureCount: 2,
-    featured: true,
-  },
-  {
-    slug: 'chemicals-refrigerant-gases',
-    category: 'service',
-    image: '/images/products/chemicals-gases.jpg',
-    featureCount: 3,
-  },
-  {
     slug: 'strategic-intermediation',
     category: 'service',
     featureCount: 3,
@@ -79,6 +60,13 @@ export const CATALOG: CatalogItem[] = [
     category: 'product',
     image: '/images/products/fuel-additives.jpg',
     featureCount: 2,
+  },
+  {
+    slug: 'renewable-energy-projects',
+    category: 'product',
+    image: '/images/products/renewable-energy.jpg',
+    featureCount: 3,
+    featured: true,
   },
 ];
 
