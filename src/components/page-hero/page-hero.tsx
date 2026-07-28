@@ -1,10 +1,12 @@
+import { ReactNode } from 'react';
+
 import { Container } from 'components/container';
 
 import styles from './page-hero.module.css';
 
 interface Props {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   subtitle?: string;
   /** Imagen de fondo opcional (ruta en /public). */
   image?: string;

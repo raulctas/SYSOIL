@@ -1,0 +1,11 @@
+.brand {
+  white-space: nowrap;
+}
+
+.name {
+  color: var(--color-green-light);
+}
+
+.suffix {
+  color: var(--color-gold);
+}
