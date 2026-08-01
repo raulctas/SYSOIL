@@ -6,7 +6,9 @@
     "languageSelector": "Seleccionar idioma",
     "readMore": "Saber más",
     "backToList": "Volver a Productos y Servicios",
-    "getInTouch": "Hablemos"
+    "getInTouch": "Hablemos",
+    "previous": "Anterior",
+    "next": "Siguiente"
   },
   "nav": {
     "main": "Navegación principal",
@@ -128,9 +130,46 @@
   },
   "castrolGallery": {
     "title": "Gama de productos Castrol",
-    "subtitle": "Una selección de lubricantes y productos de la marca Castrol que comercializamos.",
-    "prev": "Anterior",
-    "next": "Siguiente"
+    "subtitle": "Una selección de lubricantes y productos de la marca Castrol que comercializamos."
+  },
+  "repsolGallery": {
+    "title": "Gamas de lubricantes Repsol",
+    "subtitle": "Catálogos por segmento: encuentra el lubricante Repsol adecuado para cada aplicación."
+  },
+  "repsol": {
+    "back": "Volver a Lubricantes Repsol",
+    "car": {
+      "name": "Coche",
+      "description": "Aceites lubricantes para coche que van más allá de la innovación. Toda la gama Repsol para turismos, desde los aceites totalmente sintéticos de altas prestaciones hasta las soluciones para vehículos de gran kilometraje."
+    },
+    "motorcycle": {
+      "name": "Moto",
+      "description": "Aceites lubricantes de moto que se adaptan a ti. Gama desarrollada con la experiencia de Repsol en competición, con productos específicos para motores de 4T y 2T, scooter y uso deportivo."
+    },
+    "truck-bus": {
+      "name": "Camión y autobús",
+      "description": "Lubricantes para camión y autobús diseñados para vehículos industriales y flotas: máxima protección del motor, intervalos de cambio prolongados y ahorro de combustible en servicio intensivo."
+    },
+    "agriculture": {
+      "name": "Agro",
+      "description": "Distintos tipos de aceites lubricantes para tractores y maquinaria agrícola, con soluciones multifuncionales para motor, transmisión e hidráulica que simplifican el mantenimiento en campo."
+    },
+    "industry": {
+      "name": "Industria",
+      "description": "Lubricantes industriales para todo tipo de maquinaria: aceites hidráulicos, de engranajes, compresores y turbinas, formulados para prolongar la vida útil de los equipos y reducir paradas."
+    },
+    "marine": {
+      "name": "Marinos",
+      "description": "Lubricantes y aceites marinos para navegar, con gamas para motores de propulsión y auxiliares de buques, que responden a las exigencias del transporte marítimo."
+    },
+    "recreational-boating": {
+      "name": "Náutica de recreo",
+      "description": "Lubricantes y aceites náuticos para embarcaciones de recreo, con productos para motores fueraborda e intraborda, tanto de 4T como de 2T."
+    },
+    "greases": {
+      "name": "Grasas",
+      "description": "Gama de grasas lubricantes de alto rendimiento para automoción e industria, con soluciones para altas temperaturas, cargas elevadas y ambientes húmedos."
+    }
   },
   "castrol": {
     "back": "Volver a Lubricantes Castrol",
@@ -250,8 +289,13 @@
     },
     "lubricants-repsol": {
       "title": "Lubricantes Repsol",
-      "summary": "Próximamente.",
-      "description": "Estamos preparando esta sección. Muy pronto encontrarás aquí nuestra gama de lubricantes Repsol."
+      "summary": "Gama completa de lubricantes Repsol para automoción, industria y náutica.",
+      "description": "Comercializamos la gama de lubricantes Repsol, con un aceite para cada tipo de motor y aplicación. Desde turismos y motos hasta camiones, maquinaria agrícola, industria y náutica, con la calidad e innovación del fabricante.",
+      "features": [
+        "Catálogos por segmento: coche, moto, camión y autobús, agro, industria, marinos, náutica y grasas.",
+        "Productos de alto rendimiento desarrollados con experiencia en competición.",
+        "Asesoramiento para elegir el lubricante adecuado en cada aplicación."
+      ]
     },
     "antifriction-additives": {
       "title": "Aditivos antifricción y para combustibles",

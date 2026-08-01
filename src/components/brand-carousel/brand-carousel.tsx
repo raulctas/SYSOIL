@@ -4,17 +4,25 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 
-import { CASTROL_GALLERY } from 'data/castrol-gallery';
-import { castrolProductPath } from 'src/constants/routes';
+import { BrandProduct } from 'interfaces/brand-product';
 
-import styles from './castrol-gallery.module.css';
+import styles from './brand-carousel.module.css';
+
+interface Props {
+  items: BrandProduct[];
+  title: string;
+  subtitle: string;
+  /** Construye la ruta de detalle de cada producto a partir de su slug. */
+  pathBuilder: (slug: string) => string;
+}
 
 /**
- * Carrusel horizontal de productos Castrol (embla-carousel): desplazamiento
+ * Carrusel horizontal de productos de una marca (embla-carousel): desplazamiento
  * suave y circular (loop), con botones a ambos lados. Cada producto enlaza a su
- * página de detalle (foto grande + descripción).
+ * página de detalle (foto grande + descripción). Se usa tanto para la gama
+ * Castrol como para la de Repsol.
  */
-export const CastrolGallery = () => {
+export const BrandCarousel = ({ items, title, subtitle, pathBuilder }: Props) => {
   const { t } = useTranslation();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
 
@@ -22,17 +30,17 @@ export const CastrolGallery = () => {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section className={styles.gallery} aria-label={t('castrolGallery.title')}>
+    <section className={styles.gallery} aria-label={title}>
       <div className={styles.header}>
-        <h3 className={styles.title}>{t('castrolGallery.title')}</h3>
-        <p className={styles.subtitle}>{t('castrolGallery.subtitle')}</p>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.subtitle}>{subtitle}</p>
       </div>
 
       <div className={styles.carousel}>
         <button
           type="button"
           className={styles.control}
-          aria-label={t('castrolGallery.prev')}
+          aria-label={t('common.previous')}
           onClick={scrollPrev}
         >
           <ChevronLeft size={22} aria-hidden />
@@ -40,9 +48,9 @@ export const CastrolGallery = () => {
 
         <div className={styles.viewport} ref={emblaRef}>
           <div className={styles.container}>
-            {CASTROL_GALLERY.map((product) => (
+            {items.map((product) => (
               <div key={product.slug} className={styles.slide}>
-                <Link to={castrolProductPath(product.slug)} className={styles.card}>
+                <Link to={pathBuilder(product.slug)} className={styles.card}>
                   <div className={styles.media}>
                     <img src={product.image} alt={product.name} loading="lazy" />
                   </div>
@@ -56,7 +64,7 @@ export const CastrolGallery = () => {
         <button
           type="button"
           className={styles.control}
-          aria-label={t('castrolGallery.next')}
+          aria-label={t('common.next')}
           onClick={scrollNext}
         >
           <ChevronRight size={22} aria-hidden />

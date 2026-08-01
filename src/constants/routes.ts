@@ -8,6 +8,7 @@ export const routes = {
   productsServices: '/products-services',
   productDetail: '/products-services/:slug',
   castrolProduct: '/products-services/castrol/:slug',
+  repsolProduct: '/products-services/repsol/:slug',
   team: '/team',
   contact: '/contact',
 } as const;
@@ -18,3 +19,7 @@ export const productDetailPath = (slug: string) => `/products-services/${slug}`;
 /** Construye la ruta de detalle de un producto Castrol a partir de su slug. */
 export const castrolProductPath = (slug: string) =>
   `/products-services/castrol/${slug}`;
+
+/** Construye la ruta de detalle de una gama Repsol a partir de su slug. */
+export const repsolProductPath = (slug: string) =>
+  `/products-services/repsol/${slug}`;

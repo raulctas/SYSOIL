@@ -6,7 +6,9 @@
     "languageSelector": "Select language",
     "readMore": "Read more",
     "backToList": "Back to Products & Services",
-    "getInTouch": "Let's talk"
+    "getInTouch": "Let's talk",
+    "previous": "Previous",
+    "next": "Next"
   },
   "nav": {
     "main": "Main navigation",
@@ -128,9 +130,46 @@
   },
   "castrolGallery": {
     "title": "Castrol product range",
-    "subtitle": "A selection of Castrol-branded lubricants and products that we trade.",
-    "prev": "Previous",
-    "next": "Next"
+    "subtitle": "A selection of Castrol-branded lubricants and products that we trade."
+  },
+  "repsolGallery": {
+    "title": "Repsol lubricant ranges",
+    "subtitle": "Catalogues by segment: find the right Repsol lubricant for every application."
+  },
+  "repsol": {
+    "back": "Back to Repsol lubricants",
+    "car": {
+      "name": "Car",
+      "description": "Car engine oils that go beyond innovation. The full Repsol range for passenger cars, from high-performance fully synthetic oils to solutions for high-mileage vehicles."
+    },
+    "motorcycle": {
+      "name": "Motorcycle",
+      "description": "Motorcycle engine oils that adapt to you. A range developed with Repsol's racing experience, with specific products for 4T and 2T engines, scooters and sports use."
+    },
+    "truck-bus": {
+      "name": "Truck and bus",
+      "description": "Lubricants for trucks and buses designed for commercial vehicles and fleets: maximum engine protection, extended drain intervals and fuel savings in heavy-duty service."
+    },
+    "agriculture": {
+      "name": "Agriculture",
+      "description": "A range of lubricants for tractors and agricultural machinery, with multifunctional solutions for engine, transmission and hydraulics that simplify maintenance in the field."
+    },
+    "industry": {
+      "name": "Industry",
+      "description": "Industrial lubricants for all types of machinery: hydraulic, gear, compressor and turbine oils, formulated to extend equipment life and reduce downtime."
+    },
+    "marine": {
+      "name": "Marine",
+      "description": "Marine lubricants and oils for navigation, with ranges for vessel propulsion and auxiliary engines that meet the demands of maritime transport."
+    },
+    "recreational-boating": {
+      "name": "Recreational boating",
+      "description": "Marine lubricants and oils for recreational craft, with products for outboard and inboard engines, both 4T and 2T."
+    },
+    "greases": {
+      "name": "Greases",
+      "description": "A range of high-performance lubricating greases for automotive and industry, with solutions for high temperatures, heavy loads and wet environments."
+    }
   },
   "castrol": {
     "back": "Back to Castrol lubricants",
@@ -250,8 +289,13 @@
     },
     "lubricants-repsol": {
       "title": "Repsol lubricants",
-      "summary": "Coming soon.",
-      "description": "We're preparing this section. Our Repsol lubricants range will be available here soon."
+      "summary": "The full range of Repsol lubricants for automotive, industry and marine use.",
+      "description": "We trade the Repsol lubricants range, with an oil for every type of engine and application. From cars and motorcycles to trucks, agricultural machinery, industry and boating, with the manufacturer's quality and innovation.",
+      "features": [
+        "Catalogues by segment: car, motorcycle, truck and bus, agriculture, industry, marine, boating and greases.",
+        "High-performance products developed with racing experience.",
+        "Advice on choosing the right lubricant for each application."
+      ]
     },
     "antifriction-additives": {
       "title": "Anti-friction and fuel additives",

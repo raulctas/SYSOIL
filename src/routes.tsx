@@ -8,6 +8,7 @@ import { AboutUs } from 'pages/about-us';
 import { ProductsServices } from 'pages/products-services';
 import { ProductDetail } from 'pages/product-detail';
 import { CastrolProduct } from 'pages/castrol-product';
+import { RepsolProduct } from 'pages/repsol-product';
 import { Team } from 'pages/team';
 import { Contact } from 'pages/contact';
 import { NotFound } from 'pages/not-found';
@@ -22,6 +23,7 @@ export const routes = (
     <Route path={routePaths.aboutUs} element={<AboutUs />} />
     <Route path={routePaths.productsServices} element={<ProductsServices />} />
     <Route path={routePaths.castrolProduct} element={<CastrolProduct />} />
+    <Route path={routePaths.repsolProduct} element={<RepsolProduct />} />
     <Route path={routePaths.productDetail} element={<ProductDetail />} />
     <Route path={routePaths.team} element={<Team />} />
     <Route path={routePaths.contact} element={<Contact />} />

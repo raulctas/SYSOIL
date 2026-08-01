@@ -1,6 +1,7 @@
+export { BrandCarousel } from './brand-carousel';
 export { BrandName } from './brand-name';
+export { BrandProductDetail } from './brand-product-detail';
 export { Button } from './button';
-export { CastrolGallery } from './castrol-gallery';
 export { CatalogCard } from './catalog-card';
 export { Container } from './container';
 export { Footer } from './footer';
