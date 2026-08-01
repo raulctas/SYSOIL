@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, Layers } from 'lucide-react';
@@ -10,7 +9,6 @@ import { Section } from 'components/section';
 import { NotFound } from 'pages/not-found';
 import { getCatalogItem } from 'data/catalog';
 import { CASTROL_GALLERY } from 'data/castrol-gallery';
-import { getCatalogHeroSlides } from 'data/hero-slides';
 import { castrolProductPath, routes } from 'src/constants/routes';
 
 import styles from './product-detail.module.css';
@@ -19,7 +17,6 @@ export const ProductDetail = () => {
   const { t } = useTranslation();
   const { slug = '' } = useParams();
   const item = getCatalogItem(slug);
-  const heroSlides = useMemo(() => (item ? getCatalogHeroSlides(item) : []), [item]);
 
   if (!item) {
     return <NotFound />;
@@ -36,7 +33,6 @@ export const ProductDetail = () => {
         eyebrow={t(`catalog.categories.${item.category}`)}
         title={t(`catalog.${item.slug}.title`)}
         subtitle={t(`catalog.${item.slug}.summary`)}
-        image={heroSlides}
         wide
       />
 

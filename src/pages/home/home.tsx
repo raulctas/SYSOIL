@@ -7,7 +7,7 @@ import { Container } from 'components/container';
 import { Section } from 'components/section';
 import { routes } from 'src/constants/routes';
 import { getFeaturedCatalog } from 'data/catalog';
-import { HOME_HERO_SLIDES } from 'data/hero-slides';
+import { HERO_SLIDES } from 'data/hero-slides';
 import { VALUES } from 'data/values';
 import { useSlideshow } from 'hooks/use-slideshow';
 
@@ -18,7 +18,7 @@ const HOME_VALUES = VALUES.slice(0, 6);
 export const Home = () => {
   const { t } = useTranslation();
   const featured = getFeaturedCatalog().slice(0, 4);
-  const slide = useSlideshow(HOME_HERO_SLIDES);
+  const slide = useSlideshow(HERO_SLIDES);
 
   const stats = [
     { value: t('home.growth.stats.revenueValue'), label: t('home.growth.stats.revenue') },
@@ -31,7 +31,7 @@ export const Home = () => {
     <>
       {/* Hero */}
       <section className={styles.hero}>
-        {HOME_HERO_SLIDES.map((image, index) => (
+        {HERO_SLIDES.map((image, index) => (
           <div
             key={image}
             className={[styles.heroBg, index === slide && styles.heroBgActive]

@@ -4,7 +4,6 @@ import { CatalogCard } from 'components/catalog-card';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
 import { getCatalogByCategory } from 'data/catalog';
-import { PRODUCTS_SERVICES_HERO_SLIDES } from 'data/hero-slides';
 
 import styles from './products-services.module.css';
 
@@ -19,7 +18,6 @@ export const ProductsServices = () => {
         eyebrow={t('productsServices.hero.eyebrow')}
         title={t('productsServices.hero.title')}
         subtitle={t('productsServices.hero.subtitle')}
-        image={PRODUCTS_SERVICES_HERO_SLIDES}
         wide
       />
 

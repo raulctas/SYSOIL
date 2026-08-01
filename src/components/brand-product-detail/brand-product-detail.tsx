@@ -20,8 +20,6 @@ interface Props {
   /** Ruta y texto del enlace de vuelta al producto de lubricantes. */
   backTo: string;
   backLabel: string;
-  /** Imágenes de fondo del hero, que se van deslizando en bucle. */
-  heroImages?: string[];
   /** La imagen es una fotografía (llena el marco) en lugar de un render de producto. */
   photo?: boolean;
 }
@@ -37,14 +35,13 @@ export const BrandProductDetail = ({
   description,
   backTo,
   backLabel,
-  heroImages,
   photo,
 }: Props) => {
   const { t } = useTranslation();
 
   return (
     <>
-      <PageHero eyebrow={rangeTitle} title={product.name} image={heroImages} wide />
+      <PageHero eyebrow={rangeTitle} title={product.name} wide />
 
       <Section>
         <Link to={backTo} className={styles.breadcrumb}>
