@@ -21,6 +21,7 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'logistics-supply-chain',
     category: 'service',
+    image: '/images/services/logistics-supply-chain.jpg',
     featureCount: 3,
   },
   {
