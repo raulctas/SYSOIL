@@ -9,6 +9,7 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'wholesale-hydrocarbons',
     category: 'service',
+    image: '/images/services/wholesale-hydrocarbons.jpg',
     featureCount: 3,
   },
   {
