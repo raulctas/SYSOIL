@@ -35,10 +35,7 @@ export const AboutUs = () => {
           </div>
           <div className={styles.introImageWrap}>
             <div className={styles.introImage}>
-              <img
-                src="/images/products/chemicals-gases.jpg"
-                alt={t('aboutUs.hero.title')}
-              />
+              <img src="/images/about-us.jpg" alt={t('aboutUs.hero.title')} />
             </div>
           </div>
         </div>
