@@ -8,6 +8,11 @@
   margin-bottom: var(--space-6);
 }
 
+/* Encabezado (categoria + titulo) a ancho completo, sobre las dos columnas. */
+.heading {
+  margin-bottom: var(--space-6);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -51,9 +56,15 @@
   margin-bottom: var(--space-4);
 }
 
+/**
+ * Se limita el ancho para que los titulos muy largos se repartan en dos lineas
+ * en lugar de estirarse en una sola linea muy ancha. `text-wrap: balance` reparte
+ * las palabras de forma equilibrada entre ambas lineas.
+ */
 .title {
   font-size: var(--text-3xl);
-  margin-bottom: var(--space-4);
+  max-width: 800px;
+  text-wrap: balance;
 }
 
 .description {

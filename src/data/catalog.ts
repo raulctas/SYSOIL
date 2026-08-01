@@ -9,21 +9,25 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'wholesale-hydrocarbons',
     category: 'service',
+    image: '/images/services/wholesale-hydrocarbons.jpg',
     featureCount: 3,
   },
   {
     slug: 'strategic-intermediation',
     category: 'service',
+    image: '/images/services/strategic-intermediation.jpg',
     featureCount: 3,
   },
   {
     slug: 'logistics-supply-chain',
     category: 'service',
+    image: '/images/services/logistics-supply-chain.jpg',
     featureCount: 3,
   },
   {
     slug: 'consulting-risk-management',
     category: 'service',
+    image: '/images/services/consulting-risk-management.jpg',
     featureCount: 3,
   },
 
@@ -57,7 +61,7 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'lubricants-repsol',
     category: 'product',
-    image: '/images/repsol/repsol-hero.jpg',
+    image: '/images/products/repsol/repsol-hero.jpg',
     featureCount: 3,
     featured: true,
   },
