@@ -5,6 +5,7 @@ import { Mail, MapPin } from 'lucide-react';
 import { Button } from 'components/button';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
+import { CONTACT_HERO_SLIDES } from 'data/hero-slides';
 import { COMPANY, COMPANY_ADDRESS_LINES } from 'src/constants/company';
 
 import styles from './contact.module.css';
@@ -59,6 +60,7 @@ export const Contact = () => {
         eyebrow={t('contact.hero.eyebrow')}
         title={t('contact.hero.title')}
         subtitle={t('contact.hero.subtitle')}
+        image={CONTACT_HERO_SLIDES}
       />
 
       <Section>

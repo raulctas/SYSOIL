@@ -3,6 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { BrandName } from 'components/brand-name';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
+import { TEAM_HERO_SLIDES } from 'data/hero-slides';
 import { TEAM, TEAM_PHOTO_PLACEHOLDER } from 'data/team';
 
 import styles from './team.module.css';
@@ -18,7 +19,7 @@ export const Team = () => {
           <Trans i18nKey="team.hero.title" components={{ brand: <BrandName /> }} />
         }
         subtitle={t('team.hero.subtitle')}
-        image="/images/products/chemicals-gases.jpg"
+        image={TEAM_HERO_SLIDES}
         wide
       />
 

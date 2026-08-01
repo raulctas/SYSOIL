@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
+import { ABOUT_US_HERO_SLIDES } from 'data/hero-slides';
 import { VALUES } from 'data/values';
 
 import styles from './about-us.module.css';
@@ -22,7 +23,7 @@ export const AboutUs = () => {
         eyebrow={t('aboutUs.hero.eyebrow')}
         title={t('aboutUs.hero.title')}
         subtitle={t('aboutUs.hero.subtitle')}
-        image="/images/about-us.jpg"
+        image={ABOUT_US_HERO_SLIDES}
         wide
       />
 
