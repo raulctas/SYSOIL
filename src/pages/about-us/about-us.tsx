@@ -22,7 +22,6 @@ export const AboutUs = () => {
         eyebrow={t('aboutUs.hero.eyebrow')}
         title={t('aboutUs.hero.title')}
         subtitle={t('aboutUs.hero.subtitle')}
-        image="/images/about-us.jpg"
         wide
       />
 

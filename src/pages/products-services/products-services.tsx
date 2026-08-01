@@ -18,7 +18,6 @@ export const ProductsServices = () => {
         eyebrow={t('productsServices.hero.eyebrow')}
         title={t('productsServices.hero.title')}
         subtitle={t('productsServices.hero.subtitle')}
-        image="/images/products/mobile-fuel-stations.jpg"
         wide
       />
 

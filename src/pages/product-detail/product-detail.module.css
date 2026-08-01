@@ -63,7 +63,7 @@
  */
 .title {
   font-size: var(--text-3xl);
-  max-width: 800px;
+  max-width: 620px;
   text-wrap: balance;
 }
 

@@ -18,7 +18,6 @@ export const Team = () => {
           <Trans i18nKey="team.hero.title" components={{ brand: <BrandName /> }} />
         }
         subtitle={t('team.hero.subtitle')}
-        image="/images/products/chemicals-gases.jpg"
         wide
       />
 

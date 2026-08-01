@@ -5,12 +5,28 @@
   overflow: hidden;
 }
 
+/**
+ * Las imágenes se apilan una sobre otra y solo la activa es visible: el cambio
+ * de opacidad produce el fundido al pasar de una a la siguiente. La activa se
+ * queda en 0.28, la transparencia con la que se ha mostrado siempre el fondo.
+ */
 .bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.bgActive {
   opacity: 0.28;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg {
+    transition: none;
+  }
 }
 
 .overlay {

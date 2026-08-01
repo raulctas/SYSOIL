@@ -33,7 +33,6 @@ export const ProductDetail = () => {
         eyebrow={t(`catalog.categories.${item.category}`)}
         title={t(`catalog.${item.slug}.title`)}
         subtitle={t(`catalog.${item.slug}.summary`)}
-        image={item.image}
         wide
       />
 

@@ -111,6 +111,8 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
   padding: var(--space-6);
+  /* Permite dimensionar el titulo respecto al ancho de la tarjeta (unidad cqi). */
+  container-type: inline-size;
 }
 
 .whyNumber {
@@ -121,9 +123,15 @@
   margin-bottom: var(--space-3);
 }
 
+/**
+ * Los titulos van siempre en una sola linea. El tamano se ata al ancho de la
+ * tarjeta: 6.5cqi es el mayor con el que el titulo mas largo ("Compromiso con
+ * la excelencia") entra entero, y en tarjetas anchas no pasa de --text-xl.
+ */
 .whyCard h3 {
   color: var(--color-white);
-  font-size: var(--text-xl);
+  font-size: min(var(--text-xl), 6.5cqi);
+  white-space: nowrap;
   margin-bottom: var(--space-2);
 }
 
