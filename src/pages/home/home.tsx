@@ -15,7 +15,7 @@ const HOME_VALUES = VALUES.slice(0, 6);
 
 export const Home = () => {
   const { t } = useTranslation();
-  const featured = getFeaturedCatalog().slice(0, 3);
+  const featured = getFeaturedCatalog().slice(0, 4);
 
   const stats = [
     { value: t('home.growth.stats.revenueValue'), label: t('home.growth.stats.revenue') },

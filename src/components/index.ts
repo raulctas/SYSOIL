@@ -1,5 +1,6 @@
 export { BrandName } from './brand-name';
 export { Button } from './button';
+export { CastrolGallery } from './castrol-gallery';
 export { CatalogCard } from './catalog-card';
 export { Container } from './container';
 export { Footer } from './footer';

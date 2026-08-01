@@ -31,6 +31,7 @@ export default defineConfig({
       'i18next-http-backend',
       'i18next-browser-languagedetector',
       'lucide-react',
+      'embla-carousel-react',
     ],
   },
 });

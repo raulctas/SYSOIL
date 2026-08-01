@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, Layers } from 'lucide-react';
 
 import { Button } from 'components/button';
+import { CastrolGallery } from 'components/castrol-gallery';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
 import { NotFound } from 'pages/not-found';
@@ -20,9 +21,10 @@ export const ProductDetail = () => {
     return <NotFound />;
   }
 
-  const features = t(`catalog.${item.slug}.features`, {
-    returnObjects: true,
-  }) as string[];
+  const features =
+    item.featureCount > 0
+      ? (t(`catalog.${item.slug}.features`, { returnObjects: true }) as string[])
+      : [];
 
   return (
     <>
@@ -49,23 +51,21 @@ export const ProductDetail = () => {
               {t(`catalog.${item.slug}.description`)}
             </p>
 
-            <h3 className={styles.featuresTitle}>{t('catalog.detail.featuresTitle')}</h3>
-            <ul className={styles.features}>
-              {features.map((feature) => (
-                <li key={feature} className={styles.feature}>
-                  <Check size={20} className={styles.featureIcon} aria-hidden />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className={styles.cta}>
-              <h3>{t('catalog.detail.ctaTitle')}</h3>
-              <p>{t('catalog.detail.ctaText')}</p>
-              <Button to={routes.contact} variant="primary">
-                {t('catalog.detail.ctaButton')}
-              </Button>
-            </div>
+            {features.length > 0 && (
+              <>
+                <h3 className={styles.featuresTitle}>
+                  {t('catalog.detail.featuresTitle')}
+                </h3>
+                <ul className={styles.features}>
+                  {features.map((feature) => (
+                    <li key={feature} className={styles.feature}>
+                      <Check size={20} className={styles.featureIcon} aria-hidden />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
 
           <div>
@@ -79,6 +79,16 @@ export const ProductDetail = () => {
               </div>
             )}
           </div>
+        </div>
+
+        {item.slug === 'lubricants-castrol' && <CastrolGallery />}
+
+        <div className={styles.cta}>
+          <h3>{t('catalog.detail.ctaTitle')}</h3>
+          <p>{t('catalog.detail.ctaText')}</p>
+          <Button to={routes.contact} variant="primary">
+            {t('catalog.detail.ctaButton')}
+          </Button>
         </div>
       </Section>
     </>
