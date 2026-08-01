@@ -34,6 +34,7 @@ export const ProductDetail = () => {
         title={t(`catalog.${item.slug}.title`)}
         subtitle={t(`catalog.${item.slug}.summary`)}
         image={item.image}
+        wide
       />
 
       <Section>
