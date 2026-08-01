@@ -50,7 +50,7 @@ export const Header = () => {
     <header className={styles.header}>
       <Container>
         <div className={styles.inner}>
-          <Logo transparent />
+          <Logo />
 
           <nav className={`${styles.nav} ${styles.desktopNav}`} aria-label={t('nav.main')}>
             {navLinks}
