@@ -15,6 +15,7 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'strategic-intermediation',
     category: 'service',
+    image: '/images/services/strategic-intermediation.jpg',
     featureCount: 3,
   },
   {
