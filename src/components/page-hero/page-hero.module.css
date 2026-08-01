@@ -44,11 +44,13 @@
 }
 
 /**
- * Tamaño fluido: mantiene 3rem en pantallas anchas y reduce de forma progresiva
- * en las mas estrechas, para que los titulos largos sigan cabiendo en una linea.
+ * Tamaño fluido: se reduce de forma progresiva en pantallas estrechas para que
+ * los titulos largos sigan cabiendo en una linea. El tope (2.875rem) es el mayor
+ * tamano con el que el titulo mas largo de la web ("Especialistas en gestion
+ * energetica internacional") entra en el ancho del contenedor.
  */
 .title {
-  font-size: clamp(1.75rem, 3.6vw, var(--text-4xl));
+  font-size: clamp(1.75rem, 3.6vw, 2.875rem);
   color: var(--color-white);
   margin-bottom: var(--space-4);
 }
