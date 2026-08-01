@@ -9,8 +9,7 @@ import { Section } from 'components/section';
 import { NotFound } from 'pages/not-found';
 import { getCatalogItem } from 'data/catalog';
 import { CASTROL_GALLERY } from 'data/castrol-gallery';
-import { REPSOL_GALLERY } from 'data/repsol-gallery';
-import { castrolProductPath, repsolProductPath, routes } from 'src/constants/routes';
+import { castrolProductPath, routes } from 'src/constants/routes';
 
 import styles from './product-detail.module.css';
 
@@ -89,18 +88,6 @@ export const ProductDetail = () => {
             title={t('castrolGallery.title')}
             subtitle={t('castrolGallery.subtitle')}
             pathBuilder={castrolProductPath}
-          />
-        )}
-
-        {item.slug === 'lubricants-repsol' && (
-          <BrandCarousel
-            items={REPSOL_GALLERY.map((range) => ({
-              ...range,
-              name: t(`repsol.${range.slug}.name`),
-            }))}
-            title={t('repsolGallery.title')}
-            subtitle={t('repsolGallery.subtitle')}
-            pathBuilder={repsolProductPath}
           />
         )}
 
