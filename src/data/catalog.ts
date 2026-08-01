@@ -27,6 +27,7 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'consulting-risk-management',
     category: 'service',
+    image: '/images/services/consulting-risk-management.jpg',
     featureCount: 3,
   },
 
