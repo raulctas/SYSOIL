@@ -43,12 +43,17 @@ export const ProductDetail = () => {
           {t('common.backToList')}
         </Link>
 
+        {/* Encabezado a ancho completo: evita que los titulos largos partan en
+            dos lineas al quedar encajonados en la columna de texto. */}
+        <div className={styles.heading}>
+          <span className={styles.category}>
+            {t(`catalog.categories.${item.category}`)}
+          </span>
+          <h2 className={styles.title}>{t(`catalog.${item.slug}.title`)}</h2>
+        </div>
+
         <div className={styles.layout}>
           <div>
-            <span className={styles.category}>
-              {t(`catalog.categories.${item.category}`)}
-            </span>
-            <h2 className={styles.title}>{t(`catalog.${item.slug}.title`)}</h2>
             <p className={styles.description}>
               {t(`catalog.${item.slug}.description`)}
             </p>

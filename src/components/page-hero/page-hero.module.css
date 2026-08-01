@@ -43,8 +43,12 @@
   margin-bottom: var(--space-3);
 }
 
+/**
+ * Tamaño fluido: mantiene 3rem en pantallas anchas y reduce de forma progresiva
+ * en las mas estrechas, para que los titulos largos sigan cabiendo en una linea.
+ */
 .title {
-  font-size: var(--text-4xl);
+  font-size: clamp(1.75rem, 3.6vw, var(--text-4xl));
   color: var(--color-white);
   margin-bottom: var(--space-4);
 }
@@ -54,8 +58,3 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-@media (max-width: 600px) {
-  .title {
-    font-size: var(--text-3xl);
-  }
-}

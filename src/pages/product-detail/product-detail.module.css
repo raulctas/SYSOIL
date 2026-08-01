@@ -8,6 +8,11 @@
   margin-bottom: var(--space-6);
 }
 
+/* Encabezado (categoria + titulo) a ancho completo, sobre las dos columnas. */
+.heading {
+  margin-bottom: var(--space-6);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -53,7 +58,6 @@
 
 .title {
   font-size: var(--text-3xl);
-  margin-bottom: var(--space-4);
 }
 
 .description {
