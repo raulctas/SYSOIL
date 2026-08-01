@@ -25,7 +25,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, wide }: Props) => {
     }
     return Array.isArray(image) ? image : [image];
   }, [image]);
-  const slide = useSlideshow(images.length);
+  const slide = useSlideshow(images);
 
   return (
     <section className={styles.hero}>

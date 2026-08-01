@@ -1,14 +1,20 @@
+import { CATALOG } from 'data/catalog';
+import { CatalogItem } from 'interfaces/catalog';
+
 /**
  * Imágenes de fondo de las cabeceras (hero). En cada página se van deslizando en
  * bucle por detrás del texto, manteniendo la capa de degradado superior que les
  * da la transparencia. Son decorativas: no llevan texto alternativo.
- *
- * Las páginas de detalle de producto no aparecen aquí: su hero muestra la imagen
- * del propio producto, que lo identifica.
  */
 
 /** Milisegundos que permanece visible cada imagen antes de pasar a la siguiente. */
 export const HERO_SLIDE_INTERVAL = 6000;
+
+/**
+ * Imágenes por hero en las fichas de detalle. Se limita porque cada imagen se
+ * descarga aunque aún no se vea, y las fichas son las páginas más numerosas.
+ */
+const DETAIL_SLIDE_COUNT = 4;
 
 export const HOME_HERO_SLIDES: string[] = [
   '/images/about-us.jpg',
@@ -46,3 +52,18 @@ export const CONTACT_HERO_SLIDES: string[] = [
   '/images/services/logistics-supply-chain.jpg',
   '/images/about-us.jpg',
 ];
+
+/**
+ * Imágenes del hero de una ficha de detalle: primero la del propio producto o
+ * servicio, que es la que lo identifica, y después las de otros de su misma
+ * categoría. Se empieza por el siguiente del catálogo para que dos fichas
+ * vecinas no muestren la misma secuencia.
+ */
+export const getCatalogHeroSlides = (item: CatalogItem): string[] => {
+  const sameCategory = CATALOG.filter((other) => other.category === item.category);
+  const start = sameCategory.indexOf(item);
+  return [...sameCategory.slice(start), ...sameCategory.slice(0, start)]
+    .map((other) => other.image)
+    .filter((image): image is string => Boolean(image))
+    .slice(0, DETAIL_SLIDE_COUNT);
+};
