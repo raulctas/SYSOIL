@@ -57,7 +57,8 @@ export const CATALOG: CatalogItem[] = [
   {
     slug: 'lubricants-repsol',
     category: 'product',
-    featureCount: 0,
+    image: '/images/repsol/repsol-hero.jpg',
+    featureCount: 3,
     featured: true,
   },
   {

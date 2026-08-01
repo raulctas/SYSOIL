@@ -6,7 +6,9 @@
     "languageSelector": "Select language",
     "readMore": "Read more",
     "backToList": "Back to Products & Services",
-    "getInTouch": "Let's talk"
+    "getInTouch": "Let's talk",
+    "previous": "Previous",
+    "next": "Next"
   },
   "nav": {
     "main": "Main navigation",
@@ -128,9 +130,7 @@
   },
   "castrolGallery": {
     "title": "Castrol product range",
-    "subtitle": "A selection of Castrol-branded lubricants and products that we trade.",
-    "prev": "Previous",
-    "next": "Next"
+    "subtitle": "A selection of Castrol-branded lubricants and products that we trade."
   },
   "castrol": {
     "back": "Back to Castrol lubricants",
@@ -250,8 +250,13 @@
     },
     "lubricants-repsol": {
       "title": "Repsol lubricants",
-      "summary": "Coming soon.",
-      "description": "We're preparing this section. Our Repsol lubricants range will be available here soon."
+      "summary": "The full range of Repsol lubricants for automotive, industry and marine use.",
+      "description": "We trade the Repsol lubricants range, with an oil for every type of engine and application. From cars and motorcycles to trucks, agricultural machinery, industry and boating, with the manufacturer's quality and innovation.",
+      "features": [
+        "Ranges for car, motorcycle, truck and bus, agriculture, industry, marine, boating and greases.",
+        "High-performance products developed with racing experience.",
+        "Advice on choosing the right lubricant for each application."
+      ]
     },
     "antifriction-additives": {
       "title": "Anti-friction and fuel additives",

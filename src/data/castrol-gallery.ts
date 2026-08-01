@@ -1,16 +1,12 @@
+import { BrandProduct } from 'interfaces/brand-product';
+
 /**
- * Galería de productos de la marca Castrol mostrada en la página de detalle de
- * "Lubricantes Repsol y Castrol". Los nombres son nombres comerciales de
+ * Gama de productos de la marca Castrol mostrada en el carrusel de la página de
+ * detalle de "Lubricantes Castrol". Los nombres son nombres comerciales de
  * producto (marca Castrol), por lo que no se traducen. La descripción de cada
  * producto está en `translation.json` → `castrol.<slug>.description`.
  */
-export interface CastrolProduct {
-  slug: string;
-  name: string;
-  image: string;
-}
-
-export const CASTROL_GALLERY: CastrolProduct[] = [
+export const CASTROL_GALLERY: BrandProduct[] = [
   {
     slug: 'vecton-15w40',
     name: 'Castrol VECTON 15W-40 CK-4/E9',

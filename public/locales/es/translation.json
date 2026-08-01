@@ -6,7 +6,9 @@
     "languageSelector": "Seleccionar idioma",
     "readMore": "Saber más",
     "backToList": "Volver a Productos y Servicios",
-    "getInTouch": "Hablemos"
+    "getInTouch": "Hablemos",
+    "previous": "Anterior",
+    "next": "Siguiente"
   },
   "nav": {
     "main": "Navegación principal",
@@ -128,9 +130,7 @@
   },
   "castrolGallery": {
     "title": "Gama de productos Castrol",
-    "subtitle": "Una selección de lubricantes y productos de la marca Castrol que comercializamos.",
-    "prev": "Anterior",
-    "next": "Siguiente"
+    "subtitle": "Una selección de lubricantes y productos de la marca Castrol que comercializamos."
   },
   "castrol": {
     "back": "Volver a Lubricantes Castrol",
@@ -250,8 +250,13 @@
     },
     "lubricants-repsol": {
       "title": "Lubricantes Repsol",
-      "summary": "Próximamente.",
-      "description": "Estamos preparando esta sección. Muy pronto encontrarás aquí nuestra gama de lubricantes Repsol."
+      "summary": "Gama completa de lubricantes Repsol para automoción, industria y náutica.",
+      "description": "Comercializamos la gama de lubricantes Repsol, con un aceite para cada tipo de motor y aplicación. Desde turismos y motos hasta camiones, maquinaria agrícola, industria y náutica, con la calidad e innovación del fabricante.",
+      "features": [
+        "Gamas para coche, moto, camión y autobús, agro, industria, marinos, náutica y grasas.",
+        "Productos de alto rendimiento desarrollados con experiencia en competición.",
+        "Asesoramiento para elegir el lubricante adecuado en cada aplicación."
+      ]
     },
     "antifriction-additives": {
       "title": "Aditivos antifricción y para combustibles",

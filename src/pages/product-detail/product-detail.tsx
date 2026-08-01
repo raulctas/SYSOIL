@@ -3,12 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, Layers } from 'lucide-react';
 
 import { Button } from 'components/button';
-import { CastrolGallery } from 'components/castrol-gallery';
+import { BrandCarousel } from 'components/brand-carousel';
 import { PageHero } from 'components/page-hero';
 import { Section } from 'components/section';
 import { NotFound } from 'pages/not-found';
 import { getCatalogItem } from 'data/catalog';
-import { routes } from 'src/constants/routes';
+import { CASTROL_GALLERY } from 'data/castrol-gallery';
+import { castrolProductPath, routes } from 'src/constants/routes';
 
 import styles from './product-detail.module.css';
 
@@ -81,7 +82,14 @@ export const ProductDetail = () => {
           </div>
         </div>
 
-        {item.slug === 'lubricants-castrol' && <CastrolGallery />}
+        {item.slug === 'lubricants-castrol' && (
+          <BrandCarousel
+            items={CASTROL_GALLERY}
+            title={t('castrolGallery.title')}
+            subtitle={t('castrolGallery.subtitle')}
+            pathBuilder={castrolProductPath}
+          />
+        )}
 
         <div className={styles.cta}>
           <h3>{t('catalog.detail.ctaTitle')}</h3>

@@ -29,6 +29,21 @@
   object-fit: contain;
 }
 
+/**
+ * Variante para fotografías (p. ej. gamas Repsol): la imagen llena el marco en
+ * lugar de mostrarse contenida como un render de producto sobre fondo blanco.
+ */
+.photo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.photo img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
 .brand {
   display: inline-block;
   font-size: var(--text-xs);
