@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 
@@ -7,6 +8,7 @@ import { Container } from 'components/container';
 import { Section } from 'components/section';
 import { routes } from 'src/constants/routes';
 import { getFeaturedCatalog } from 'data/catalog';
+import { HERO_SLIDE_INTERVAL, HERO_SLIDES } from 'data/hero-slides';
 import { VALUES } from 'data/values';
 
 import styles from './home.module.css';
@@ -16,6 +18,16 @@ const HOME_VALUES = VALUES.slice(0, 6);
 export const Home = () => {
   const { t } = useTranslation();
   const featured = getFeaturedCatalog().slice(0, 4);
+  const [slide, setSlide] = useState(0);
+
+  // Rotación cíclica de las imágenes de fondo del hero.
+  useEffect(() => {
+    const timer = window.setInterval(
+      () => setSlide((current) => (current + 1) % HERO_SLIDES.length),
+      HERO_SLIDE_INTERVAL,
+    );
+    return () => window.clearInterval(timer);
+  }, []);
 
   const stats = [
     { value: t('home.growth.stats.revenueValue'), label: t('home.growth.stats.revenue') },
@@ -28,7 +40,16 @@ export const Home = () => {
     <>
       {/* Hero */}
       <section className={styles.hero}>
-        <div className={styles.heroBg} />
+        {HERO_SLIDES.map((image, index) => (
+          <div
+            key={image}
+            className={[styles.heroBg, index === slide && styles.heroBgActive]
+              .filter(Boolean)
+              .join(' ')}
+            style={{ backgroundImage: `url('${image}')` }}
+            aria-hidden
+          />
+        ))}
         <div className={styles.heroOverlay} />
         <Container>
           <div className={styles.heroInner}>

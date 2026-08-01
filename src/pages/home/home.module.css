@@ -5,12 +5,28 @@
   overflow: hidden;
 }
 
+/**
+ * Las imágenes del hero se apilan una sobre otra y solo la activa es visible:
+ * el cambio de opacidad produce el fundido al pasar de una a la siguiente. La
+ * transparencia sobre el texto la sigue aportando `.heroOverlay`, que va encima.
+ */
 .heroBg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/products/wholesale-fuels.jpg');
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.heroBgActive {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroBg {
+    transition: none;
+  }
 }
 
 .heroOverlay {
