@@ -35,25 +35,30 @@
 .wordmarkSuffix {
   display: flex;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.45em;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-indent: 0.2em;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   margin-top: 6px;
 }
 
 /**
- * Líneas que flanquean "INVESTMENT", como los circuitos del logo: azul a la
+ * Líneas que flanquean "INVESTMENT S.L", como los circuitos del logo: azul a la
  * izquierda y rojo a la derecha, en el mismo orden que sus dos flechas.
+ */
+/**
+ * Ancho fijo en lugar de `flex: 1`: la razón social es más ancha que "SYSOIL",
+ * así que repartir el sobrante dejaría las líneas a cero. Con ancho fijo la
+ * fila crece a lo que necesite y las líneas se ven siempre.
  */
 .wordmarkSuffix::before,
 .wordmarkSuffix::after {
   content: '';
-  flex: 1;
+  flex: 0 0 16px;
   height: 1px;
 }
 

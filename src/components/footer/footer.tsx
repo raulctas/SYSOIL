@@ -8,7 +8,7 @@ import { COMPANY, COMPANY_ADDRESS_LINES } from 'src/constants/company';
 import styles from './footer.module.css';
 
 // Partes del wordmark de marca (no traducibles: es el nombre de la empresa).
-const BRAND = { name: 'SYSOIL', suffix: 'INVESTMENT' };
+const BRAND = { name: 'SYSOIL', suffix: 'INVESTMENT S.L' };
 
 const NAV_LINKS = [
   { to: routes.home, labelKey: 'nav.home', end: true },
