@@ -22,6 +22,16 @@
   transform: translateY(-1px);
 }
 
+/**
+ * El color sí sigue transicionando: "reducir movimiento" es una preferencia
+ * sobre el desplazamiento, no sobre los fundidos de color.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .button:hover {
+    transform: none;
+  }
+}
+
 .primary {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);

@@ -28,6 +28,12 @@
   box-shadow: var(--shadow-md);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
+}
+
 .photoWrap {
   position: relative;
   aspect-ratio: 1 / 1;

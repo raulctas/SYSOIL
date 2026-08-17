@@ -144,6 +144,12 @@
   box-shadow: var(--shadow-md);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .valueCard:hover {
+    transform: none;
+  }
+}
+
 .valueIcon {
   display: inline-flex;
   align-items: center;

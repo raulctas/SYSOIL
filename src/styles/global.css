@@ -13,6 +13,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* El desplazamiento suave también es movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);

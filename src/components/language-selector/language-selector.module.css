@@ -30,6 +30,16 @@
   transform: rotate(180deg);
 }
 
+/**
+ * Aquí se quita la transición, no el giro: la orientación del chevron indica si
+ * el menú está abierto, así que tiene que llegar al estado final igualmente.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
 .menu {
   position: absolute;
   top: calc(100% + 8px);
