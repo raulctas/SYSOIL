@@ -1,6 +1,6 @@
-# ParriGroup.Front
+# Sysoil.Front
 
-Sitio web corporativo de **PARRI GROUP MANEGEMENT S.L** — empresa de trading y gestión
+Sitio web corporativo de **SYSOIL INVESTMENT S.L** — empresa de trading y gestión
 integral de hidrocarburos y productos energéticos.
 
 ## Stack
@@ -59,4 +59,4 @@ El selector de idioma del header y i18next lo detectarán automáticamente.
 - **Fotos del equipo:** los miembros muestran un placeholder. Para publicar una foto, copiar
   la imagen a `public/images/team/` y añadir `photo: '/images/team/<archivo>'` en `src/data/team.ts`.
 - **Correo de contacto:** el formulario usa `mailto:` con el email definido en
-  `src/constants/company.ts` (`parri-group@parri-group.com`).
+  `src/constants/company.ts` (`sysoil@sysoil.es`).

@@ -36,12 +36,23 @@
   transform: scale(1.05);
 }
 
+/* El levantamiento y el zoom son movimiento; la sombra y el borde no. */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .media img {
+    transform: none;
+  }
+}
+
 .noMedia {
   aspect-ratio: 16 / 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-navy) 100%);
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-red-dark) 100%);
   color: var(--color-white);
 }
 
@@ -84,5 +95,5 @@
   gap: var(--space-2);
   font-weight: 700;
   font-size: var(--text-sm);
-  color: var(--color-green);
+  color: var(--color-blue);
 }

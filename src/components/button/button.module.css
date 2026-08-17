@@ -22,6 +22,16 @@
   transform: translateY(-1px);
 }
 
+/**
+ * El color sí sigue transicionando: "reducir movimiento" es una preferencia
+ * sobre el desplazamiento, no sobre los fundidos de color.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .button:hover {
+    transform: none;
+  }
+}
+
 .primary {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
@@ -51,13 +61,21 @@
   color: var(--color-text-inverse);
 }
 
+/**
+ * Acción secundaria sobre fondo oscuro (heroes). Va en contorno y no en relleno
+ * para hacer pareja con el principal en oro: dos rellenos sólidos del mismo
+ * tamaño se leen como dos acciones equivalentes, sin jerarquía. Es el mismo
+ * criterio que `.outline` sobre fondo claro, cambiando azul por blanco.
+ */
 .onDark {
-  background-color: var(--color-white);
-  color: var(--color-navy-dark);
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
 }
 
 .onDark:hover {
-  background-color: var(--color-gold);
+  background-color: var(--color-white);
+  color: var(--color-navy-dark);
 }
 
 .fullWidth {

@@ -7,8 +7,13 @@ import { COMPANY, COMPANY_ADDRESS_LINES } from 'src/constants/company';
 
 import styles from './footer.module.css';
 
-// Partes del wordmark de marca (no traducibles: es el nombre de la empresa).
-const BRAND = { name: 'PARRI', suffix: 'GROUP' };
+/**
+ * Partes del wordmark de marca (no traducibles: es el nombre de la empresa).
+ * Sin la forma societaria: aquí el nombre funciona como marca gráfica, igual
+ * que en el logo. La razón social completa va debajo, en la columna de contacto
+ * y en la línea de copyright.
+ */
+const BRAND = { name: 'SYSOIL', suffix: 'INVESTMENT' };
 
 const NAV_LINKS = [
   { to: routes.home, labelKey: 'nav.home', end: true },

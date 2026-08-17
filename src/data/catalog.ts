@@ -1,7 +1,7 @@
 import { CatalogItem } from 'interfaces/catalog';
 
 /**
- * Catálogo de servicios y productos de Parri Group (contenido del brochure).
+ * Catálogo de servicios y productos de SYSOIL INVESTMENT S.L (contenido del brochure).
  * El texto correspondiente a cada `slug` está en `translation.json` → `catalog.<slug>`.
  */
 export const CATALOG: CatalogItem[] = [

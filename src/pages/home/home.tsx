@@ -63,7 +63,7 @@ export const Home = () => {
       <Section>
         <div className={styles.missionGrid}>
           <div className={styles.missionText}>
-            <span className={styles.heroEyebrow} style={{ color: 'var(--color-green)' }}>
+            <span className={styles.heroEyebrow} style={{ color: 'var(--color-blue)' }}>
               {t('home.mission.eyebrow')}
             </span>
             <h2 style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-4)' }}>

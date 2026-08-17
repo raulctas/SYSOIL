@@ -67,6 +67,12 @@
   }
 }
 
+/**
+ * Control de icono con la misma lógica que el botón de contorno: nace
+ * transparente, con borde e icono en azul, y al pasar el cursor se rellena
+ * invirtiendo el icono. Antes nacía relleno en blanco y cambiaba a azul, que
+ * mezclaba las dos familias de botón: el aspecto de una y el hover de la otra.
+ */
 .control {
   display: inline-flex;
   align-items: center;
@@ -75,20 +81,26 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  background: var(--color-white);
-  color: var(--color-navy);
-  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
   transition:
     background-color var(--transition),
     color var(--transition),
-    border-color var(--transition);
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .control:hover {
-  background: var(--color-green);
-  border-color: var(--color-green);
-  color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control:hover {
+    transform: none;
+  }
 }
 
 .card {
@@ -109,6 +121,12 @@
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
 }
 
 .media {

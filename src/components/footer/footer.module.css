@@ -29,31 +29,41 @@
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 0.05em;
-  color: var(--color-green-light);
+  color: var(--color-gold);
 }
 
 .wordmarkSuffix {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.45em;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.5em;
-  text-indent: 0.5em;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: rgba(255, 255, 255, 0.85);
   margin-top: 6px;
 }
 
-/* Líneas que flanquean "GROUP", como en el logo. */
+/**
+ * Líneas que flanquean "INVESTMENT", como los circuitos del logo: azul a la
+ * izquierda y rojo a la derecha, en el mismo orden que sus dos flechas. Se
+ * reparten el ancho que le sobra a la fila respecto a "SYSOIL".
+ */
 .wordmarkSuffix::before,
 .wordmarkSuffix::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--color-gold);
-  opacity: 0.7;
+}
+
+.wordmarkSuffix::before {
+  background: var(--color-blue-light);
+}
+
+.wordmarkSuffix::after {
+  background: var(--color-red-light);
 }
 
 .tagline {

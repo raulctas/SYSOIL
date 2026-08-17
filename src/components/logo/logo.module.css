@@ -3,8 +3,14 @@
   align-items: center;
 }
 
+/**
+ * El logo es un óvalo apaisado (1.70:1) con el wordmark dentro, así que a poca
+ * altura "SYSOIL INVESTMENT" se vuelve ilegible. Se escala por altura y el
+ * header crece con él (`--header-height`), manteniendo la misma proporción
+ * entre ambos que antes.
+ */
 .image {
-  height: 66px;
+  height: 84px;
   width: auto;
   display: block;
 }

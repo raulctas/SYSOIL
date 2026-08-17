@@ -1,31 +1,46 @@
 /**
- * Design tokens — variables de marca de Parri Group.
- * Paleta derivada del logo: verde profundo, oro/ámbar y azul marino.
+ * Design tokens — variables de marca de SYSOIL INVESTMENT S.L.
+ * Paleta derivada del logo: azul profundo, rojo y oro metálico.
  * Todos los componentes consumen estas variables (CSS Modules) en lugar de valores literales.
+ *
+ * Reparto de los tres colores del logo:
+ * - Azul: color primario (enlaces, botones, iconos, eyebrows sobre fondo claro).
+ * - Oro: acento (badges, cifras destacadas, eyebrows sobre fondo oscuro, foco).
+ * - Rojo: segundo color de marca. Se reserva para los pares en los que el logo
+ *   opone azul y rojo, como sus dos flechas: Misión/Visión, el cierre de los
+ *   degradados de los heroes y las líneas que flanquean INVESTMENT en el footer.
+ *   Es el color menos frecuente a propósito: en el logo comparte peso con el
+ *   azul, pero repartido por toda la página competiría con él.
  */
 :root {
   /* Brand colors */
-  --color-green: #1e6b3a;
-  --color-green-dark: #164f2b;
-  --color-green-light: #2e8b4f;
-  --color-gold: #e8a32c;
-  --color-gold-dark: #c9871a;
-  --color-navy: #1b2a4a;
-  --color-navy-dark: #121d33;
+  --color-blue: #10487c;
+  --color-blue-dark: #0b3159;
+  /* Tintes claros: solo para detalles sobre superficies oscuras (navy). */
+  --color-blue-light: #3f7fc4;
+  --color-red: #9e2016;
+  --color-red-dark: #74160f;
+  --color-red-light: #c8443a;
+  --color-gold: #c9a24a;
+  --color-gold-dark: #a37c2e;
+  /* Oro legible como texto sobre fondos claros (el oro de marca no da contraste suficiente). */
+  --color-gold-text: #7f5e1c;
+  --color-navy: #0e2340;
+  --color-navy-dark: #071627;
 
   /* Neutrals */
   --color-white: #ffffff;
   --color-bg: #ffffff;
-  --color-bg-subtle: #f5f7f6;
-  --color-bg-muted: #eef1f0;
-  --color-border: #e2e7e4;
+  --color-bg-subtle: #f4f6f9;
+  --color-bg-muted: #e9edf3;
+  --color-border: #dde3ea;
   --color-text: #1c2530;
   --color-text-muted: #5b6672;
   --color-text-inverse: #ffffff;
 
   /* Semantic */
-  --color-primary: var(--color-green);
-  --color-primary-hover: var(--color-green-dark);
+  --color-primary: var(--color-blue);
+  --color-primary-hover: var(--color-blue-dark);
   --color-accent: var(--color-gold);
 
   /* Typography */
@@ -54,7 +69,8 @@
 
   /* Layout */
   --container-max: 1180px;
-  --header-height: 76px;
+  /* Da de sí lo justo para que el logo respire: es el óvalo lo que manda. */
+  --header-height: 96px;
 
   /* Radii */
   --radius-sm: 6px;
@@ -63,9 +79,9 @@
   --radius-full: 999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(18, 29, 51, 0.06);
-  --shadow-md: 0 6px 20px rgba(18, 29, 51, 0.08);
-  --shadow-lg: 0 18px 48px rgba(18, 29, 51, 0.14);
+  --shadow-sm: 0 1px 2px rgba(7, 22, 39, 0.07);
+  --shadow-md: 0 6px 20px rgba(7, 22, 39, 0.09);
+  --shadow-lg: 0 18px 48px rgba(7, 22, 39, 0.16);
 
   /* Transitions */
   --transition: 180ms ease;
