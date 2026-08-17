@@ -69,7 +69,8 @@
 
   /* Layout */
   --container-max: 1180px;
-  --header-height: 76px;
+  /* Da de sí lo justo para que el logo respire: es el óvalo lo que manda. */
+  --header-height: 96px;
 
   /* Radii */
   --radius-sm: 6px;
