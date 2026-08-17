@@ -1,6 +1,6 @@
 {
-  "name": "PARRI GROUP MANEGEMENT S.L",
-  "short_name": "PARRI GROUP",
+  "name": "SYSOIL INVESTMENT S.L",
+  "short_name": "SYSOIL",
   "icons": [
     {
       "src": "/images/logo/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#1e6b3a",
+  "theme_color": "#10487c",
   "background_color": "#ffffff",
   "display": "standalone"
 }

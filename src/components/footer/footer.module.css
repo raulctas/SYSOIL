@@ -29,24 +29,24 @@
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 0.05em;
-  color: var(--color-green-light);
+  color: var(--color-gold);
 }
 
 .wordmarkSuffix {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.4em;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.5em;
-  text-indent: 0.5em;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: rgba(255, 255, 255, 0.85);
   margin-top: 6px;
 }
 
-/* Líneas que flanquean "GROUP", como en el logo. */
+/* Líneas que flanquean "INVESTMENT", como en el logo. */
 .wordmarkSuffix::before,
 .wordmarkSuffix::after {
   content: '';

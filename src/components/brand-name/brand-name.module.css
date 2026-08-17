@@ -3,9 +3,9 @@
 }
 
 .name {
-  color: var(--color-green-light);
+  color: var(--color-gold);
 }
 
 .suffix {
-  color: var(--color-gold);
+  color: inherit;
 }

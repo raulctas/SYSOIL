@@ -4,7 +4,7 @@
   gap: var(--space-2);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-green);
+  color: var(--color-blue);
   margin-bottom: var(--space-6);
 }
 
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-navy) 100%);
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-red-dark) 100%);
   color: var(--color-white);
 }
 
@@ -49,8 +49,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-gold-dark);
-  background: rgba(232, 163, 44, 0.14);
+  color: var(--color-gold-text);
+  background: rgba(201, 162, 74, 0.18);
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
   margin-bottom: var(--space-4);
@@ -93,7 +93,7 @@
 
 .featureIcon {
   flex-shrink: 0;
-  color: var(--color-green);
+  color: var(--color-blue);
   margin-top: 3px;
 }
 

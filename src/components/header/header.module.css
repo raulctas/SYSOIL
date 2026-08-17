@@ -37,11 +37,11 @@
 }
 
 .link:hover {
-  color: var(--color-green);
+  color: var(--color-blue);
 }
 
 .active {
-  color: var(--color-green);
+  color: var(--color-blue);
   border-bottom-color: var(--color-gold);
 }
 
