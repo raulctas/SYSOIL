@@ -1,16 +1,14 @@
 import styles from './brand-name.module.css';
 
-// Partes del wordmark de marca (no traducibles: es el nombre de la empresa).
-const BRAND = { name: 'SYSOIL', suffix: 'INVESTMENT S.L' };
+/**
+ * Nombre de la empresa (no traducible). El espacio antes de "S.L" es duro
+ * (\u00A0, escapado para que se vea en el código) y así la forma societaria no
+ * se queda sola al final de una línea.
+ */
+const BRAND_NAME = 'SYSOIL INVESTMENT\u00A0S.L';
 
 /**
- * Nombre de marca en línea: "SYSOIL" en oro, como en el logo, y el resto de la
- * razón social heredando el color del texto para que funcione sobre fondos
- * claros y oscuros. Pensado para insertarse dentro de textos (p. ej. títulos).
+ * Nombre de marca en línea, entero en el oro del logo. Pensado para insertarse
+ * dentro de textos (p. ej. títulos), de los que hereda el tamaño.
  */
-export const BrandName = () => (
-  <span className={styles.brand}>
-    <span className={styles.name}>{BRAND.name}</span>{' '}
-    <span className={styles.suffix}>{BRAND.suffix}</span>
-  </span>
-);
+export const BrandName = () => <span className={styles.brand}>{BRAND_NAME}</span>;

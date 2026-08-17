@@ -1,11 +1,9 @@
+/**
+ * Sin `white-space: nowrap`: con la razón social completa el nombre medía 357px
+ * dentro de un contenedor de 343px a 375px de ancho, y como el hero recorta lo
+ * que sobra (`overflow: hidden`) se perdía parte de "S.L". Ahora parte entre
+ * palabras, y el espacio duro del componente evita el único corte feo posible.
+ */
 .brand {
-  white-space: nowrap;
-}
-
-.name {
   color: var(--color-gold);
-}
-
-.suffix {
-  color: inherit;
 }
