@@ -1,16 +1,24 @@
 .logo {
   display: inline-flex;
   align-items: center;
+  /**
+   * Sin esto el logo se deforma: es un flex item de la barra del header y, al
+   * quedarse esta sin sitio, se encogía y el `max-width: 100%` global de las
+   * imágenes achataba el óvalo (un 6,9 % con la ventana a 902px, justo por
+   * encima del punto en el que la navegación se pliega). Que ceda la
+   * navegación, que sí puede.
+   */
+  flex-shrink: 0;
 }
 
 /**
  * El logo es un óvalo apaisado (1.70:1) con el wordmark dentro, así que a poca
- * altura "SYSOIL INVESTMENT" se vuelve ilegible. Se escala por altura y el
- * header crece con él (`--header-height`), manteniendo la misma proporción
- * entre ambos que antes.
+ * altura "SYSOIL INVESTMENT" se vuelve ilegible. Se escala por altura, y esa
+ * altura va junto a la del header en `design-tokens.css`: los dos valores
+ * tienen que moverse a la vez o el logo desborda la barra.
  */
 .image {
-  height: 84px;
+  height: var(--logo-height);
   width: auto;
   display: block;
 }

@@ -71,6 +71,7 @@
   --container-max: 1180px;
   /* Da de sí lo justo para que el logo respire: es el óvalo lo que manda. */
   --header-height: 96px;
+  --logo-height: 84px;
 
   /* Radii */
   --radius-sm: 6px;
@@ -85,4 +86,18 @@
 
   /* Transitions */
   --transition: 180ms ease;
+}
+
+/**
+ * Header más contenido a partir del punto en el que la navegación se pliega en
+ * hamburguesa (900px, el mismo de `header.module.css`). El header es pegajoso,
+ * así que su alto se descuenta de la pantalla durante todo el scroll: los 96px
+ * que el logo necesita para leerse en escritorio se comen demasiado en un
+ * móvil. Vuelve a los 76 / 66px de siempre, manteniendo la proporción (0,87).
+ */
+@media (max-width: 900px) {
+  :root {
+    --header-height: 76px;
+    --logo-height: 66px;
+  }
 }
