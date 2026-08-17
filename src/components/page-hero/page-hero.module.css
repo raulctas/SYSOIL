@@ -29,13 +29,15 @@
   }
 }
 
+/* Mismo recorrido azul → rojo que el hero de inicio, más contenido. */
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     120deg,
     rgba(7, 22, 39, 0.95) 0%,
-    rgba(14, 35, 64, 0.7) 100%
+    rgba(14, 35, 64, 0.74) 65%,
+    rgba(116, 22, 15, 0.62) 100%
   );
 }
 

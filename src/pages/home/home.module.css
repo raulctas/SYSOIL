@@ -29,14 +29,24 @@
   }
 }
 
+/**
+ * El degradado recorre los dos colores del logo en el mismo orden que él, de
+ * azul a rojo. El extremo oscuro se queda a la izquierda, donde va el texto.
+ *
+ * Las opacidades del tramo derecho (0.74 / 0.72) están puestas para que el
+ * texto siga legible ahí: en móvil el titular ocupa todo el ancho y llega al
+ * extremo rojo, y las fotos del pase pueden tener zonas muy claras. Con estos
+ * valores el peor caso (foto blanca) queda por encima de 4.5:1 en blanco.
+ */
 .heroOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     100deg,
     rgba(7, 22, 39, 0.92) 0%,
-    rgba(14, 35, 64, 0.82) 45%,
-    rgba(16, 72, 124, 0.55) 100%
+    rgba(14, 35, 64, 0.84) 40%,
+    rgba(16, 72, 124, 0.74) 70%,
+    rgba(116, 22, 15, 0.72) 100%
   );
 }
 

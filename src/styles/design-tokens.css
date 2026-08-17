@@ -2,13 +2,25 @@
  * Design tokens — variables de marca de SYSOIL.
  * Paleta derivada del logo: azul profundo, rojo y oro metálico.
  * Todos los componentes consumen estas variables (CSS Modules) en lugar de valores literales.
+ *
+ * Reparto de los tres colores del logo:
+ * - Azul: color primario (enlaces, botones, iconos, eyebrows sobre fondo claro).
+ * - Oro: acento (badges, cifras destacadas, eyebrows sobre fondo oscuro, foco).
+ * - Rojo: segundo color de marca. Se reserva para los pares en los que el logo
+ *   opone azul y rojo, como sus dos flechas: Misión/Visión, el cierre de los
+ *   degradados de los heroes y las líneas que flanquean INVESTMENT en el footer.
+ *   Es el color menos frecuente a propósito: en el logo comparte peso con el
+ *   azul, pero repartido por toda la página competiría con él.
  */
 :root {
   /* Brand colors */
   --color-blue: #10487c;
   --color-blue-dark: #0b3159;
+  /* Tintes claros: solo para detalles sobre superficies oscuras (navy). */
+  --color-blue-light: #3f7fc4;
   --color-red: #9e2016;
   --color-red-dark: #74160f;
+  --color-red-light: #c8443a;
   --color-gold: #c9a24a;
   --color-gold-dark: #a37c2e;
   /* Oro legible como texto sobre fondos claros (el oro de marca no da contraste suficiente). */
@@ -30,7 +42,6 @@
   --color-primary: var(--color-blue);
   --color-primary-hover: var(--color-blue-dark);
   --color-accent: var(--color-gold);
-  --color-secondary: var(--color-red);
 
   /* Typography */
   --font-heading: 'Rem', 'Segoe UI', system-ui, sans-serif;

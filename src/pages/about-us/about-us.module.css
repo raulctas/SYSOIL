@@ -44,8 +44,9 @@
   padding: var(--space-6);
 }
 
+/* Misión y Visión se oponen en azul y rojo, como las dos flechas del logo. */
 .mvCard:last-child {
-  border-left-color: var(--color-gold);
+  border-left-color: var(--color-red);
 }
 
 .mvCard h3 {
