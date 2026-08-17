@@ -3,10 +3,23 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { EmblaOptionsType } from 'embla-carousel';
 
 import { BrandProduct } from 'interfaces/brand-product';
+import { usePrefersReducedMotion } from 'hooks/use-prefers-reduced-motion';
 
 import styles from './brand-carousel.module.css';
+
+const CAROUSEL_OPTIONS: EmblaOptionsType = { loop: true, align: 'start' };
+
+/**
+ * `duration: 0` deja el cambio de diapositiva instantáneo, sin desplazamiento
+ * animado. Embla anima por JavaScript, así que los bloques de
+ * `prefers-reduced-motion` del CSS no le llegan y hay que desactivarlo aquí.
+ * Se parte de las opciones normales en lugar de pasar `duration: undefined`,
+ * que sobrescribiría el valor por defecto de embla (25) en vez de respetarlo.
+ */
+const REDUCED_MOTION_OPTIONS: EmblaOptionsType = { ...CAROUSEL_OPTIONS, duration: 0 };
 
 interface Props {
   items: BrandProduct[];
@@ -24,7 +37,12 @@ interface Props {
  */
 export const BrandCarousel = ({ items, title, subtitle, pathBuilder }: Props) => {
   const { t } = useTranslation();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+  const prefersReducedMotion = usePrefersReducedMotion();
+  // El hook de embla compara las opciones en profundidad y se reinicia solo
+  // cuando cambian, así que basta con darle unas u otras.
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    prefersReducedMotion ? REDUCED_MOTION_OPTIONS : CAROUSEL_OPTIONS,
+  );
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
