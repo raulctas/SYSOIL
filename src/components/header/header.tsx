@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -22,11 +22,33 @@ export const Header = () => {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const headerRef = useRef<HTMLElement>(null);
 
   // Cierra el menú móvil al navegar.
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
+
+  /**
+   * Cierra el menú móvil al pulsar fuera. La referencia es el header completo y
+   * no solo el panel: si la hamburguesa quedara fuera, su pulsación cerraría el
+   * menú aquí y su `onClick` lo volvería a abrir, y no habría forma de cerrarlo
+   * con el propio botón. El listener solo existe mientras el menú está abierto.
+   */
+  useEffect(() => {
+    if (!mobileOpen) {
+      return;
+    }
+
+    const onPressOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', onPressOutside);
+    return () => document.removeEventListener('mousedown', onPressOutside);
+  }, [mobileOpen]);
 
   const navLinks = (
     <ul className={styles.navList}>
@@ -47,7 +69,7 @@ export const Header = () => {
   );
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} ref={headerRef}>
       <Container>
         <div className={styles.inner}>
           <Logo />
