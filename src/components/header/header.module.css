@@ -59,6 +59,16 @@
   padding: var(--space-2);
 }
 
+/**
+ * Oculto por defecto y visible solo bajo 900px, en pareja con `.burger`. Sin
+ * esta regla, abrir el menú estrecho y luego ensanchar la ventana dejaba el
+ * menú móvil desplegado en escritorio: el estado `mobileOpen` de React no se
+ * reinicia al redimensionar, así que tiene que ser el CSS el que lo esconda.
+ */
+.mobileNav {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .desktopNav {
     display: none;
@@ -73,15 +83,35 @@
     border-top: 1px solid var(--color-border);
     background: var(--color-white);
     padding: var(--space-4) 0 var(--space-5);
+    /**
+     * Con el móvil en horizontal el menú no cabe: mejor que ruede que que se
+     * corte y deje "Contactar" fuera de alcance. Se descuenta la barra del
+     * header y su borde inferior de 1px. `dvh` es lo correcto en móvil, donde
+     * `vh` mide la ventana sin la barra de URL y dejaría el menú saliéndose;
+     * la primera declaración es el respaldo para navegadores sin `dvh`.
+     */
+    max-height: calc(100vh - var(--header-height) - 1px);
+    max-height: calc(100dvh - var(--header-height) - 1px);
+    overflow-y: auto;
   }
 
+  /* Sin hueco entre filas, para que los separadores formen una lista continua. */
   .mobileNav .navList {
     flex-direction: column;
     align-items: stretch;
-    gap: var(--space-1);
+    gap: 0;
   }
 
+  /**
+   * `display: block` es lo que hace que la fila funcione. Heredado como
+   * `inline` del menú de escritorio, el enlace solo ocupaba el ancho de su
+   * texto: el separador medía 39px de los 343 de la fila en "Inicio", el
+   * relleno vertical se salía 18px del `li` y la zona pulsable de cada enlace
+   * se solapaba 14px con la del siguiente. En bloque cada enlace ocupa la fila
+   * entera y mide 44px de alto, el mínimo recomendado para pulsar con el dedo.
+   */
   .mobileNav .link {
+    display: block;
     padding: var(--space-3) 0;
     border-bottom: 1px solid var(--color-border);
   }
