@@ -47,18 +47,14 @@
 }
 
 /**
- * Líneas que flanquean "INVESTMENT S.L", como los circuitos del logo: azul a la
- * izquierda y rojo a la derecha, en el mismo orden que sus dos flechas.
- */
-/**
- * Ancho fijo en lugar de `flex: 1`: la razón social es más ancha que "SYSOIL",
- * así que repartir el sobrante dejaría las líneas a cero. Con ancho fijo la
- * fila crece a lo que necesite y las líneas se ven siempre.
+ * Líneas que flanquean "INVESTMENT", como los circuitos del logo: azul a la
+ * izquierda y rojo a la derecha, en el mismo orden que sus dos flechas. Se
+ * reparten el ancho que le sobra a la fila respecto a "SYSOIL".
  */
 .wordmarkSuffix::before,
 .wordmarkSuffix::after {
   content: '';
-  flex: 0 0 16px;
+  flex: 1;
   height: 1px;
 }
 
