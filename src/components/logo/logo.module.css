@@ -25,7 +25,7 @@
 }
 
 .dark {
-  --logo-band: var(--color-ink);
+  --logo-band: var(--color-ink-surface);
   color: var(--color-white);
 }
 
@@ -54,15 +54,16 @@
 }
 
 /**
- * Descriptor centrado bajo el nombre, que nunca sobrepasa en anchura: a 0.24em
- * con el interletrado de marca, "ENERGY TRADING" mide algo menos que "SYSOIL".
- * El `text-indent` compensa el espacio que el interletrado deja tras la última
- * letra, que si no descentraría la línea.
+ * Descriptor centrado bajo el nombre, al que nunca sobrepasa en anchura: a
+ * 0.22em con el interletrado de marca "ENERGY TRADING" mide 3,21em contra los
+ * 3,29em de "SYSOIL", que es lo que pide la norma 5.2. El `text-indent`
+ * compensa el espacio que el interletrado deja tras la última letra, que si no
+ * descentraría la línea.
  */
 .descriptor {
   font-family: var(--font-brand);
   font-weight: 500;
-  font-size: 0.24em;
+  font-size: 0.22em;
   letter-spacing: 0.42em;
   text-indent: 0.42em;
   line-height: 1;

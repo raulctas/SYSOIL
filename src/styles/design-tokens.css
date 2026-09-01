@@ -11,10 +11,20 @@
  */
 :root {
   /* Marca */
-  --color-ink: #0f1114; /* negro carbón, superficie oscura */
-  --color-ink-deep: #0b0d0f; /* pie */
-  /* Negro levantado: separa la placa del CTA y el bloque de cifras del resto. */
-  --color-ink-raised: #14171a;
+  /**
+    * El negro de marca es el carbón, y sigue siendo el color del texto, de los
+    * iconos y de los rótulos sobre fondo claro. Las superficies oscuras, en
+    * cambio, van en grafito: un negro algo levantado que no cierra la página
+    * del todo y sobre el que el oro y el blanco respiran mejor.
+    */
+  --color-ink: #0f1114; /* negro carbón: tinta sobre claro */
+  /**
+    * Grafito. Los tres tonos son la misma tinta a distinta claridad
+    * —hsl(240 10% 15/19/11%)— para que la familia se mantenga unida.
+    */
+  --color-ink-surface: #22222a; /* las secciones oscuras */
+  --color-ink-raised: #2c2c35; /* un punto por encima: la placa del CTA */
+  --color-ink-deep: #19191f; /* un punto por debajo: el pie */
   --color-gold: #b4884a; /* oro sobre fondo claro */
   --color-gold-on-dark: #d8ae5c; /* oro sobre fondo oscuro */
   --color-gold-soft: #e6c88f; /* glifos de icono sobre azul */
@@ -29,8 +39,7 @@
   /* Acento */
   --color-petrol: #1b4a5a;
   --color-petrol-dark: #143a47; /* hover de los rellenos petróleo */
-  --color-petrol-tint: #e1ecf0; /* superficies claras */
-  --color-petrol-line: #bdd3da; /* bordes sobre tinte */
+  --color-petrol-tint: #e1ecf0; /* chips de icono y etiquetas de categoría */
   --color-petrol-on-dark: #7fb3c4;
 
   /* Neutros */
@@ -55,10 +64,14 @@
   --color-primary-hover: var(--color-petrol-dark);
   --color-accent: var(--color-gold);
 
-  /* Typography */
+  /**
+    * Tres familias con un reparto claro: REM pone la voz en los titulares de
+    * página y de sección, Inter sostiene todo lo que se lee de corrido —cuerpo,
+    * navegación, botones y títulos de componente— y Archivo aparece solo donde
+    * habla la marca.
+    */
   --font-heading: 'REM', 'Segoe UI', system-ui, sans-serif;
-  --font-body: 'REM', 'Segoe UI', system-ui, sans-serif;
-  /* Solo el logotipo, los antetítulos y las cifras destacadas. */
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --font-brand: 'Archivo', 'Segoe UI', system-ui, sans-serif;
 
   --text-xs: 0.8125rem; /* 13 — antetítulo, pie de página */
@@ -90,8 +103,8 @@
   --container-max: 1180px;
   --container-pad: 24px;
   --header-height: 100px;
-  /* Cuerpo del wordmark de la cabecera: manda sobre el alto del logotipo. */
-  --logo-size: 38px;
+  /* Cuerpo del nombre en la cabecera: manda sobre el alto del logotipo. */
+  --logo-size: 44px;
 
   /* Radii */
   --radius-sm: 6px;
@@ -118,7 +131,13 @@
 @media (max-width: 900px) {
   :root {
     --header-height: 76px;
-    --logo-size: 30px;
+    /**
+     * El logotipo cede menos que la barra porque lleva descriptor: por debajo
+     * de este cuerpo, ENERGY TRADING deja de leerse. A 39px el nombre mide
+     * 128px de ancho, por encima de los 120px que pide la norma 6.2 para la
+     * versión con descriptor.
+     */
+    --logo-size: 39px;
     /* El aire de sección se recorta con la misma lógica. */
     --section-space: 80px;
     --section-space-tight: 72px;

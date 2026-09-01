@@ -26,7 +26,7 @@ export const AboutUs = () => {
       />
 
       {/* Intro */}
-      <Section>
+      <Section background="sand">
         <div className={styles.intro}>
           <div className={styles.introText}>
             <p>{t('aboutUs.intro.text')}</p>
@@ -41,7 +41,7 @@ export const AboutUs = () => {
       </Section>
 
       {/* Mission + Vision */}
-      <Section background="sand">
+      <Section background="ink">
         <div className={styles.mvGrid}>
           <div className={styles.mvCard}>
             <h3>{t('aboutUs.mission.title')}</h3>
@@ -55,7 +55,11 @@ export const AboutUs = () => {
       </Section>
 
       {/* Values */}
-      <Section title={t('aboutUs.values.title')} subtitle={t('aboutUs.values.subtitle')}>
+      <Section
+        background="sand"
+        title={t('aboutUs.values.title')}
+        subtitle={t('aboutUs.values.subtitle')}
+      >
         <div className={styles.valuesGrid}>
           {VALUES.map(({ key, icon: Icon }) => (
             <div key={key} className={styles.valueItem}>
@@ -89,7 +93,11 @@ export const AboutUs = () => {
       </Section>
 
       {/* Growth */}
-      <Section eyebrow={t('aboutUs.growth.eyebrow')} title={t('aboutUs.growth.title')}>
+      <Section
+        background="sand"
+        eyebrow={t('aboutUs.growth.eyebrow')}
+        title={t('aboutUs.growth.title')}
+      >
         <p className={styles.growthText}>{t('aboutUs.growth.text')}</p>
         <p className={styles.confidentiality}>{t('aboutUs.growth.confidentiality')}</p>
       </Section>

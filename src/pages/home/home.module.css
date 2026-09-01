@@ -1,9 +1,12 @@
 /* Hero */
 .hero {
   position: relative;
-  background: var(--color-ink);
+  background: var(--color-ink-surface);
   color: var(--color-text-inverse);
   overflow: hidden;
+  /* Tono del antetítulo sobre el velo oscuro. */
+  --eyebrow-ink: var(--color-gold-text-on-dark);
+  --eyebrow-rule: var(--gold-drop-mid);
 }
 
 /**
@@ -43,7 +46,7 @@
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(15, 17, 20, 0.95) 0%,
+    rgba(34, 34, 42, 0.95) 0%,
     rgba(17, 48, 60, 0.9) 34%,
     rgba(27, 74, 90, 0.9) 66%,
     rgba(41, 105, 124, 0.86) 100%
@@ -61,7 +64,7 @@
   .heroOverlay {
     background: linear-gradient(
       160deg,
-      rgba(15, 17, 20, 0.95) 0%,
+      rgba(34, 34, 42, 0.95) 0%,
       rgba(17, 48, 60, 0.93) 45%,
       rgba(27, 74, 90, 0.93) 100%
     );
@@ -78,31 +81,6 @@
   .heroInner {
     padding-block: 88px;
   }
-}
-
-/**
- * Antetítulo de marca sobre fondo oscuro, con el filete de oro a su izquierda.
- * Es el único texto corriente compuesto en Archivo, junto a las cifras.
- */
-.eyebrowGold {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-brand);
-  font-weight: 500;
-  font-size: var(--text-xs);
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-gold-text-on-dark);
-  margin-bottom: var(--space-5);
-}
-
-.eyebrowGold::before {
-  content: '';
-  width: 26px;
-  height: 2px;
-  flex-shrink: 0;
-  background: var(--gold-drop-mid);
 }
 
 .heroTitle {
@@ -135,21 +113,6 @@
   align-items: center;
 }
 
-/**
- * En la misión el filete del antetítulo pasa del oro al petróleo: es la
- * bisagra entre el hero, todo de marca, y las secciones claras, que estructura
- * el color de acento.
- */
-.eyebrowMission {
-  composes: eyebrowGold;
-  color: var(--color-petrol);
-  margin-bottom: var(--space-4);
-}
-
-.eyebrowMission::before {
-  background: linear-gradient(90deg, var(--color-gold), var(--color-petrol));
-}
-
 .missionTitle {
   font-size: var(--text-3xl);
   line-height: 1.18;
@@ -176,8 +139,8 @@
 }
 
 /**
- * Cabecera a dos columnas de las secciones negras: antetítulo y titular a la
- * izquierda, entradilla a la derecha, alineadas por la base.
+ * Cabecera a dos columnas de la sección de crecimiento: antetítulo y titular a
+ * la izquierda, entradilla a la derecha, alineadas por la base.
  */
 .splitHeader {
   display: flex;
@@ -185,14 +148,6 @@
   justify-content: space-between;
   gap: var(--space-7);
   margin-bottom: 56px;
-}
-
-.splitTitle {
-  font-size: 2.5rem;
-  line-height: 1.14;
-  letter-spacing: -0.025em;
-  max-width: 600px;
-  text-wrap: pretty;
 }
 
 .splitText {
@@ -216,56 +171,150 @@
 }
 
 /**
- * Rejilla de valores sin bordes ni tarjetas: el hueco de 1px deja ver el fondo
- * de la rejilla y son esos hilos los que hacen de filetes entre celdas.
+ * Los valores desfilan en bucle en lugar de ocupar una rejilla: son diez, y
+ * puestos en cuadrícula se comían media pantalla. Así se ven todos sin gastar
+ * altura, y la banda se detiene al pasar el cursor para poder leerlos.
  */
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.12);
+.valuesViewport {
+  position: relative;
+  overflow: hidden;
+  /**
+   * Los extremos se desvanecen para que las tarjetas no aparezcan ni se corten
+   * de golpe. Va con máscara y no con dos degradados encima porque así no hay
+   * que repetir aquí el color de fondo de la sección.
+   */
+  --values-fade: 96px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 var(--values-fade),
+    #000 calc(100% - var(--values-fade)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 var(--values-fade),
+    #000 calc(100% - var(--values-fade)),
+    transparent
+  );
 }
 
-@media (max-width: 900px) {
-  .valuesGrid {
-    grid-template-columns: repeat(2, 1fr);
+.valuesTrack {
+  display: flex;
+  width: max-content;
+  animation: valuesMarquee 55s linear infinite;
+}
+
+.valuesRun {
+  display: flex;
+}
+
+.valuesViewport:hover .valuesTrack,
+.valuesViewport:focus-within .valuesTrack {
+  animation-play-state: paused;
+}
+
+/**
+ * La pista se desplaza exactamente la mitad de su ancho, que es donde la
+ * segunda copia cae sobre la posición de la primera. Por eso la separación
+ * entre tarjetas va en el `margin-right` de cada una y no en un `gap` de la
+ * pista: con `gap` a la vuelta faltaría medio hueco y el bucle daría un tirón.
+ */
+@keyframes valuesMarquee {
+  to {
+    transform: translateX(-50%);
   }
 }
 
-@media (max-width: 560px) {
-  .valuesGrid {
-    grid-template-columns: 1fr;
+/**
+ * Sin movimiento el desfile no enseña nada, así que se para y la banda pasa a
+ * arrastrarse con el dedo o la rueda. La segunda copia ahí sobra: dejaría los
+ * diez valores repetidos dentro de la zona de scroll.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .valuesViewport {
+    overflow-x: auto;
+  }
+
+  .valuesTrack {
+    animation: none;
+  }
+
+  .valuesRun + .valuesRun {
+    display: none;
   }
 }
 
 .valueCard {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  background: var(--color-ink);
-  padding: 38px 32px 42px;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  width: 320px;
+  /* La separación es margen, no `gap`: lo pide el bucle de la pista. */
+  margin-right: 24px;
+  padding: var(--space-5);
+  background: var(--color-ink-raised);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition);
+}
+
+.valueCard:hover {
+  border-color: rgba(216, 174, 92, 0.4);
+}
+
+.valueHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .valueIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(216, 174, 92, 0.14);
   color: var(--color-gold-on-dark);
+  transition: background-color var(--transition);
 }
 
-.valueRule {
-  width: 28px;
-  height: 1px;
-  background: var(--color-gold-on-dark);
+.valueCard:hover .valueIcon {
+  background: rgba(216, 174, 92, 0.24);
 }
 
 .valueTitle {
-  font-size: var(--text-xl);
+  font-size: var(--text-sm);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.35;
+  color: var(--color-white);
 }
 
 .valueText {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
+}
+
+/**
+ * En una pantalla estrecha los 96px de desvanecido a cada lado se comerían más
+ * de la mitad de la banda, así que se recortan. Las tarjetas también encogen:
+ * a 270px la siguiente asoma lo justo para que se vea que la fila sigue.
+ */
+@media (max-width: 600px) {
+  .valuesViewport {
+    --values-fade: 32px;
+  }
+
+  .valueCard {
+    width: 270px;
+    margin-right: var(--space-4);
+  }
 }
 
 /* Featured cards */
@@ -376,7 +425,7 @@
 }
 
 /**
- * Final CTA: sección blanca con una placa negra dentro. Va algo más contenida
+ * Final CTA: la placa negra va dentro de la última arena. Va algo más contenida
  * que el resto. La clase se repite para ganarle en especificidad al
  * `padding-block` de `Section`, que vive en otro módulo y podría ir después.
  */

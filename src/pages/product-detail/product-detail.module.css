@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-petrol) 100%);
+  background: linear-gradient(135deg, var(--color-ink-surface) 0%, var(--color-petrol) 100%);
   color: var(--color-gold-on-dark);
 }
 

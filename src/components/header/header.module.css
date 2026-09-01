@@ -2,7 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(255, 255, 255, 0.94);
+  /**
+   * Translúcida, para que se intuya lo que pasa por debajo. No baja de 0.88:
+   * con el desenfoque, ese es el punto en el que los enlaces del menú siguen
+   * dando 4.5:1 sobre la superficie más oscura que llega a pasar por detrás
+   * (el grafito de las secciones y el negro del pie).
+   */
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   /* Filo de marca: el petróleo estructura todas las superficies claras. */
   border-bottom: 3px solid var(--color-petrol);

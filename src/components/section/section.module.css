@@ -6,19 +6,17 @@
   background-color: var(--color-bg);
 }
 
-/* Arena: el claro cálido que hace de descanso entre dos bloques de color. */
+/* Arena: el claro de la marca, el que se alterna con el negro. */
 .sand {
   background-color: var(--color-sand);
 }
 
-/* Tinte petróleo: superficie clara estructurada por el color de acento. */
-.petrol {
-  background-color: var(--color-petrol-tint);
-}
-
 .ink {
-  background-color: var(--color-ink);
+  background-color: var(--color-ink-surface);
   color: var(--color-text-inverse);
+  /* Tono del antetítulo sobre superficie oscura. */
+  --eyebrow-ink: var(--color-gold-text-on-dark);
+  --eyebrow-rule: var(--gold-drop-mid);
 }
 
 .ink :global(h1),
@@ -32,32 +30,8 @@
   margin-bottom: var(--space-7);
 }
 
-.header.center {
-  margin-inline: auto;
-  text-align: center;
-}
-
 .header.wide {
   max-width: none;
-}
-
-/**
- * Antetítulo: la única pieza de texto corriente compuesta en Archivo, la
- * tipografía de marca. Sobre fondo claro va en petróleo; sobre negro, en oro.
- */
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-brand);
-  font-weight: 500;
-  font-size: var(--text-xs);
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-petrol);
-  margin-bottom: var(--space-4);
-}
-
-.ink .eyebrow {
-  color: var(--color-gold-text-on-dark);
 }
 
 .title {

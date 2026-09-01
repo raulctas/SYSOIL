@@ -1,8 +1,11 @@
 .hero {
   position: relative;
-  background: var(--color-ink);
+  background: var(--color-ink-surface);
   color: var(--color-text-inverse);
   overflow: hidden;
+  /* Tono del antetítulo sobre el velo oscuro. */
+  --eyebrow-ink: var(--color-gold-text-on-dark);
+  --eyebrow-rule: var(--gold-drop-mid);
 }
 
 /**
@@ -39,7 +42,7 @@
   inset: 0;
   background: linear-gradient(
     120deg,
-    rgba(15, 17, 20, 0.95) 0%,
+    rgba(34, 34, 42, 0.95) 0%,
     rgba(17, 48, 60, 0.88) 55%,
     rgba(41, 105, 124, 0.82) 100%
   );
@@ -53,28 +56,6 @@
 
 .inner.wide {
   max-width: none;
-}
-
-/* Antetítulo de marca, con el filete de oro a su izquierda. */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-brand);
-  font-weight: 500;
-  font-size: var(--text-xs);
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-gold-text-on-dark);
-  margin-bottom: var(--space-4);
-}
-
-.eyebrow::before {
-  content: '';
-  width: 26px;
-  height: 2px;
-  flex-shrink: 0;
-  background: var(--gold-drop-mid);
 }
 
 /**

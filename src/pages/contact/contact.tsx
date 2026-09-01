@@ -55,10 +55,13 @@ export const Contact = () => {
 
   return (
     <>
+      {/* `wide` suelta el ancho del titular: sin él "Hablemos de tu próximo
+          suministro" no cabe en los 720px por defecto y parte en dos líneas. */}
       <PageHero
         eyebrow={t('contact.hero.eyebrow')}
         title={t('contact.hero.title')}
         subtitle={t('contact.hero.subtitle')}
+        wide
       />
 
       <Section>

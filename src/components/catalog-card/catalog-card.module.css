@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   background: var(--color-white);
-  border: 1px solid var(--color-petrol-line);
+  /* Blancas sobre arena: el filete va en el neutro cálido, no en el frío. */
+  border: 1px solid var(--color-sand-line);
   border-radius: var(--radius-md);
   overflow: hidden;
   transition:
@@ -52,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-petrol) 100%);
+  background: linear-gradient(135deg, var(--color-ink-surface) 0%, var(--color-petrol) 100%);
   color: var(--color-gold-on-dark);
 }
 

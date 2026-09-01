@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="SYSOIL">
   <!--
-    Marca reducida para la pestana del navegador: la gota suelta del logotipo
-    sobre el negro de marca. Lleva fondo opaco propio para tener silueta tanto
-    en barras claras como oscuras. Sobre fondo oscuro la gota va con degradado
-    y los aros calados del color del fondo, igual que en el logotipo completo.
+    Marca reducida para la pestana del navegador: la gota suelta del logotipo,
+    sin fondo. Los aros no se pintan de ningun color: se recortan de la gota con
+    una mascara, asi que dejan pasar lo que haya detras. Es la regla del calado
+    del manual resuelta sola, sea clara u oscura la barra del navegador.
     Los aros desaparecen en favicon-16x16.png: por debajo de 24px se cierran.
   -->
   <defs>
@@ -12,27 +12,19 @@
       <stop offset="0.5" stop-color="#C99C45" />
       <stop offset="1" stop-color="#8A5F1E" />
     </linearGradient>
-    <clipPath id="gotaClip">
-      <path
-        transform="translate(19.67 8) scale(0.46667)"
-        d="M65,0 C101,52 130,74 130,115 A65,65 0 0 1 0,115 C0,74 29,52 65,0 Z"
-      />
-    </clipPath>
+    <mask id="aros">
+      <g transform="translate(15.33 2) scale(0.53333)">
+        <path d="M65,0 C101,52 130,74 130,115 A65,65 0 0 1 0,115 C0,74 29,52 65,0 Z" fill="#FFFFFF" />
+        <path d="M-6,104 L136,62 L136,77 L-6,119 Z" fill="#000000" />
+        <path d="M-6,140 L136,98 L136,113 L-6,155 Z" fill="#000000" />
+      </g>
+    </mask>
   </defs>
-  <rect width="100" height="100" fill="#0F1114" />
-  <g transform="translate(19.67 8) scale(0.46667)">
-    <path d="M65,0 C101,52 130,74 130,115 A65,65 0 0 1 0,115 C0,74 29,52 65,0 Z" fill="url(#gota)" />
-  </g>
-  <g clip-path="url(#gotaClip)">
+  <g mask="url(#aros)">
     <path
-      transform="translate(19.67 8) scale(0.46667)"
-      d="M-6,104 L136,62 L136,77 L-6,119 Z"
-      fill="#0F1114"
-    />
-    <path
-      transform="translate(19.67 8) scale(0.46667)"
-      d="M-6,140 L136,98 L136,113 L-6,155 Z"
-      fill="#0F1114"
+      transform="translate(15.33 2) scale(0.53333)"
+      d="M65,0 C101,52 130,74 130,115 A65,65 0 0 1 0,115 C0,74 29,52 65,0 Z"
+      fill="url(#gota)"
     />
   </g>
 </svg>

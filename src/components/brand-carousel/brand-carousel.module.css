@@ -120,7 +120,7 @@
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  border-color: transparent;
+  border-color: var(--color-petrol);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -153,4 +153,65 @@
   text-align: center;
   padding: var(--space-3);
   border-top: 1px solid var(--color-border);
+}
+
+/**
+ * Puntos de posición: uno por página, no por producto. El botón mide 24px para
+ * poder pulsarlo con el dedo aunque la marca que se ve sea de 8.
+ */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-top: var(--space-5);
+}
+
+.dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-sand-line);
+  transition:
+    background-color var(--transition),
+    width var(--transition);
+}
+
+.dot:hover::before {
+  background: var(--color-text-muted);
+}
+
+/* La parada actual se alarga en lugar de solo cambiar de color: así se
+   distingue sin depender de la vista. */
+.dotActive::before {
+  width: 22px;
+  background: var(--color-petrol);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot::before {
+    transition: none;
+  }
+}
+
+/**
+ * En pantalla estrecha las flechas se llevaban 110px de ancho a cada lado, que
+ * es justo donde no sobra: ahí se retiran y la fila se arrastra con el dedo,
+ * con los puntos haciendo de indicador y de control.
+ */
+@media (max-width: 600px) {
+  .control {
+    display: none;
+  }
 }

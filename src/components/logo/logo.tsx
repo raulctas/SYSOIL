@@ -72,8 +72,8 @@ interface Props {
   tone?: Tone;
   /**
    * Añade ENERGY TRADING bajo el nombre. El descriptor acompaña siempre al
-   * logotipo salvo donde no cabe legible: la cabecera es una de esas
-   * excepciones, y por eso viene apagado por defecto.
+   * logotipo, y la web no tiene ningún hueco tan estrecho como para prescindir
+   * de él; queda apagado por defecto para los sitios donde no quepa legible.
    */
   descriptor?: boolean;
   className?: string;
