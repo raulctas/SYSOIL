@@ -1,0 +1,29 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  /* Sobre fondo claro el rótulo va en petróleo, el color que estructura ahí. */
+  color: var(--eyebrow-ink, var(--color-petrol));
+  margin-bottom: var(--space-4);
+}
+
+/**
+ * El filete va del oro al petróleo sobre fondo claro —hace de bisagra entre el
+ * color de marca y el de acento— y en oro macizo sobre fondo oscuro, donde el
+ * petróleo no se distinguiría.
+ */
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(
+    --eyebrow-rule,
+    linear-gradient(90deg, var(--color-gold), var(--color-petrol))
+  );
+}

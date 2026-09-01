@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -10,7 +10,17 @@ import { usePrefersReducedMotion } from 'hooks/use-prefers-reduced-motion';
 
 import styles from './brand-carousel.module.css';
 
-const CAROUSEL_OPTIONS: EmblaOptionsType = { loop: true, align: 'start' };
+/**
+ * `slidesToScroll: 'auto'` avanza una pantalla entera en lugar de una tarjeta:
+ * las flechas pasan de página y los puntos cuentan páginas, no productos. Con
+ * ocho productos y cinco visibles serían ocho puntos para tres posiciones
+ * distintas, que no dice nada.
+ */
+const CAROUSEL_OPTIONS: EmblaOptionsType = {
+  loop: true,
+  align: 'start',
+  slidesToScroll: 'auto',
+};
 
 /**
  * `duration: 0` deja el cambio de diapositiva instantáneo, sin desplazamiento
@@ -46,6 +56,35 @@ export const BrandCarousel = ({ items, title, subtitle, pathBuilder }: Props) =>
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+
+  /**
+   * Posición dentro del carrusel. Cuántas paradas hay depende de cuántas
+   * tarjetas quepan a la vez, así que embla la recalcula al redimensionar y se
+   * escucha también `reInit` para no quedarse con una lista de puntos vieja.
+   */
+  const [stops, setStops] = useState<number[]>([]);
+  const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    if (!emblaApi) {
+      return;
+    }
+
+    const sync = () => {
+      setStops(emblaApi.scrollSnapList());
+      setSelected(emblaApi.selectedScrollSnap());
+    };
+
+    sync();
+    emblaApi.on('select', sync);
+    emblaApi.on('reInit', sync);
+
+    return () => {
+      emblaApi.off('select', sync);
+      emblaApi.off('reInit', sync);
+    };
+  }, [emblaApi]);
 
   return (
     <section className={styles.gallery} aria-label={title}>
@@ -88,6 +127,28 @@ export const BrandCarousel = ({ items, title, subtitle, pathBuilder }: Props) =>
           <ChevronRight size={22} aria-hidden />
         </button>
       </div>
+
+      {/**
+       * Los puntos dicen cuántas tarjetas quedan y dónde estás, que es lo que
+       * no contaban las flechas. En una pantalla táctil son además el único
+       * control: ahí las flechas se esconden y la fila se arrastra con el dedo.
+       */}
+      {stops.length > 1 && (
+        <div className={styles.dots}>
+          {stops.map((stop, index) => (
+            <button
+              key={stop}
+              type="button"
+              className={[styles.dot, index === selected && styles.dotActive]
+                .filter(Boolean)
+                .join(' ')}
+              aria-label={t('common.goToSlide', { index: index + 1 })}
+              aria-current={index === selected || undefined}
+              onClick={() => scrollTo(index)}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

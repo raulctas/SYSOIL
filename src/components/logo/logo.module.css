@@ -1,24 +1,72 @@
+/**
+ * El logotipo se compone con texto vivo, no con una imagen: así se dibuja
+ * nítido a cualquier tamaño y hereda el color del fondo sobre el que va. El
+ * cuerpo del nombre lo fija `--logo-size` (en `design-tokens.css` para la
+ * cabecera); todo lo demás está en `em`, así que basta cambiar ese valor.
+ */
 .logo {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.21em;
+  font-size: var(--logo-size);
   /**
-   * Sin esto el logo se deforma: es un flex item de la barra del header y, al
-   * quedarse esta sin sitio, se encogía y el `max-width: 100%` global de las
-   * imágenes achataba el óvalo (un 6,9 % con la ventana a 902px, justo por
-   * encima del punto en el que la navegación se pliega). Que ceda la
+   * Sin esto el logotipo se deforma: es un flex item de la barra de la
+   * cabecera y, al quedarse esta sin sitio, se encogía. Que ceda la
    * navegación, que sí puede.
    */
   flex-shrink: 0;
 }
 
+/* Color del calado de los aros: siempre el del fondo, nunca un tercer color. */
+.light {
+  --logo-band: var(--color-white);
+  color: var(--color-ink);
+}
+
+.dark {
+  --logo-band: var(--color-ink-surface);
+  color: var(--color-white);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 0.84;
+  letter-spacing: -0.02em;
+}
+
 /**
- * El logo es un óvalo apaisado (1.70:1) con el wordmark dentro, así que a poca
- * altura "SYSOIL INVESTMENT" se vuelve ilegible. Se escala por altura, y esa
- * altura va junto a la del header en `design-tokens.css`: los dos valores
- * tienen que moverse a la vez o el logo desborda la barra.
+ * La gota ocupa el sitio de la O: misma altura que las mayúsculas y punta que
+ * no sobresale de la línea de texto.
  */
-.image {
-  height: var(--logo-height);
-  width: auto;
-  display: block;
+.drop {
+  height: 0.9em;
+  width: 0.64em;
+  margin-inline: 0.035em;
+}
+
+.band {
+  fill: var(--logo-band);
+}
+
+/**
+ * Descriptor centrado bajo el nombre, al que nunca sobrepasa en anchura: a
+ * 0.22em con el interletrado de marca "ENERGY TRADING" mide 3,21em contra los
+ * 3,29em de "SYSOIL", que es lo que pide la norma 5.2. El `text-indent`
+ * compensa el espacio que el interletrado deja tras la última letra, que si no
+ * descentraría la línea.
+ */
+.descriptor {
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: 0.22em;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  line-height: 1;
+  color: currentColor;
+  opacity: 0.72;
 }

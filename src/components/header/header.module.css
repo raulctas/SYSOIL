@@ -2,9 +2,16 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(255, 255, 255, 0.92);
+  /**
+   * Translúcida, para que se intuya lo que pasa por debajo. No baja de 0.88:
+   * con el desenfoque, ese es el punto en el que los enlaces del menú siguen
+   * dando 4.5:1 sobre la superficie más oscura que llega a pasar por detrás
+   * (el grafito de las secciones y el negro del pie).
+   */
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  /* Filo de marca: el petróleo estructura todas las superficies claras. */
+  border-bottom: 3px solid var(--color-petrol);
 }
 
 .inner {
@@ -28,21 +35,22 @@
 }
 
 .link {
-  font-weight: 600;
-  font-size: var(--text-sm);
-  color: var(--color-text);
+  font-weight: 500;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
   padding: 0.35rem 0;
   border-bottom: 2px solid transparent;
   transition: color var(--transition);
 }
 
 .link:hover {
-  color: var(--color-blue);
+  color: var(--color-text);
 }
 
+/* La página en la que se está va en negro y subrayada en petróleo. */
 .active {
-  color: var(--color-blue);
-  border-bottom-color: var(--color-gold);
+  color: var(--color-text);
+  border-bottom-color: var(--color-petrol);
 }
 
 .actions {
@@ -55,7 +63,7 @@
   display: none;
   background: transparent;
   border: none;
-  color: var(--color-navy);
+  color: var(--color-ink);
   padding: var(--space-2);
 }
 
@@ -86,12 +94,12 @@
     /**
      * Con el móvil en horizontal el menú no cabe: mejor que ruede que que se
      * corte y deje "Contactar" fuera de alcance. Se descuenta la barra del
-     * header y su borde inferior de 1px. `dvh` es lo correcto en móvil, donde
+     * header y su filo inferior de 3px. `dvh` es lo correcto en móvil, donde
      * `vh` mide la ventana sin la barra de URL y dejaría el menú saliéndose;
      * la primera declaración es el respaldo para navegadores sin `dvh`.
      */
-    max-height: calc(100vh - var(--header-height) - 1px);
-    max-height: calc(100dvh - var(--header-height) - 1px);
+    max-height: calc(100vh - var(--header-height) - 3px);
+    max-height: calc(100dvh - var(--header-height) - 3px);
     overflow-y: auto;
   }
 

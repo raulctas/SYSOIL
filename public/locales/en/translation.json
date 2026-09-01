@@ -7,7 +7,8 @@
     "backToList": "Back to Products & Services",
     "getInTouch": "Let's talk",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "goToSlide": "Go to slide {{index}}"
   },
   "nav": {
     "main": "Main navigation",

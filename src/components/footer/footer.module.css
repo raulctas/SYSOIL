@@ -1,80 +1,47 @@
 .footer {
-  background: var(--color-navy);
-  color: rgba(255, 255, 255, 0.78);
+  background: var(--color-ink-deep);
+  color: rgba(255, 255, 255, 0.72);
+  /* Mismo filo de petróleo que la cabecera: cierran la página en pareja. */
+  border-top: 3px solid var(--color-petrol);
   padding-block: var(--space-8) var(--space-5);
   margin-top: auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.2fr 0.8fr 1.1fr;
   gap: var(--space-7);
   padding-bottom: var(--space-6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .brand {
   max-width: 340px;
 }
 
-.wordmark {
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1;
-  margin-bottom: var(--space-4);
-}
-
-.wordmarkName {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 0.05em;
-  color: var(--color-gold);
-}
-
-.wordmarkSuffix {
-  display: flex;
-  align-items: center;
-  gap: 0.45em;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.64rem;
-  letter-spacing: 0.22em;
-  text-indent: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 6px;
-}
-
 /**
- * Líneas que flanquean "INVESTMENT", como los circuitos del logo: azul a la
- * izquierda y rojo a la derecha, en el mismo orden que sus dos flechas. Se
- * reparten el ancho que le sobra a la fila respecto a "SYSOIL".
+ * El logotipo del pie va más grande que el de la cabecera porque aquí lleva
+ * descriptor: por debajo de este cuerpo, ENERGY TRADING deja de leerse.
  */
-.wordmarkSuffix::before,
-.wordmarkSuffix::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-}
-
-.wordmarkSuffix::before {
-  background: var(--color-blue-light);
-}
-
-.wordmarkSuffix::after {
-  background: var(--color-red-light);
+.logo {
+  --logo-band: var(--color-ink-deep);
+  --logo-size: 44px;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
 }
 
 .tagline {
   font-size: var(--text-sm);
   line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .colTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-base);
-  color: var(--color-white);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-on-dark);
   margin-bottom: var(--space-4);
 }
 
@@ -86,17 +53,22 @@
 
 .link {
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.72);
   transition: color var(--transition);
 }
 
 .link:hover {
-  color: var(--color-gold);
+  color: var(--color-gold-on-dark);
 }
 
 .contactLine {
   font-size: var(--text-sm);
   line-height: 1.7;
+}
+
+/* El correo es el único enlace del pie que nace en oro: es la acción real. */
+.contactLine .link {
+  color: var(--color-gold-text-on-dark);
 }
 
 .bottom {
@@ -106,7 +78,7 @@
   flex-wrap: wrap;
   padding-top: var(--space-5);
   font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 @media (max-width: 800px) {

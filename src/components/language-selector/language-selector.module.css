@@ -19,7 +19,7 @@
 }
 
 .trigger:hover {
-  border-color: var(--color-blue);
+  border-color: var(--color-petrol);
 }
 
 .chevron {
@@ -70,6 +70,6 @@
 }
 
 .active {
-  color: var(--color-blue);
+  color: var(--color-petrol);
   font-weight: 700;
 }

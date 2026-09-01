@@ -5,5 +5,5 @@
  * palabras, y el espacio duro del componente evita el único corte feo posible.
  */
 .brand {
-  color: var(--color-gold);
+  color: var(--color-gold-on-dark);
 }

@@ -1,8 +1,12 @@
 /* Hero */
 .hero {
   position: relative;
+  background: var(--color-ink-surface);
   color: var(--color-text-inverse);
   overflow: hidden;
+  /* Tono del antetítulo sobre el velo oscuro. */
+  --eyebrow-ink: var(--color-gold-text-on-dark);
+  --eyebrow-rule: var(--gold-drop-mid);
 }
 
 /**
@@ -30,51 +34,68 @@
 }
 
 /**
- * El degradado recorre los dos colores del logo en el mismo orden que él, de
- * azul a rojo. El extremo oscuro se queda a la izquierda, donde va el texto.
+ * El velo recorre la marca de un extremo a otro: del negro carbón al petróleo.
+ * El extremo oscuro se queda a la izquierda, donde va el texto.
  *
- * Las opacidades del tramo derecho (0.74 / 0.72) están puestas para que el
+ * Las opacidades del tramo derecho (0.90 / 0.86) están puestas para que el
  * texto siga legible ahí: en móvil el titular ocupa todo el ancho y llega al
- * extremo rojo, y las fotos del pase pueden tener zonas muy claras. Con estos
- * valores el peor caso (foto blanca) queda por encima de 4.5:1 en blanco.
+ * extremo claro, y las fotos del pase pueden tener zonas muy claras.
  */
 .heroOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(7, 22, 39, 0.92) 0%,
-    rgba(14, 35, 64, 0.84) 40%,
-    rgba(16, 72, 124, 0.74) 70%,
-    rgba(116, 22, 15, 0.72) 100%
+    rgba(34, 34, 42, 0.95) 0%,
+    rgba(17, 48, 60, 0.9) 34%,
+    rgba(27, 74, 90, 0.9) 66%,
+    rgba(41, 105, 124, 0.86) 100%
   );
+}
+
+/**
+ * En escritorio el texto se queda en los 720px de la izquierda, sobre el tramo
+ * oscuro. Al plegarse a una columna ocupa todo el ancho y llega al extremo
+ * claro del velo, donde una foto muy luminosa dejaba la entradilla en 3.5:1.
+ * Aquí se cierra el recorrido antes y se sube la opacidad: mismo color, mismo
+ * sentido, pero sin el tramo final que no da contraste.
+ */
+@media (max-width: 900px) {
+  .heroOverlay {
+    background: linear-gradient(
+      160deg,
+      rgba(34, 34, 42, 0.95) 0%,
+      rgba(17, 48, 60, 0.93) 45%,
+      rgba(27, 74, 90, 0.93) 100%
+    );
+  }
 }
 
 .heroInner {
   position: relative;
-  padding-block: var(--space-9);
-  max-width: 680px;
+  padding-block: 132px;
+  max-width: 720px;
 }
 
-.heroEyebrow {
-  display: inline-block;
-  font-weight: 700;
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-4);
+@media (max-width: 900px) {
+  .heroInner {
+    padding-block: 88px;
+  }
 }
 
 .heroTitle {
   font-size: var(--text-4xl);
+  line-height: 1.1;
   color: var(--color-white);
   margin-bottom: var(--space-5);
+  text-wrap: pretty;
 }
 
 .heroSubtitle {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 600px;
   margin-bottom: var(--space-6);
 }
 
@@ -88,14 +109,22 @@
 .missionGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
+  gap: 72px;
   align-items: center;
 }
 
+.missionTitle {
+  font-size: var(--text-3xl);
+  line-height: 1.18;
+  margin-bottom: var(--space-4);
+  text-wrap: pretty;
+}
+
 .missionImage {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-image);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
 }
 
 .missionImage img {
@@ -106,98 +135,186 @@
 
 .missionText p {
   color: var(--color-text-muted);
-  font-size: var(--text-lg);
   margin-bottom: var(--space-5);
 }
 
-/* Values grid */
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+/**
+ * Cabecera a dos columnas de la sección de crecimiento: antetítulo y titular a
+ * la izquierda, entradilla a la derecha, alineadas por la base.
+ */
+.splitHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-7);
+  margin-bottom: 56px;
 }
 
-@media (max-width: 900px) {
-  .valuesGrid {
-    grid-template-columns: repeat(2, 1fr);
+.splitText {
+  font-size: var(--text-md);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 320px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .splitHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  .splitText {
+    max-width: none;
   }
 }
 
-@media (max-width: 560px) {
-  .valuesGrid {
-    grid-template-columns: 1fr;
+/**
+ * Los valores desfilan en bucle en lugar de ocupar una rejilla: son diez, y
+ * puestos en cuadrícula se comían media pantalla. Así se ven todos sin gastar
+ * altura, y la banda se detiene al pasar el cursor para poder leerlos.
+ */
+.valuesViewport {
+  position: relative;
+  overflow: hidden;
+  /**
+   * Los extremos se desvanecen para que las tarjetas no aparezcan ni se corten
+   * de golpe. Va con máscara y no con dos degradados encima porque así no hay
+   * que repetir aquí el color de fondo de la sección.
+   */
+  --values-fade: 96px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 var(--values-fade),
+    #000 calc(100% - var(--values-fade)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 var(--values-fade),
+    #000 calc(100% - var(--values-fade)),
+    transparent
+  );
+}
+
+.valuesTrack {
+  display: flex;
+  width: max-content;
+  animation: valuesMarquee 55s linear infinite;
+}
+
+.valuesRun {
+  display: flex;
+}
+
+.valuesViewport:hover .valuesTrack,
+.valuesViewport:focus-within .valuesTrack {
+  animation-play-state: paused;
+}
+
+/**
+ * La pista se desplaza exactamente la mitad de su ancho, que es donde la
+ * segunda copia cae sobre la posición de la primera. Por eso la separación
+ * entre tarjetas va en el `margin-right` de cada una y no en un `gap` de la
+ * pista: con `gap` a la vuelta faltaría medio hueco y el bucle daría un tirón.
+ */
+@keyframes valuesMarquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/**
+ * Sin movimiento el desfile no enseña nada, así que se para y la banda pasa a
+ * arrastrarse con el dedo o la rueda. La segunda copia ahí sobra: dejaría los
+ * diez valores repetidos dentro de la zona de scroll.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .valuesViewport {
+    overflow-x: auto;
+  }
+
+  .valuesTrack {
+    animation: none;
+  }
+
+  .valuesRun + .valuesRun {
+    display: none;
   }
 }
 
 .valueCard {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  width: 320px;
+  /* La separación es margen, no `gap`: lo pide el bucle de la pista. */
+  margin-right: 24px;
   padding: var(--space-5);
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+  background: var(--color-ink-raised);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition);
 }
 
 .valueCard:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  border-color: rgba(216, 174, 92, 0.4);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .valueCard:hover {
-    transform: none;
-  }
+.valueHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .valueIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: rgba(16, 72, 124, 0.1);
-  color: var(--color-blue);
-  margin-bottom: var(--space-4);
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(216, 174, 92, 0.14);
+  color: var(--color-gold-on-dark);
+  transition: background-color var(--transition);
+}
+
+.valueCard:hover .valueIcon {
+  background: rgba(216, 174, 92, 0.24);
 }
 
 .valueTitle {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-white);
 }
 
 .valueText {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* Growth stats */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-5);
-  margin-top: var(--space-7);
-}
+/**
+ * En una pantalla estrecha los 96px de desvanecido a cada lado se comerían más
+ * de la mitad de la banda, así que se recortan. Las tarjetas también encogen:
+ * a 270px la siguiente asoma lo justo para que se vea que la fila sigue.
+ */
+@media (max-width: 600px) {
+  .valuesViewport {
+    --values-fade: 32px;
+  }
 
-.statCard {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: var(--space-5);
-}
-
-.statValue {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  color: var(--color-gold);
-  margin-bottom: var(--space-1);
-}
-
-.statLabel {
-  font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.82);
+  .valueCard {
+    width: 270px;
+    margin-right: var(--space-4);
+  }
 }
 
 /* Featured cards */
@@ -225,23 +342,126 @@
   margin-top: var(--space-7);
 }
 
-/* Final CTA */
+/* Growth: solo cifras, sin gráficos ni tarjetas. */
+.growthTitle {
+  font-size: 2.75rem;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  max-width: 620px;
+  text-wrap: pretty;
+}
+
+.growth .splitHeader {
+  margin-bottom: 72px;
+}
+
+.growth .splitText {
+  max-width: 340px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 860px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/**
+ * Las cifras van en Archivo, la tipografía de marca: es el otro sitio, además
+ * del logotipo, donde asoma. `white-space: nowrap` es imprescindible — sin él
+ * "13,1 %" se parte por el espacio antes del signo.
+ */
+.statValue {
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 4.5rem;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.statRule {
+  width: 100%;
+  height: 2px;
+  background: var(--color-gold-on-dark);
+}
+
+.statLabel {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.statsPeriod {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-petrol-on-dark);
+}
+
+@media (max-width: 600px) {
+  .statValue {
+    font-size: 3.25rem;
+  }
+
+  .statsPeriod {
+    margin-top: var(--space-7);
+  }
+}
+
+/**
+ * Final CTA: la placa negra va dentro de la última arena. Va algo más contenida
+ * que el resto. La clase se repite para ganarle en especificidad al
+ * `padding-block` de `Section`, que vive en otro módulo y podría ir después.
+ */
+.ctaSection.ctaSection {
+  padding-block: var(--section-space-tight);
+}
+
 .finalCta {
+  background: var(--color-ink-raised);
+  border-radius: var(--radius-lg);
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
   text-align: center;
-  max-width: 720px;
-  margin-inline: auto;
 }
 
-.finalCta h2 {
-  color: var(--color-navy);
+.finalCtaTitle {
   font-size: var(--text-3xl);
-  margin-bottom: var(--space-4);
+  line-height: 1.18;
+  color: var(--color-white);
+  max-width: 720px;
+  text-wrap: pretty;
 }
 
-.finalCta p {
-  color: var(--color-text-muted);
+.finalCtaText {
   font-size: var(--text-lg);
-  margin-bottom: var(--space-6);
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 620px;
+}
+
+@media (max-width: 600px) {
+  .finalCta {
+    padding: var(--space-7) var(--space-5);
+  }
 }
 
 @media (max-width: 860px) {
@@ -252,9 +472,5 @@
 
   .missionImageWrap {
     order: -1;
-  }
-
-  .heroTitle {
-    font-size: var(--text-3xl);
   }
 }

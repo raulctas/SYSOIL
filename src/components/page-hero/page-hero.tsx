@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import { Container } from 'components/container';
+import { Eyebrow } from 'components/eyebrow';
 import { HERO_SLIDES } from 'data/hero-slides';
 import { useSlideshow } from 'hooks/use-slideshow';
 
@@ -32,7 +33,7 @@ export const PageHero = ({ eyebrow, title, subtitle, wide }: Props) => {
       <div className={styles.overlay} />
       <Container>
         <div className={[styles.inner, wide && styles.wide].filter(Boolean).join(' ')}>
-          {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
+          {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
           <h1 className={styles.title}>{title}</h1>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </div>

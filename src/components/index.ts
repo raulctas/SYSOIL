@@ -4,6 +4,7 @@ export { BrandProductDetail } from './brand-product-detail';
 export { Button } from './button';
 export { CatalogCard } from './catalog-card';
 export { Container } from './container';
+export { Eyebrow } from './eyebrow';
 export { Footer } from './footer';
 export { Header } from './header';
 export { LanguageSelector } from './language-selector';

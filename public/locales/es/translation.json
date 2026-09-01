@@ -7,7 +7,8 @@
     "backToList": "Volver a Productos y Servicios",
     "getInTouch": "Hablemos",
     "previous": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "goToSlide": "Ir a la diapositiva {{index}}"
   },
   "nav": {
     "main": "Navegación principal",

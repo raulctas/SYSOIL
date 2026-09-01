@@ -23,7 +23,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -36,10 +36,29 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
   line-height: 1.15;
+  color: var(--color-text);
+}
+
+/* Titulares de página y de sección: los que ponen la voz, en la display. */
+h1,
+h2 {
+  font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-navy);
+  letter-spacing: -0.02em;
+}
+
+/**
+ * De ahí para abajo ya no son titulares sino rótulos de componente —tarjetas,
+ * columnas del pie, bloques sueltos— y se leen mejor en la de interfaz, que es
+ * la misma del texto que los acompaña.
+ */
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
 }
 
 img,
@@ -72,7 +91,7 @@ ul {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--color-petrol);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }

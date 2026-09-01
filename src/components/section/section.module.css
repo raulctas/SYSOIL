@@ -1,23 +1,27 @@
 .section {
-  padding-block: var(--space-9);
+  padding-block: var(--section-space);
 }
 
 .default {
   background-color: var(--color-bg);
 }
 
-.subtle {
-  background-color: var(--color-bg-subtle);
+/* Arena: el claro de la marca, el que se alterna con el negro. */
+.sand {
+  background-color: var(--color-sand);
 }
 
-.navy {
-  background-color: var(--color-navy);
+.ink {
+  background-color: var(--color-ink-surface);
   color: var(--color-text-inverse);
+  /* Tono del antetítulo sobre superficie oscura. */
+  --eyebrow-ink: var(--color-gold-text-on-dark);
+  --eyebrow-rule: var(--gold-drop-mid);
 }
 
-.navy :global(h1),
-.navy :global(h2),
-.navy :global(h3) {
+.ink :global(h1),
+.ink :global(h2),
+.ink :global(h3) {
   color: var(--color-text-inverse);
 }
 
@@ -26,50 +30,22 @@
   margin-bottom: var(--space-7);
 }
 
-.header.center {
-  margin-inline: auto;
-  text-align: center;
-}
-
 .header.wide {
   max-width: none;
 }
 
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-blue);
-  margin-bottom: var(--space-3);
-}
-
-.navy .eyebrow {
-  color: var(--color-gold);
-}
-
 .title {
   font-size: var(--text-3xl);
-  margin-bottom: var(--space-3);
+  line-height: 1.18;
+  margin-bottom: var(--space-4);
+  text-wrap: pretty;
 }
 
 .subtitle {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--color-text-muted);
 }
 
-.navy .subtitle {
-  color: rgba(255, 255, 255, 0.82);
-}
-
-@media (max-width: 600px) {
-  .section {
-    padding-block: var(--space-8);
-  }
-
-  .title {
-    font-size: var(--text-2xl);
-  }
+.ink .subtitle {
+  color: rgba(255, 255, 255, 0.6);
 }
