@@ -2,18 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { Container } from 'components/container';
+import { Logo } from 'components/logo';
 import { routes } from 'src/constants/routes';
 import { COMPANY, COMPANY_ADDRESS_LINES } from 'src/constants/company';
 
 import styles from './footer.module.css';
-
-/**
- * Partes del wordmark de marca (no traducibles: es el nombre de la empresa).
- * Sin la forma societaria: aquí el nombre funciona como marca gráfica, igual
- * que en el logo. La razón social completa va debajo, en la columna de contacto
- * y en la línea de copyright.
- */
-const BRAND = { name: 'SYSOIL', suffix: 'INVESTMENT' };
 
 const NAV_LINKS = [
   { to: routes.home, labelKey: 'nav.home', end: true },
@@ -32,10 +25,8 @@ export const Footer = () => {
       <Container>
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <Link to={routes.home} className={styles.wordmark} aria-label={t('common.homeLink')}>
-              <span className={styles.wordmarkName}>{BRAND.name}</span>
-              <span className={styles.wordmarkSuffix}>{BRAND.suffix}</span>
-            </Link>
+            {/* Aquí sí cabe el logotipo completo, con su descriptor. */}
+            <Logo tone="dark" descriptor className={styles.logo} />
             <p className={styles.tagline}>{t('footer.tagline')}</p>
           </div>
 

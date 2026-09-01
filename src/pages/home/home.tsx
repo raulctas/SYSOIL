@@ -20,11 +20,14 @@ export const Home = () => {
   const featured = getFeaturedCatalog().slice(0, 4);
   const slide = useSlideshow(HERO_SLIDES);
 
+  /**
+   * Tres cifras, no cuatro: los ejercicios no son una magnitud comparable con
+   * las otras tres y cierran el bloque como pie, bajo el filete.
+   */
   const stats = [
     { value: t('home.growth.stats.revenueValue'), label: t('home.growth.stats.revenue') },
     { value: t('home.growth.stats.growthValue'), label: t('home.growth.stats.growth') },
     { value: t('home.growth.stats.ebitdaValue'), label: t('home.growth.stats.ebitda') },
-    { value: t('home.growth.stats.yearsValue'), label: t('home.growth.stats.years') },
   ];
 
   return (
@@ -44,11 +47,11 @@ export const Home = () => {
         <div className={styles.heroOverlay} />
         <Container>
           <div className={styles.heroInner}>
-            <span className={styles.heroEyebrow}>{t('home.hero.eyebrow')}</span>
+            <span className={styles.eyebrowGold}>{t('home.hero.eyebrow')}</span>
             <h1 className={styles.heroTitle}>{t('home.hero.title')}</h1>
             <p className={styles.heroSubtitle}>{t('home.hero.subtitle')}</p>
             <div className={styles.heroActions}>
-              <Button to={routes.contact} variant="secondary">
+              <Button to={routes.contact} variant="primary">
                 {t('home.hero.ctaPrimary')}
               </Button>
               <Button to={routes.productsServices} variant="onDark">
@@ -60,15 +63,11 @@ export const Home = () => {
       </section>
 
       {/* Mission */}
-      <Section>
+      <Section background="sand">
         <div className={styles.missionGrid}>
           <div className={styles.missionText}>
-            <span className={styles.heroEyebrow} style={{ color: 'var(--color-blue)' }}>
-              {t('home.mission.eyebrow')}
-            </span>
-            <h2 style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-4)' }}>
-              {t('home.mission.title')}
-            </h2>
+            <span className={styles.eyebrowMission}>{t('home.mission.eyebrow')}</span>
+            <h2 className={styles.missionTitle}>{t('home.mission.title')}</h2>
             <p>{t('home.mission.text')}</p>
             <Button to={routes.aboutUs} variant="outline">
               {t('home.mission.cta')}
@@ -84,19 +83,24 @@ export const Home = () => {
       </Section>
 
       {/* Values */}
-      <Section
-        background="subtle"
-        eyebrow={t('home.values.eyebrow')}
-        title={t('home.values.title')}
-        subtitle={t('home.values.subtitle')}
-        center
-      >
+      <Section background="ink">
+        <div className={styles.splitHeader}>
+          <div>
+            <span className={styles.eyebrowGold}>{t('home.values.eyebrow')}</span>
+            <h2 className={styles.splitTitle}>{t('home.values.title')}</h2>
+          </div>
+          <p className={styles.splitText}>{t('home.values.subtitle')}</p>
+        </div>
+
+        {/**
+         * Los huecos de 1px de la rejilla hacen de filetes: el fondo se ve por
+         * ellos y cada celda vuelve a tapar el resto con el negro de sección.
+         */}
         <div className={styles.valuesGrid}>
           {HOME_VALUES.map(({ key, icon: Icon }) => (
             <div key={key} className={styles.valueCard}>
-              <span className={styles.valueIcon}>
-                <Icon size={24} aria-hidden />
-              </span>
+              <Icon className={styles.valueIcon} size={26} strokeWidth={1.5} aria-hidden />
+              <span className={styles.valueRule} />
               <h3 className={styles.valueTitle}>{t(`values.${key}.title`)}</h3>
               <p className={styles.valueText}>{t(`values.${key}.text`)}</p>
             </div>
@@ -104,25 +108,12 @@ export const Home = () => {
         </div>
       </Section>
 
-      {/* Growth stats */}
+      {/**
+       * Productos y servicios va entre Valores y Crecimiento a propósito: sin
+       * este claro quedarían dos secciones negras seguidas.
+       */}
       <Section
-        background="navy"
-        eyebrow={t('home.growth.eyebrow')}
-        title={t('home.growth.title')}
-        subtitle={t('home.growth.text')}
-      >
-        <div className={styles.statsGrid}>
-          {stats.map((stat) => (
-            <div key={stat.label} className={styles.statCard}>
-              <div className={styles.statValue}>{stat.value}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Featured products & services */}
-      <Section
+        background="petrol"
         eyebrow={t('home.featured.eyebrow')}
         title={t('home.featured.title')}
         subtitle={t('home.featured.subtitle')}
@@ -141,12 +132,37 @@ export const Home = () => {
         </div>
       </Section>
 
+      {/* Growth stats */}
+      <Section background="ink" className={styles.growth}>
+        <div className={styles.splitHeader}>
+          <div>
+            <span className={styles.eyebrowGold}>{t('home.growth.eyebrow')}</span>
+            <h2 className={styles.growthTitle}>{t('home.growth.title')}</h2>
+          </div>
+          <p className={styles.splitText}>{t('home.growth.text')}</p>
+        </div>
+
+        <div className={styles.statsGrid}>
+          {stats.map((stat) => (
+            <div key={stat.label} className={styles.stat}>
+              <div className={styles.statValue}>{stat.value}</div>
+              <span className={styles.statRule} />
+              <div className={styles.statLabel}>{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.statsPeriod}>
+          {t('home.growth.stats.years')} · {t('home.growth.stats.yearsValue')}
+        </div>
+      </Section>
+
       {/* Final CTA */}
-      <Section background="subtle">
+      <Section className={styles.ctaSection}>
         <div className={styles.finalCta}>
-          <h2>{t('home.cta.title')}</h2>
-          <p>{t('home.cta.text')}</p>
-          <Button to={routes.contact} variant="secondary">
+          <h2 className={styles.finalCtaTitle}>{t('home.cta.title')}</h2>
+          <p className={styles.finalCtaText}>{t('home.cta.text')}</p>
+          <Button to={routes.contact} variant="primary">
             {t('home.cta.button')}
           </Button>
         </div>

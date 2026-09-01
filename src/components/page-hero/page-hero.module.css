@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background: var(--color-navy);
+  background: var(--color-ink);
   color: var(--color-text-inverse);
   overflow: hidden;
 }
@@ -29,21 +29,25 @@
   }
 }
 
-/* Mismo recorrido azul → rojo que el hero de inicio, más contenido. */
+/**
+ * Mismo velo que el hero de inicio, del negro de marca al petróleo: el extremo
+ * oscuro se queda a la izquierda, donde va el texto. Aquí va más contenido
+ * porque la cabecera de página es más baja.
+ */
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     120deg,
-    rgba(7, 22, 39, 0.95) 0%,
-    rgba(14, 35, 64, 0.74) 65%,
-    rgba(116, 22, 15, 0.62) 100%
+    rgba(15, 17, 20, 0.95) 0%,
+    rgba(17, 48, 60, 0.88) 55%,
+    rgba(41, 105, 124, 0.82) 100%
   );
 }
 
 .inner {
   position: relative;
-  padding-block: var(--space-8);
+  padding-block: var(--space-9);
   max-width: 720px;
 }
 
@@ -51,14 +55,26 @@
   max-width: none;
 }
 
+/* Antetítulo de marca, con el filete de oro a su izquierda. */
 .eyebrow {
-  display: inline-block;
-  font-weight: 700;
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-3);
+  color: var(--color-gold-text-on-dark);
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--gold-drop-mid);
 }
 
 /**
@@ -69,12 +85,15 @@
  */
 .title {
   font-size: clamp(1.75rem, 3.6vw, 2.875rem);
+  line-height: 1.12;
   color: var(--color-white);
   margin-bottom: var(--space-4);
+  text-wrap: pretty;
 }
 
 .subtitle {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
 }
 

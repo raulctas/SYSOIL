@@ -41,7 +41,7 @@ export const AboutUs = () => {
       </Section>
 
       {/* Mission + Vision */}
-      <Section background="subtle">
+      <Section background="sand">
         <div className={styles.mvGrid}>
           <div className={styles.mvCard}>
             <h3>{t('aboutUs.mission.title')}</h3>
@@ -73,7 +73,7 @@ export const AboutUs = () => {
 
       {/* Why us */}
       <Section
-        background="navy"
+        background="ink"
         eyebrow={t('aboutUs.whyUs.eyebrow')}
         title={t('aboutUs.whyUs.title')}
       >

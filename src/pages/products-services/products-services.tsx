@@ -34,7 +34,7 @@ export const ProductsServices = () => {
       </Section>
 
       <Section
-        background="subtle"
+        background="sand"
         title={t('productsServices.services.title')}
         subtitle={t('productsServices.services.subtitle')}
       >

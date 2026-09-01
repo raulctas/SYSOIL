@@ -69,8 +69,8 @@
 
 /**
  * Control de icono con la misma lógica que el botón de contorno: nace
- * transparente, con borde e icono en azul, y al pasar el cursor se rellena
- * invirtiendo el icono. Antes nacía relleno en blanco y cambiaba a azul, que
+ * transparente, con borde e icono en petróleo, y al pasar el cursor se rellena
+ * invirtiendo el icono. Antes nacía relleno en blanco y cambiaba de color, que
  * mezclaba las dos familias de botón: el aspecto de una y el hover de la otra.
  */
 .control {
@@ -149,7 +149,7 @@
   font-size: var(--text-xs);
   font-weight: 600;
   line-height: 1.35;
-  color: var(--color-navy);
+  color: var(--color-text);
   text-align: center;
   padding: var(--space-3);
   border-top: 1px solid var(--color-border);

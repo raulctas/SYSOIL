@@ -23,7 +23,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -39,7 +39,8 @@ h6 {
   font-family: var(--font-heading);
   line-height: 1.15;
   font-weight: 700;
-  color: var(--color-navy);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
 img,
@@ -72,7 +73,7 @@ ul {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--color-petrol);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }

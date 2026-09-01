@@ -1,6 +1,7 @@
 /* Hero */
 .hero {
   position: relative;
+  background: var(--color-ink);
   color: var(--color-text-inverse);
   overflow: hidden;
 }
@@ -30,51 +31,93 @@
 }
 
 /**
- * El degradado recorre los dos colores del logo en el mismo orden que él, de
- * azul a rojo. El extremo oscuro se queda a la izquierda, donde va el texto.
+ * El velo recorre la marca de un extremo a otro: del negro carbón al petróleo.
+ * El extremo oscuro se queda a la izquierda, donde va el texto.
  *
- * Las opacidades del tramo derecho (0.74 / 0.72) están puestas para que el
+ * Las opacidades del tramo derecho (0.90 / 0.86) están puestas para que el
  * texto siga legible ahí: en móvil el titular ocupa todo el ancho y llega al
- * extremo rojo, y las fotos del pase pueden tener zonas muy claras. Con estos
- * valores el peor caso (foto blanca) queda por encima de 4.5:1 en blanco.
+ * extremo claro, y las fotos del pase pueden tener zonas muy claras.
  */
 .heroOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(7, 22, 39, 0.92) 0%,
-    rgba(14, 35, 64, 0.84) 40%,
-    rgba(16, 72, 124, 0.74) 70%,
-    rgba(116, 22, 15, 0.72) 100%
+    rgba(15, 17, 20, 0.95) 0%,
+    rgba(17, 48, 60, 0.9) 34%,
+    rgba(27, 74, 90, 0.9) 66%,
+    rgba(41, 105, 124, 0.86) 100%
   );
+}
+
+/**
+ * En escritorio el texto se queda en los 720px de la izquierda, sobre el tramo
+ * oscuro. Al plegarse a una columna ocupa todo el ancho y llega al extremo
+ * claro del velo, donde una foto muy luminosa dejaba la entradilla en 3.5:1.
+ * Aquí se cierra el recorrido antes y se sube la opacidad: mismo color, mismo
+ * sentido, pero sin el tramo final que no da contraste.
+ */
+@media (max-width: 900px) {
+  .heroOverlay {
+    background: linear-gradient(
+      160deg,
+      rgba(15, 17, 20, 0.95) 0%,
+      rgba(17, 48, 60, 0.93) 45%,
+      rgba(27, 74, 90, 0.93) 100%
+    );
+  }
 }
 
 .heroInner {
   position: relative;
-  padding-block: var(--space-9);
-  max-width: 680px;
+  padding-block: 132px;
+  max-width: 720px;
 }
 
-.heroEyebrow {
-  display: inline-block;
-  font-weight: 700;
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
+@media (max-width: 900px) {
+  .heroInner {
+    padding-block: 88px;
+  }
+}
+
+/**
+ * Antetítulo de marca sobre fondo oscuro, con el filete de oro a su izquierda.
+ * Es el único texto corriente compuesto en Archivo, junto a las cifras.
+ */
+.eyebrowGold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-4);
+  color: var(--color-gold-text-on-dark);
+  margin-bottom: var(--space-5);
+}
+
+.eyebrowGold::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--gold-drop-mid);
 }
 
 .heroTitle {
   font-size: var(--text-4xl);
+  line-height: 1.1;
   color: var(--color-white);
   margin-bottom: var(--space-5);
+  text-wrap: pretty;
 }
 
 .heroSubtitle {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 600px;
   margin-bottom: var(--space-6);
 }
 
@@ -88,14 +131,37 @@
 .missionGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
+  gap: 72px;
   align-items: center;
 }
 
+/**
+ * En la misión el filete del antetítulo pasa del oro al petróleo: es la
+ * bisagra entre el hero, todo de marca, y las secciones claras, que estructura
+ * el color de acento.
+ */
+.eyebrowMission {
+  composes: eyebrowGold;
+  color: var(--color-petrol);
+  margin-bottom: var(--space-4);
+}
+
+.eyebrowMission::before {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-petrol));
+}
+
+.missionTitle {
+  font-size: var(--text-3xl);
+  line-height: 1.18;
+  margin-bottom: var(--space-4);
+  text-wrap: pretty;
+}
+
 .missionImage {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-image);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
 }
 
 .missionImage img {
@@ -106,15 +172,58 @@
 
 .missionText p {
   color: var(--color-text-muted);
-  font-size: var(--text-lg);
   margin-bottom: var(--space-5);
 }
 
-/* Values grid */
+/**
+ * Cabecera a dos columnas de las secciones negras: antetítulo y titular a la
+ * izquierda, entradilla a la derecha, alineadas por la base.
+ */
+.splitHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-7);
+  margin-bottom: 56px;
+}
+
+.splitTitle {
+  font-size: 2.5rem;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  max-width: 600px;
+  text-wrap: pretty;
+}
+
+.splitText {
+  font-size: var(--text-md);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 320px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .splitHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  .splitText {
+    max-width: none;
+  }
+}
+
+/**
+ * Rejilla de valores sin bordes ni tarjetas: el hueco de 1px deja ver el fondo
+ * de la rejilla y son esos hilos los que hacen de filetes entre celdas.
+ */
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 900px) {
@@ -130,74 +239,33 @@
 }
 
 .valueCard {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-5);
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.valueCard:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .valueCard:hover {
-    transform: none;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--color-ink);
+  padding: 38px 32px 42px;
 }
 
 .valueIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: rgba(16, 72, 124, 0.1);
-  color: var(--color-blue);
-  margin-bottom: var(--space-4);
+  color: var(--color-gold-on-dark);
+}
+
+.valueRule {
+  width: 28px;
+  height: 1px;
+  background: var(--color-gold-on-dark);
 }
 
 .valueTitle {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-2);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .valueText {
-  color: var(--color-text-muted);
   font-size: var(--text-sm);
-}
-
-/* Growth stats */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-5);
-  margin-top: var(--space-7);
-}
-
-.statCard {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: var(--space-5);
-}
-
-.statValue {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  color: var(--color-gold);
-  margin-bottom: var(--space-1);
-}
-
-.statLabel {
-  font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Featured cards */
@@ -225,23 +293,126 @@
   margin-top: var(--space-7);
 }
 
-/* Final CTA */
+/* Growth: solo cifras, sin gráficos ni tarjetas. */
+.growthTitle {
+  font-size: 2.75rem;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  max-width: 620px;
+  text-wrap: pretty;
+}
+
+.growth .splitHeader {
+  margin-bottom: 72px;
+}
+
+.growth .splitText {
+  max-width: 340px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 860px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/**
+ * Las cifras van en Archivo, la tipografía de marca: es el otro sitio, además
+ * del logotipo, donde asoma. `white-space: nowrap` es imprescindible — sin él
+ * "13,1 %" se parte por el espacio antes del signo.
+ */
+.statValue {
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 4.5rem;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.statRule {
+  width: 100%;
+  height: 2px;
+  background: var(--color-gold-on-dark);
+}
+
+.statLabel {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.statsPeriod {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-petrol-on-dark);
+}
+
+@media (max-width: 600px) {
+  .statValue {
+    font-size: 3.25rem;
+  }
+
+  .statsPeriod {
+    margin-top: var(--space-7);
+  }
+}
+
+/**
+ * Final CTA: sección blanca con una placa negra dentro. Va algo más contenida
+ * que el resto. La clase se repite para ganarle en especificidad al
+ * `padding-block` de `Section`, que vive en otro módulo y podría ir después.
+ */
+.ctaSection.ctaSection {
+  padding-block: var(--section-space-tight);
+}
+
 .finalCta {
+  background: var(--color-ink-raised);
+  border-radius: var(--radius-lg);
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
   text-align: center;
-  max-width: 720px;
-  margin-inline: auto;
 }
 
-.finalCta h2 {
-  color: var(--color-navy);
+.finalCtaTitle {
   font-size: var(--text-3xl);
-  margin-bottom: var(--space-4);
+  line-height: 1.18;
+  color: var(--color-white);
+  max-width: 720px;
+  text-wrap: pretty;
 }
 
-.finalCta p {
-  color: var(--color-text-muted);
+.finalCtaText {
   font-size: var(--text-lg);
-  margin-bottom: var(--space-6);
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 620px;
+}
+
+@media (max-width: 600px) {
+  .finalCta {
+    padding: var(--space-7) var(--space-5);
+  }
 }
 
 @media (max-width: 860px) {
@@ -252,9 +423,5 @@
 
   .missionImageWrap {
     order: -1;
-  }
-
-  .heroTitle {
-    font-size: var(--text-3xl);
   }
 }

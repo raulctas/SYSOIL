@@ -1,60 +1,75 @@
 /**
- * Design tokens — variables de marca de SYSOIL INVESTMENT S.L.
- * Paleta derivada del logo: azul profundo, rojo y oro metálico.
- * Todos los componentes consumen estas variables (CSS Modules) en lugar de valores literales.
+ * Design tokens — variables de marca de SYSOIL Energy Trading.
  *
- * Reparto de los tres colores del logo:
- * - Azul: color primario (enlaces, botones, iconos, eyebrows sobre fondo claro).
- * - Oro: acento (badges, cifras destacadas, eyebrows sobre fondo oscuro, foco).
- * - Rojo: segundo color de marca. Se reserva para los pares en los que el logo
- *   opone azul y rojo, como sus dos flechas: Misión/Visión, el cierre de los
- *   degradados de los heroes y las líneas que flanquean INVESTMENT en el footer.
- *   Es el color menos frecuente a propósito: en el logo comparte peso con el
- *   azul, pero repartido por toda la página competiría con él.
+ * La identidad son dos colores: negro carbón y oro (el "oro negro" del
+ * petróleo). El azul petróleo es el acento que estructura las superficies
+ * claras — filos, antetítulos, botones de contorno— y nunca compite con la
+ * pareja de marca. Verde y rojo solo indican dato: subidas, bajadas y errores.
+ *
+ * Todos los componentes consumen estas variables (CSS Modules) en lugar de
+ * valores literales.
  */
 :root {
-  /* Brand colors */
-  --color-blue: #10487c;
-  --color-blue-dark: #0b3159;
-  /* Tintes claros: solo para detalles sobre superficies oscuras (navy). */
-  --color-blue-light: #3f7fc4;
-  --color-red: #9e2016;
-  --color-red-dark: #74160f;
-  --color-red-light: #c8443a;
-  --color-gold: #c9a24a;
-  --color-gold-dark: #a37c2e;
-  /* Oro legible como texto sobre fondos claros (el oro de marca no da contraste suficiente). */
-  --color-gold-text: #7f5e1c;
-  --color-navy: #0e2340;
-  --color-navy-dark: #071627;
+  /* Marca */
+  --color-ink: #0f1114; /* negro carbón, superficie oscura */
+  --color-ink-deep: #0b0d0f; /* pie */
+  /* Negro levantado: separa la placa del CTA y el bloque de cifras del resto. */
+  --color-ink-raised: #14171a;
+  --color-gold: #b4884a; /* oro sobre fondo claro */
+  --color-gold-on-dark: #d8ae5c; /* oro sobre fondo oscuro */
+  --color-gold-soft: #e6c88f; /* glifos de icono sobre azul */
+  /* Oro de texto sobre negro: antetítulos y correo del pie. */
+  --color-gold-text-on-dark: #e6c179;
 
-  /* Neutrals */
+  /* Degradado de la gota del logotipo (solo sobre fondo oscuro). */
+  --gold-drop-light: #f5dfa6;
+  --gold-drop-mid: #c99c45;
+  --gold-drop-dark: #8a5f1e;
+
+  /* Acento */
+  --color-petrol: #1b4a5a;
+  --color-petrol-dark: #143a47; /* hover de los rellenos petróleo */
+  --color-petrol-tint: #e1ecf0; /* superficies claras */
+  --color-petrol-line: #bdd3da; /* bordes sobre tinte */
+  --color-petrol-on-dark: #7fb3c4;
+
+  /* Neutros */
   --color-white: #ffffff;
   --color-bg: #ffffff;
-  --color-bg-subtle: #f4f6f9;
-  --color-bg-muted: #e9edf3;
-  --color-border: #dde3ea;
-  --color-text: #1c2530;
+  --color-sand: #f5f2ec; /* fondo cálido de sección */
+  --color-sand-line: #e0d9cb;
+  --color-bg-subtle: var(--color-sand);
+  --color-bg-muted: var(--color-sand-line);
+  --color-border: #eaecf0;
+  --color-text: #0f1114;
   --color-text-muted: #5b6672;
   --color-text-inverse: #ffffff;
 
-  /* Semantic */
-  --color-primary: var(--color-blue);
-  --color-primary-hover: var(--color-blue-dark);
+  /* Dato (nunca marca) */
+  --color-up: #7cc7a0; /* sobre oscuro */
+  --color-up-light: #16a34a; /* sobre claro */
+  --color-down: #b42318;
+
+  /* Semánticos: la acción estructural sobre fondo claro es el petróleo. */
+  --color-primary: var(--color-petrol);
+  --color-primary-hover: var(--color-petrol-dark);
   --color-accent: var(--color-gold);
 
   /* Typography */
-  --font-heading: 'Rem', 'Segoe UI', system-ui, sans-serif;
-  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'REM', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'REM', 'Segoe UI', system-ui, sans-serif;
+  /* Solo el logotipo, los antetítulos y las cifras destacadas. */
+  --font-brand: 'Archivo', 'Segoe UI', system-ui, sans-serif;
 
-  --text-xs: 0.8125rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.375rem;
-  --text-2xl: 1.75rem;
-  --text-3xl: 2.25rem;
-  --text-4xl: 3rem;
+  --text-xs: 0.8125rem; /* 13 — antetítulo, pie de página */
+  --text-sm: 0.9375rem; /* 15 */
+  --text-md: 1rem; /* 16 — botones */
+  --text-base: 1.0625rem; /* 17 — cuerpo y menú */
+  --text-lg: 1.1875rem; /* 19 — entradilla */
+  --text-xl: 1.25rem; /* 20 — título de tarjeta */
+  --text-2xl: 1.75rem; /* 28 */
+  --text-3xl: 2.375rem; /* 38 — H2 de sección */
+  --text-4xl: 3.5rem; /* 56 — H1 del hero */
 
   /* Spacing scale */
   --space-1: 0.25rem;
@@ -67,37 +82,54 @@
   --space-8: 4rem;
   --space-9: 6rem;
 
+  /* Aire vertical de sección. El CTA final va algo más contenido. */
+  --section-space: 112px;
+  --section-space-tight: 96px;
+
   /* Layout */
   --container-max: 1180px;
-  /* Da de sí lo justo para que el logo respire: es el óvalo lo que manda. */
-  --header-height: 96px;
-  --logo-height: 84px;
+  --container-pad: 24px;
+  --header-height: 100px;
+  /* Cuerpo del wordmark de la cabecera: manda sobre el alto del logotipo. */
+  --logo-size: 38px;
 
   /* Radii */
   --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-image: 14px;
+  --radius-md: 16px; /* tarjetas */
+  --radius-lg: 20px; /* placa del CTA */
   --radius-full: 999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(7, 22, 39, 0.07);
-  --shadow-md: 0 6px 20px rgba(7, 22, 39, 0.09);
-  --shadow-lg: 0 18px 48px rgba(7, 22, 39, 0.16);
+  --shadow-sm: 0 1px 2px rgba(15, 17, 20, 0.07);
+  --shadow-md: 0 6px 20px rgba(15, 17, 20, 0.1);
+  --shadow-lg: 0 18px 48px rgba(15, 17, 20, 0.16);
 
   /* Transitions */
   --transition: 180ms ease;
 }
 
 /**
- * Header más contenido a partir del punto en el que la navegación se pliega en
- * hamburguesa (900px, el mismo de `header.module.css`). El header es pegajoso,
- * así que su alto se descuenta de la pantalla durante todo el scroll: los 96px
- * que el logo necesita para leerse en escritorio se comen demasiado en un
- * móvil. Vuelve a los 76 / 66px de siempre, manteniendo la proporción (0,87).
+ * Cabecera más contenida a partir del punto en el que la navegación se pliega
+ * en hamburguesa (900px, el mismo de `header.module.css`). La cabecera es
+ * pegajosa, así que su alto se descuenta de la pantalla durante todo el
+ * scroll: los 100px que respira en escritorio se comen demasiado en un móvil.
  */
 @media (max-width: 900px) {
   :root {
     --header-height: 76px;
-    --logo-height: 66px;
+    --logo-size: 30px;
+    /* El aire de sección se recorta con la misma lógica. */
+    --section-space: 80px;
+    --section-space-tight: 72px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-space: 64px;
+    --section-space-tight: 56px;
+    --text-4xl: 2.5rem;
+    --text-3xl: 1.875rem;
   }
 }

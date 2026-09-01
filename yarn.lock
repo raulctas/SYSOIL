@@ -363,10 +363,10 @@
     "@eslint/core" "^0.17.0"
     levn "^0.4.1"
 
-"@fontsource/inter@^5.0.17":
+"@fontsource/archivo@^5.3.0":
   version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.3.0.tgz#866278dc2357659f8be1755c8b67f29d3697b440"
-  integrity sha512-RofMylZmjlJEfELXeNHFWBRcSs75rGU/6bV2S2jfnvv/3rPXPGe0LgUJTklcHZ9lM4OZmAVFhcJPnACfb91A3g==
+  resolved "https://registry.yarnpkg.com/@fontsource/archivo/-/archivo-5.3.0.tgz#c0af54dc50817cd19c7711bd1db51b28efc4d358"
+  integrity sha512-5DIMgPVJRi62OqdOVoogCFxP73EkNM/E0YVTSDIQlDEJfDbxqZduwM/YoNZwC9Sx1CDgpKinqf8ckRY1QNIecw==
 
 "@fontsource/rem@^5.0.4":
   version "5.3.0"

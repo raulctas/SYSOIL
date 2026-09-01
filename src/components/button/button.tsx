@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 
 import styles from './button.module.css';
 
-type Variant = 'primary' | 'secondary' | 'outline' | 'onDark';
+/**
+ * `primary` es el oro relleno, la única acción de la web con superficie de
+ * marca; `outline` la acompaña sobre fondo claro y `onDark` sobre fondo
+ * oscuro. No hay una cuarta: cuando el principal era azul hacía falta un
+ * `secondary` dorado, y al pasar el principal a oro se quedó sin cometido.
+ */
+type Variant = 'primary' | 'outline' | 'onDark';
 
 interface CommonProps {
   children: ReactNode;

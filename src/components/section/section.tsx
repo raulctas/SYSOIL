@@ -4,7 +4,11 @@ import { Container } from 'components/container';
 
 import styles from './section.module.css';
 
-type Background = 'default' | 'subtle' | 'navy';
+/**
+ * Fondos de sección. Se alternan a propósito para que no queden dos bloques
+ * oscuros seguidos: blanco, arena, negro, tinte petróleo.
+ */
+type Background = 'default' | 'sand' | 'petrol' | 'ink';
 
 interface Props {
   children: ReactNode;
