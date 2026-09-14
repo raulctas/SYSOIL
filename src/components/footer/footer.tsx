@@ -43,7 +43,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className={styles.contactCol}>
             <h3 className={styles.colTitle}>{t('footer.contact')}</h3>
             <address className={styles.contactLine}>
               <strong>{COMPANY.legalName}</strong>

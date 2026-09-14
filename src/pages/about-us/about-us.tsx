@@ -93,10 +93,13 @@ export const AboutUs = () => {
       </Section>
 
       {/* Growth */}
+      {/* `wideHeader` suelta el ancho del encabezado: sin el, "Un modelo de
+          negocio resiliente y escalable" parte en dos lineas. */}
       <Section
         background="sand"
         eyebrow={t('aboutUs.growth.eyebrow')}
         title={t('aboutUs.growth.title')}
+        wideHeader
       >
         <p className={styles.growthText}>{t('aboutUs.growth.text')}</p>
         <p className={styles.confidentiality}>{t('aboutUs.growth.confidentiality')}</p>

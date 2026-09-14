@@ -61,6 +61,15 @@
   color: var(--color-gold-on-dark);
 }
 
+/**
+ * La ultima columna se alinea al margen derecho para que sus lineas cierren en
+ * el mismo filo que "integral." en la linea inferior del pie. Alineada a la
+ * izquierda quedaba con un borde irregular contra el margen.
+ */
+.contactCol {
+  text-align: right;
+}
+
 .contactLine {
   font-size: var(--text-sm);
   line-height: 1.7;
@@ -85,5 +94,10 @@
   .grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+
+  /* En una sola columna ya no hay margen derecho con el que cuadrar. */
+  .contactCol {
+    text-align: left;
   }
 }
