@@ -61,6 +61,17 @@
   color: var(--color-gold-on-dark);
 }
 
+/**
+ * La ultima columna se arrima al margen derecho: se encoge al ancho de su linea
+ * mas larga y el sobrante de la rejilla queda a su izquierda. Asi cierra en el
+ * mismo filo que "integral." en la linea inferior del pie, pero el texto
+ * conserva su alineacion a la izquierda.
+ */
+.contactCol {
+  width: fit-content;
+  margin-left: auto;
+}
+
 .contactLine {
   font-size: var(--text-sm);
   line-height: 1.7;
@@ -85,5 +96,11 @@
   .grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+
+  /* En una sola columna ya no hay margen derecho con el que cuadrar. */
+  .contactCol {
+    width: auto;
+    margin-left: 0;
   }
 }

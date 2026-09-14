@@ -46,6 +46,23 @@
   border-left: 4px solid var(--color-petrol-on-dark);
   border-radius: var(--radius-md);
   padding: var(--space-6);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+/**
+ * Mismo realce que el resto de tarjetas de la web: se levantan al pasar por
+ * encima. Solo se aclaran tres lados, porque el filo izquierdo es el acento de
+ * color que distingue Mision de Vision y tiene que mantenerse.
+ */
+.mvCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-top-color: rgba(255, 255, 255, 0.26);
+  border-right-color: rgba(255, 255, 255, 0.26);
+  border-bottom-color: rgba(255, 255, 255, 0.26);
 }
 
 /* Misión y Visión se oponen en los dos colores de la web: petróleo y oro. */
@@ -119,9 +136,26 @@
   padding: var(--space-6);
   /* Permite dimensionar el titulo respecto al ancho de la tarjeta (unidad cqi). */
   container-type: inline-size;
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+/* Sobre fondo oscuro el realce se hace subiendo el velo blanco, no con sombra. */
+.whyCard:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+/* El numero es el acento de la tarjeta: se enciende con ella. */
+.whyCard:hover .whyNumber {
+  color: var(--color-gold-text-on-dark);
 }
 
 .whyNumber {
+  transition: color var(--transition);
   font-family: var(--font-brand);
   font-size: var(--text-2xl);
   font-weight: 800;
@@ -181,5 +215,13 @@
 
   .introImage img {
     height: auto;
+  }
+}
+
+/* El levantamiento es movimiento; el cambio de color y de borde no. */
+@media (prefers-reduced-motion: reduce) {
+  .mvCard:hover,
+  .whyCard:hover {
+    transform: none;
   }
 }
