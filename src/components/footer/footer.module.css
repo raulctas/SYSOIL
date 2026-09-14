@@ -62,12 +62,14 @@
 }
 
 /**
- * La ultima columna se alinea al margen derecho para que sus lineas cierren en
- * el mismo filo que "integral." en la linea inferior del pie. Alineada a la
- * izquierda quedaba con un borde irregular contra el margen.
+ * La ultima columna se arrima al margen derecho: se encoge al ancho de su linea
+ * mas larga y el sobrante de la rejilla queda a su izquierda. Asi cierra en el
+ * mismo filo que "integral." en la linea inferior del pie, pero el texto
+ * conserva su alineacion a la izquierda.
  */
 .contactCol {
-  text-align: right;
+  width: fit-content;
+  margin-left: auto;
 }
 
 .contactLine {
@@ -98,6 +100,7 @@
 
   /* En una sola columna ya no hay margen derecho con el que cuadrar. */
   .contactCol {
-    text-align: left;
+    width: auto;
+    margin-left: 0;
   }
 }
